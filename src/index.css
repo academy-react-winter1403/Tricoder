@@ -1,70 +1,73 @@
+
 @import "tailwindcss";
 
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@font-face {
+  font-family: 'yekan-hairline';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Hairline.TTF");
+}
+@font-face {
+  font-family: 'yekan-thin';
+  src: url("./assets/fonts//Yekan_Bakh_Fanum_Thin.TTF");
+}
+@font-face {
+  font-family: 'yekan-light';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Light.TTF");
+}
+@font-face {
+  font-family: 'yekan-regular';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Regular.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-medium';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Medium.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-semi-bold';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Semi_Bold.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-bold';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Bold.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-extera-bold';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Extra_Bold.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-fat';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Fat.TTF");
+  
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+  @theme {
+    --color-backgroundColor: #FAFBFC ;
+    --color-primaryColor: #2196F3 ;
+    --color-fontColor-1: #263238 ;
+    --color-fontColor-2: #455A64 ;
+    --color-fontColor-3: #607D8B ;
+    --color-red: #F44336 ;
+   
+    
+    --font-yekan-100:"yekan-hairline";
+    --font-yekan-200:"yekan-thin";
+    --font-yekan-300:"yekan-light";
+    --font-yekan-400:"yekan-regular";
+    --font-yekan-500:"yekan-medium";
+    --font-yekan-600:"yekan-semi-bold";
+    --font-yekan-700:"yekan-bold";
+    --font-yekan-800:"yekan-extera-bold";
+    --font-yekan-900:"yekan-fat";
   }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
-}
+  
+ 
+
+
+
