@@ -4,15 +4,15 @@
 @font-face {
   font-family: 'yekan';
   src: url("./assets/fonts/Yekan\ Bakh\ Regular.ttf");
-  font-weight: normal;
-  font-style: normal;
 }
+
 
   @theme {
     --color-black: #263238;
     --color-primaryBlue: #2196F3;
     --color-gary: #455A64;
     --font-yekan:"yekan";
+    
   }
   
  
