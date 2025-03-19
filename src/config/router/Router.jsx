@@ -22,7 +22,8 @@ import { LandingScreen } from "../../pages/landing";
                 children:[
                     
                 ]
-            }
+            },
+        
           ]
         },
         {

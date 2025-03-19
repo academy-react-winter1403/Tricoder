@@ -2,7 +2,10 @@
 
 const ChangePasswordPage = () => {
     return (
-        <div></div>
+        <div>
+
+          
+        </div>
     )
 }
 
