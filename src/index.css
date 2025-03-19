@@ -2,17 +2,69 @@
 @import "tailwindcss";
 
 @font-face {
-  font-family: 'yekan';
-  src: url("./assets/fonts/Yekan\ Bakh\ Regular.ttf");
+  font-family: 'yekan-hairline';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Hairline.TTF");
+}
+@font-face {
+  font-family: 'yekan-thin';
+  src: url("./assets/fonts//Yekan_Bakh_Fanum_Thin.TTF");
+}
+@font-face {
+  font-family: 'yekan-light';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Light.TTF");
+}
+@font-face {
+  font-family: 'yekan-regular';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Regular.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-medium';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Medium.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-semi-bold';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Semi_Bold.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-bold';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Bold.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-extera-bold';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Extra_Bold.TTF");
+  
+}
+@font-face {
+  font-family: 'yekan-fat';
+  src: url("./assets/fonts/Yekan_Bakh_Fanum_Fat.TTF");
+  
 }
 
 
+
+
   @theme {
-    --color-black: #263238;
-    --color-primaryBlue: #2196F3;
-    --color-gary: #455A64;
-    --font-yekan:"yekan";
+    --color-backgroundColor: #FAFBFC ;
+    --color-primaryColor: #2196F3 ;
+    --color-fontColor-1: #263238 ;
+    --color-fontColor-2: #455A64 ;
+    --color-fontColor-3: #607D8B ;
+    --color-red: #F44336 ;
+   
     
+    --font-yekan-100:"yekan-hairline";
+    --font-yekan-200:"yekan-thin";
+    --font-yekan-300:"yekan-light";
+    --font-yekan-400:"yekan-regular";
+    --font-yekan-500:"yekan-medium";
+    --font-yekan-600:"yekan-semi-bold";
+    --font-yekan-700:"yekan-bold";
+    --font-yekan-800:"yekan-extera-bold";
+    --font-yekan-900:"yekan-fat";
   }
   
  
