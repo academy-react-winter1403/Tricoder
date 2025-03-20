@@ -4,16 +4,15 @@ import { Landing } from "../../components/landing/Landing";
 import { Course } from "../../components/courses/course";
 import { AuthenticationLayout } from "../../app/layouts/AuthenticationLayout";
 import { LandingScreen } from "../../pages/landing";
-import StudentPanel from "../../components/student panel/StudentPanel";
-import Pages from "../../components/student panel/Pages/Pages";
-import ChangePasswordPage from "../../components/student panel/Pages/ChangePasswordPage/ChangePasswordPage";
-import CommentPage from "../../components/student panel/Pages/CommentPage/CommentPage";
-import CoursePage from "../../components/student panel/Pages/CoursePage/CoursePage";
-import DashboardPage from "../../components/student panel/Pages/DashboardPage/DashboardPage";
-import EditProfilePage from "../../components/student panel/Pages/EditProfilePage/EditProfilePage";
-import LogoutPage from "../../components/student panel/Pages/LogoutPage/LogoutPage";
-
-
+import { StudentPanel } from "../../components/student panel/StudentPanel";
+import ChangePasswordPage from "../../app/layouts/student panel/Pages/ChangePasswordPage/ChangePasswordPage"
+import CommentPage from "../../app/layouts/student panel/Pages/CommentPage/CommentPage"
+import CoursePage from "../../app/layouts/student panel/Pages/CoursePage/CoursePage"
+import DashboardPage from "../../app/layouts/student panel/Pages/DashboardPage/DashboardPage"
+import EditProfilePage from "../../app/layouts/student panel/Pages/EditProfilePage/EditProfilePage"
+import LogoutPage from "../../app/layouts/student panel/Pages/LogoutPage/LogoutPage"
+import Pages from "../../app/layouts/student panel/Pages/Pages"
+import  StudentPanel from "../../app/layouts/student panel/StudentPanel"
 
  export const routs = createBrowserRouter(
     [

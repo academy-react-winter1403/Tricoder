@@ -4,7 +4,7 @@ import Sidebar from "./sidbar/sidbar"
 
 
 
-const StudentPanel =() => {
+export const StudentPanel =() => {
     return(
       <>
         <div  className="    w-[100%]  h-[100vh]  bg-[#EEF2FF]   flex  p-7 gap-7">
@@ -17,4 +17,4 @@ const StudentPanel =() => {
 }
 
 
-export default StudentPanel;
+  

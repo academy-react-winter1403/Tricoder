@@ -2,7 +2,7 @@
 
 
 
-const Pages = () => {
+export const Pages = () => {
     return(
        <>
               <div  className="w-[80%]  h-[98%]   rounded-2xl bg-white  ">
@@ -12,4 +12,3 @@ const Pages = () => {
     )
 }
 
-export default Pages;
