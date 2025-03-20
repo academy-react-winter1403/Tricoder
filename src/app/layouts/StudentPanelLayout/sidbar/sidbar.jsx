@@ -14,7 +14,7 @@ import { Link } from "react-router-dom";
 
 
                 <div className="flex   h-[30%]  flex-col  justify-center items-center mb-6">
-                      <img src="" className="w-[8rem] h-[8rem] rounded-full mb-2  border"  />
+                      <img src="" className="w-[8rem] h-[8rem] rounded-full mb-2  border  border-white"  />
                       <h3 className=" text-white  text-lg font-semibold">بیتا قنبری</h3>
                 </div>
 
