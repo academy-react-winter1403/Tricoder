@@ -2,7 +2,7 @@
  const ChangePasswordPage = () => {
     return (
         <div>
-         <h1>pk</h1>
+         <h1>change pass</h1>
           
         </div>
     )

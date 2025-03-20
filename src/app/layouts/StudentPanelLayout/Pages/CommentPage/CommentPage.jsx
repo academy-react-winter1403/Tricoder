@@ -2,7 +2,7 @@
 
  const CommentPage = () => {
     return (
-        <div></div>
+        <div>peaple comment</div>
     )
 }
 

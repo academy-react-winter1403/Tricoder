@@ -21,6 +21,8 @@ import { Link } from "react-router-dom";
 
 
                 <ul  className="text-white  text-right  text-base">
+                      
+
                     <li className="py-2 px-4      rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]">
                             <Link to="dashboard">داشبرد</Link>
                     </li>

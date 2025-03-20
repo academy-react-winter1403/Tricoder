@@ -3,7 +3,7 @@
 
  const LogoutPage = () => {
     return (
-        <div></div>
+        <div>logout</div>
     )
 }
 

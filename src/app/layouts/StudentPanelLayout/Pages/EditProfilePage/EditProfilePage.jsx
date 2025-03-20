@@ -4,7 +4,7 @@
  const EditProfilePage = () => {
     return (
         <div>
-            heeeuuu
+            edit prifile
         </div>
     )
 }
