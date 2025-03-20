@@ -1,10 +1,14 @@
 
 
 
-export const EditProfilePage = () => {
+ const EditProfilePage = () => {
     return (
-        <div></div>
+        <div>
+            heeeuuu
+        </div>
     )
 }
+
+export default EditProfilePage;
 
 

@@ -1,7 +1,7 @@
 
 import { Link } from "react-router-dom";
 
-export const Sidebar = () => {
+ const Sidebar = () => {
 
 
 
@@ -22,22 +22,22 @@ export const Sidebar = () => {
 
                 <ul  className="text-white  text-right  text-base">
                     <li className="py-2 px-4      rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]">
-                            <Link to="/dashboard">داشبرد</Link>
+                            <Link to="dashboard">داشبرد</Link>
                     </li>
                     <li className="py-2 px-4      rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]">
-                            <Link to="/editprofile">ویرایش پروفایل</Link>
+                            <Link to="editprofile">ویرایش پروفایل</Link>
                     </li>
                     <li className="py-2 px-4      rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]">
-                            <Link to="/courses">دوره های من</Link>
+                            <Link to="mycourse">دوره های من</Link>
                     </li>
                     <li className="py-2 px-4      rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]">
-                            <Link to="/change-password">تغییر رمز عبور</Link>
+                            <Link to="change-password">تغییر رمز عبور</Link>
                     </li>
                     <li className="py-2 px-4      rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]">
-                            <Link to="/logout">خروج از حساب</Link>
+                            <Link to="logout">خروج از حساب</Link>
                     </li>
                     <li className="py-2 px-4      rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]">
-                            <Link to="/comment">نظرات ثبت شده</Link>
+                            <Link to="comment">نظرات ثبت شده</Link>
                     </li>
                 </ul>
            </div>
@@ -45,4 +45,6 @@ export const Sidebar = () => {
     )
 }
 
+
+export default Sidebar;
 

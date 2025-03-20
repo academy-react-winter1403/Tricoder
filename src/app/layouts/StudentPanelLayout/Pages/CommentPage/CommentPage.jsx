@@ -1,9 +1,13 @@
 
 
-export  const CommentPage = () => {
+ const CommentPage = () => {
     return (
         <div></div>
     )
 }
+
+
+
+export default CommentPage;
 
 

@@ -1,9 +1,10 @@
 
 
-export const CoursePage = () => {
+ const CoursePage = () => {
     return (
         <div></div>
     )
 }
 
 
+export default CoursePage;

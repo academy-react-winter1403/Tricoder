@@ -1,14 +1,19 @@
+import { Outlet } from "react-router-dom";
 
 
 
 
-export const Pages = () => {
+
+const Pages = () => {
     return(
        <>
-              <div  className="w-[80%]  h-[98%]   rounded-2xl bg-white  ">
-                  
+              <div  className="w-[100%]  h-[100%]   rounded-2xl bg-white  ">
+              
+
+               <Outlet/>
               </div>
        </>
     )
 }
 
+export default Pages;

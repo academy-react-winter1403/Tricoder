@@ -1,10 +1,12 @@
 
 
 
-export const LogoutPage = () => {
+ const LogoutPage = () => {
     return (
         <div></div>
     )
 }
 
+
+export default LogoutPage;
 

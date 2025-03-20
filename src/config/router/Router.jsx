@@ -40,17 +40,22 @@ import Pages from "../../app/layouts/StudentPanelLayout/Pages/Pages"
         },
         {
           path: "/Studentpanel",
-        element: <StudentPanel/>,
-        children: [
-        {path:"/allPages" , element:<Pages/>},
-        {path:"/change-password", element:<ChangePasswordPage/>},
-        {path:"/comment", element:<CommentPage/>} ,
-        {path:"/courses", element:<CoursePage/>} , 
-        {path:"/dashboard", element:<DashboardPage/>} ,
-        {path:"/editprofile", element:<EditProfilePage/>} ,
-        {path:"/logout", element:<LogoutPage/>},
-      ],  
-        }
+          element: <StudentPanel />,
+          children: [
+            { 
+               path: "", 
+               element: <Pages />, 
+               children: [  // صفحات داخل `AllPages` نمایش داده می‌شوند
+                  { path: "change-password", element: <ChangePasswordPage /> },
+                  { path: "comment", element: <CommentPage /> },
+                  { path: "mycourse", element: <CoursePage /> },
+                  { path: "dashboard", element: <DashboardPage /> },
+                  { path: "editprofile", element: <EditProfilePage /> },
+                  { path: "logout", element: <LogoutPage /> },
+               ]
+            }
+          ]
+       }
       ]
     } ,
    

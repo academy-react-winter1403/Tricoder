@@ -14,8 +14,9 @@ function App() {
 
 
  <Fragment>
+      
         <Header/>
-          <Outlet/>
+        <Outlet/>
         <Footer/>
     </Fragment>
 
