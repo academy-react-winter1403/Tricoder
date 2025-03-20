@@ -12,7 +12,7 @@ import DashboardPage from "../../app/layouts/student panel/Pages/DashboardPage/D
 import EditProfilePage from "../../app/layouts/student panel/Pages/EditProfilePage/EditProfilePage"
 import LogoutPage from "../../app/layouts/student panel/Pages/LogoutPage/LogoutPage"
 import Pages from "../../app/layouts/student panel/Pages/Pages"
-import  StudentPanel from "../../app/layouts/student panel/StudentPanel"
+
 
  export const routs = createBrowserRouter(
     [
