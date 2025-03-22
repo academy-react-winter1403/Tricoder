@@ -5,13 +5,13 @@ import { Course } from "../../components/courses/course";
 import { AuthenticationLayout } from "../../app/layouts/AuthenticationLayout";
 import { LandingScreen } from "../../pages/landing";
 import  StudentPanel  from "../../app/layouts/StudentPanelLayout/StudentPanel";
-import ChangePasswordPage from "../../app/layouts/StudentPanelLayout/Pages/ChangePasswordPage/ChangePasswordPage"
-import CommentPage from "../../app/layouts/StudentPanelLayout/Pages/CommentPage/CommentPage"
-import CoursePage from "../../app/layouts/StudentPanelLayout/Pages/CoursePage/CoursePage"
-import DashboardPage from "../../app/layouts/StudentPanelLayout/Pages/DashboardPage/DashboardPage"
-import EditProfilePage from "../../app/layouts/StudentPanelLayout/Pages/EditProfilePage/EditProfilePage"
-import LogoutPage from "../../app/layouts/StudentPanelLayout/Pages/LogoutPage/LogoutPage"
-import Pages from "../../app/layouts/StudentPanelLayout/Pages/Pages"
+import ChangePasswordPage from "../../components/panel/ChangePasswordPage/ChangePasswordPage"
+import CommentPage from "../../components/panel/CommentPage/CommentPage"
+import CoursePage from "../../components/panel/CoursePage/CoursePage"
+import DashboardPage from "../../components/panel/DashboardPage/DashboardPage"
+import EditProfilePage from "../../components/panel/EditProfilePage/EditProfilePage"
+import LogoutPage from "../../components/panel/LogoutPage/LogoutPage"
+import Pages from "../../app/layouts/PanelsPage"
 
 
  export const routs = createBrowserRouter(
@@ -46,12 +46,12 @@ import Pages from "../../app/layouts/StudentPanelLayout/Pages/Pages"
                path: "", 
                element: <Pages />, 
                children: [  // صفحات داخل `AllPages` نمایش داده می‌شوند
-                  { path: "change-password", element: <ChangePasswordPage /> },
-                  { path: "comment", element: <CommentPage /> },
+                  { path: "change-password", element: <ChangePasswordPage/> },
+                  { path: "comment", element: <CommentPage/> },
                   { path: "mycourse", element: <CoursePage /> },
                   { path: "dashboard", element: <DashboardPage /> },
-                  { path: "editprofile", element: <EditProfilePage /> },
-                  { path: "logout", element: <LogoutPage /> },
+                  { path: "editprofile", element: <EditProfilePage/> },
+                  { path: "logout", element: <LogoutPage/> },
                ]
             }
           ]
