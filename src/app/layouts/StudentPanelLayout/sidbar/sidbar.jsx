@@ -36,7 +36,7 @@ const Sidebar = () => {
 
         <ul className="text-white  text-right  ">
           <NavLink
-            to="dashboard"
+            to="/Studentpanel/dashboard"
             className={({ isActive }) =>
               ` block py-2 px-4  ${
                 isActive && "bg-[#6033FE]"
@@ -47,7 +47,7 @@ const Sidebar = () => {
           </NavLink>
 
           <NavLink
-            to="editprofile"
+            to="/Studentpanel/editprofile"
             className={({ isActive }) =>
               ` block py-2 px-4  ${
                 isActive && "bg-[#6033FE]"
@@ -58,7 +58,7 @@ const Sidebar = () => {
           </NavLink>
 
           <NavLink
-            to="mycourse"
+            to="/Studentpanel/mycourse"
             className={({ isActive }) =>
               ` block py-2 px-4  ${
                 isActive && "bg-[#6033FE]"
@@ -69,7 +69,7 @@ const Sidebar = () => {
           </NavLink>
 
           <NavLink
-            to="change-password"
+            to="/Studentpanel/change-password"
             className={({ isActive }) =>
               ` block py-2 px-4  ${
                 isActive && "bg-[#6033FE]"
@@ -80,7 +80,7 @@ const Sidebar = () => {
           </NavLink>
 
           <NavLink
-            to="logout"
+            to="/Studentpanel/logout"
             className={({ isActive }) =>
               ` block py-2 px-4  ${
                 isActive && "bg-[#6033FE]"
@@ -91,7 +91,7 @@ const Sidebar = () => {
           </NavLink>
 
           <NavLink
-            to="comment"
+            to="/Studentpanel/comment"
             className={({ isActive }) =>
               ` block py-2 px-4  ${
                 isActive && "bg-[#6033FE]"

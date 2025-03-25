@@ -1,9 +1,5 @@
-const Landing = ()=>{
-    return(
-        <div>
-            Landing
-        </div>
-    )
-}
+const Landing = () => {
+  return <div>Landing</div>;
+};
 
-export {Landing}
+export { Landing };
