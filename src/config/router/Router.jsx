@@ -5,9 +5,10 @@ import { Course } from "../../components/courses/course";
 import { AuthenticationLayout } from "../../app/layouts/AuthenticationLayout";
 import { LandingScreen } from "../../pages/landing";
 import { Login } from "../../components/authentication/login/Login";
-import { CreateAcount } from "../../components/authentication/createacount/creareAcount";
+
 import { SignUp } from "../../components/authentication/sighnup/SighnUp";
 import { Code } from "../../components/authentication/code/Code";
+import { CreateAcount } from "../../components/authentication/createacount/createAcount";
 
 
  export const routs = createBrowserRouter(
@@ -19,9 +20,7 @@ import { Code } from "../../components/authentication/code/Code";
         {
           path:"/",
           element:<LandingScreen/>,
-          children:[
-             
-          ]
+
         },
         
         {

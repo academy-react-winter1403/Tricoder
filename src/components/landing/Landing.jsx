@@ -4,7 +4,7 @@ const Landing = ()=>{
     return(
         <div>
             {/* Landing */}
-            <AuthenticationLayout/>
+
         </div>
         
     )
