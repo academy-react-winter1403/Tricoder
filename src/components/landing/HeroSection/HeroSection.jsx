@@ -18,9 +18,10 @@ const HeroSection = () => {
     max-md:h-80 max-xl:h-200' style={{ backgroundImage: "url('../../../../public/landing/hero-bg.png')" , backgroundRepeat:"no-repeat", backgroundSize:"100%" }}>
       {/* <img src='./public/landing/hero-bg.png ' className='w-full relative  ' alt='' /> */}
 
-      
-        <div className='px-96  text-center tracking-tight whitespace-nowrap pt-10
-        max-md:px-8 max-lg:px-30 max-lg:pt-1 max-xl:px-10 max-xl:'>
+     <div>
+       
+     <div className='px-96  text-center tracking-tight whitespace-nowrap pt-10 mx-auto bg-amber-500
+        max-md:px-8 max-lg:px-30 max-lg:pt-1 max-xl:px-10 max-xl:w-[80%] max-xl:'>
           <p className='text-2xl font-medium  pt-30
         max-md:hidden'>پلتفرم اموزش طراحی وب</p>
           <p className='text-[80px] font-black
@@ -31,8 +32,9 @@ const HeroSection = () => {
           <input className='w-182 pr-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative
         max-md:w-[300px] max-md:h-7 text-xs max-md:pr-3 max-md:my-3 max-md:rounded-[10px] max-lg:h-12 max-lg:my-10 max-xl:my-5' placeholder='چی میخوای یاد بگیری ؟' />
           <div className='max-md:hidden max-lg:hidden '>  <SearchIcon /></div>
-         <div className='max-xl:mx-42'> <WebsiteInfo /></div>
+         <div className='m'> <WebsiteInfo /></div>
         </div>
+     </div>
     
 
 
