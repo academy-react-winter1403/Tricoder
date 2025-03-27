@@ -21,11 +21,6 @@ import { CreateAcount } from "../../components/authentication/createacount/creat
           path:"/",
           element:<LandingScreen/>,
 
-        },
-        
-        {
-          path:"/courses",
-          element:<Course/>
         }
       ]
     },
@@ -50,6 +45,11 @@ import { CreateAcount } from "../../components/authentication/createacount/creat
               element:<Code/>
             }
           ]
-    } 
+    },   
+    {
+      path:"/courses",
+      element:<Course/>
+      
+    }
 ]
  )
