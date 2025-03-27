@@ -6,30 +6,31 @@ import { AuthenticationLayout } from "../../app/layouts/AuthenticationLayout";
 import { LandingScreen } from "../../pages/landing";
 
 
- export const routs = createBrowserRouter(
-    [
+export const routs = createBrowserRouter(
+  [
     {
-      path:"/",
-      element: <App/>,
-      children:[
+      path: "/",
+      element: <App />,
+      children: [
         {
-          path:"/",
-          element:<LandingScreen/>,
-          children:[
-            {
-                path:"/authentication",
-                element:<AuthenticationLayout/>,
-                children:[
-                    
-                ]
-            }
+          path: "/",
+          element: <LandingScreen />,
+          children: [
+
           ]
         },
         {
-          path:"/courses",
-          element:<Course/>
+          path: "/courses",
+          element: <Course />
         }
       ]
-    }   
-]
- )
+    },
+    {
+      path: "/authentication",
+      element: <AuthenticationLayout />,
+      children: [
+
+      ]
+    }
+  ]
+)
