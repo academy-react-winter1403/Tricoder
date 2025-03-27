@@ -23,13 +23,13 @@ const WebsiteInfo = () => {
 
   return (
     <div className='w-181 h-53 flex justify-between 
-    max-md:w-80 max-md:mx-9 '>
+    max-md:w-80 max-md:mx-9  '>
 
         {WebInfo.map((data,ind)=>(
                  <div className='w-55 h-53 rounded-2xl bg-[#FFFFFF99] border-[4px] border-white whitespace-nowrap
-                 max-md:w-25 max-md:h-24' >
+                 max-md:w-25 max-md:h-24 max-xl:' >
                  <img className='mx-18  mt-6
-                 max-md:w-9 max-md:mx-7 max-md:mt-2 ' src={data.img} alt=''/>
+                 max-md:w-9 max-md:mx-7 max-md:mt-2 max-xl:' src={data.img} alt=''/>
         
                 <p className='text-4xl font-black pt-4 px-20
                 max-md:text-[18px] max-md:pt-2 max-md:px-8'>{data.num}</p>

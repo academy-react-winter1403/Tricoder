@@ -39,11 +39,11 @@ const TeacherSlider = () => {
 
   return (
     <div className='my-25 bg-[#E3F2FD] h-187 pt-16
-    max-md:h-150'>
+    max-md:h-150 max-xl:my-70'>
         <div className='h-130    mx-29 relative  '>
 
         <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
-        max-md:h-9 max-md:w-30 max-md:mx-13'>
+        max-md:h-9 max-md:w-30 max-md:mx-13  max-xl:mx-78'>
         <p className='text-[40px] text-center whitespace-nowrap
          max-md:text-xl '>اساتید برتر </p> 
         </div> 
@@ -56,7 +56,7 @@ const TeacherSlider = () => {
                   <div className='w-74 h-95.5 relative rounded-3xl ' style={{marginTop: ind % 2 === 0 ? '80px' : '0px',}}>
 
                   <div className='bg-white  w-17 h-7 rounded-3xl flex items-center gap-0.5 absolute top-12 right-12
-                  max-md:hidden'>
+                  max-md:hidden max-xl:hidden'>
                   <div className='mr-1'> <SliderIcon/></div>
                     <p className='text-xs text-[#2196F3] mt-0.5 '> 202دوره</p>
                   </div>
@@ -74,13 +74,13 @@ const TeacherSlider = () => {
                 </div>
              ))}
             <button className='absolute  right-276 
-            max-md:right-63 max-md:top-70' ><LeftBtn/></button>
+            max-md:right-63 max-md:top-70 max-xl:right-180 max-xl:top-70' ><LeftBtn/></button>
             <button className='absolute -right-8
-            max-md:-right-36  max-md:top-70' ><RightBtn/></button>
+            max-md:-right-36  max-md:top-70 max-xl:top-70' ><RightBtn/></button>
           
         </div>
              <div className='w-24 h-4 flex mx-138 gap-6 mt-9
-             max-md:-mt-20 max-md:mx-17'>
+             max-md:-mt-20 max-md:mx-17 max-xl:mx-96'>
               <div className='w-4 h-4 bg-[#2196F3] rounded-3xl
               max-md:w-3 max-md:h-3'></div>
               <div className='w-4 h-4 bg-[#2196F3] rounded-3xl
