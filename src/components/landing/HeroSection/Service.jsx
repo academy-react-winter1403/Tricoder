@@ -35,7 +35,7 @@ const Service = () => {
             max-md:flex-col max-md:-my-5  max-md:gap-1 max-xl:my-10 '>
 
           {service.map((data,ind)=>(
-                 <div style={{boxShadow: ind % 2 === 1 ? '#0000000D ' : '',}} className='bg-[#FAFEFF2E] h-70 w-99 border-[2px] border-[#fff3f33b] rounded-3xl
+                 <div style={{boxShadow: ind % 2 === 1 ? '0 9px 32px -14px  ' : '',}} className='bg-[#FAFEFF2E] h-70 w-99 border-[2px] border-[#fff3f33b] rounded-3xl
                  max-md:w-70  max-md:h-46 max-xl:w-80 max-xl:flex flex-col justify-center'>
                  <div className='max-md:-mx-15 max-xl:-mx-9'>{data.icon}</div>
                  <p className='text-2xl font-black text-center leading-12 
