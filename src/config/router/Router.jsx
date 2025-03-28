@@ -4,6 +4,7 @@ import { Landing } from "../../components/landing/Landing";
 import { Course } from "../../components/courses/course";
 import { AuthenticationLayout } from "../../app/layouts/AuthenticationLayout";
 import { LandingScreen } from "../../pages/landing";
+import { NewsDetailScreen } from "../../pages/newsDetail/NewsDetailScreen";
 
 
 export const routs = createBrowserRouter(
@@ -22,7 +23,14 @@ export const routs = createBrowserRouter(
         {
           path: "/courses",
           element: <Course />
-        }
+        },
+        {
+          path: "/newsDetail",
+          element: <NewsDetailScreen />,
+          children: [
+
+          ]
+        },
       ]
     },
     {
