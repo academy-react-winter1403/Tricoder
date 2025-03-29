@@ -1,6 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { Share } from '../../assets/fonts/icons/newsDetail/Share'
+import { NewsMedia } from '../../assets/fonts/icons/newsDetail/NewsMedia'
+import { NewsTwitter } from '../../assets/fonts/icons/newsDetail/NewsTwitter'
+import { NewsInsta } from '../../assets/fonts/icons/newsDetail/NewsInsta'
+import { FullStar } from '../../assets/fonts/icons/newsDetail/FullStar'
+import { EmptyStar } from '../../assets/fonts/icons/newsDetail/EmptyStar'
 
 const NewsContent = () => {
+  const  star=[
+    {icon:<EmptyStar/>},
+      {icon:<FullStar/>},
+      {icon:<FullStar/>},
+      {icon:<FullStar/>},
+      {icon:<FullStar/>},
+     
+  ]
   return (
     <div className='pt-12 mx-auto w-[54%]  flex flex-col gap-16 '>
       <div>
@@ -38,6 +52,33 @@ const NewsContent = () => {
         <p className='text-[#455A64]'>امیدوارم مقاله مفیدی برای شما واقع بوده باشه.</p>
       </div>
 
+
+        <div className='flex flex-col gap-8'>
+          <div className='bg-[#ECEFF1] flex justify-between items-center py-4 px-6 rounded-2xl'>           
+             <div className='flex gap-2'> 
+              <Share/>  
+             <span className='font-bold text-base '>اشتراک گزاری</span>
+              </div>
+          
+              <div className='flex gap-4'>
+              <NewsMedia/>
+              <NewsTwitter/>
+              <NewsInsta/>
+              </div>
+          </div>
+
+          <div className='flex justify-between'>
+            <div className='flex gap-4'>
+              {star.map((data,ind)=>(
+                <div >{data.icon}</div>
+              ))}
+              <p className='font-medium '>امتیاز 20 نفر</p>
+              <div className='bg-[#2196F3] text-white font-bold text-xs px-4 py-2 rounded-[80px] text-center'>ثبت دیدگاه</div>
+            </div>
+
+            <div></div>
+          </div>
+        </div>
 
 
     </div>
