@@ -5,6 +5,8 @@ import { NewsTwitter } from '../../assets/fonts/icons/newsDetail/NewsTwitter'
 import { NewsInsta } from '../../assets/fonts/icons/newsDetail/NewsInsta'
 import { FullStar } from '../../assets/fonts/icons/newsDetail/FullStar'
 import { EmptyStar } from '../../assets/fonts/icons/newsDetail/EmptyStar'
+import { NewsLike } from '../../assets/fonts/icons/newsDetail/NewsLike'
+import { NewsDislike } from '../../assets/fonts/icons/newsDetail/NewsDislike'
 
 const NewsContent = () => {
   const  star=[
@@ -68,16 +70,31 @@ const NewsContent = () => {
           </div>
 
           <div className='flex justify-between'>
-            <div className='flex gap-4'>
+            <div className='flex gap-4 items-center'>
               {star.map((data,ind)=>(
-                <div >{data.icon}</div>
+                <div className='flex gap-2'>{data.icon}</div>
               ))}
-              <p className='font-medium '>امتیاز 20 نفر</p>
-              <div className='bg-[#2196F3] text-white font-bold text-xs px-4 py-2 rounded-[80px] text-center'>ثبت دیدگاه</div>
+              <p className='font-medium  '>امتیاز 20 نفر</p>
+              <div className='bg-[#2196F3] text-white font-bold text-xs w-20 h-8 rounded-[80px] text-center leading-8'>ثبت دیدگاه</div>
             </div>
-
-            <div></div>
+            <div className='flex gap-5 items-center'>
+              <div className='font-medium text-[#455A64] whitespace-nowrap '>آیا از این مقاله راضی بودید؟</div>
+              <div className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
+                 <NewsLike/>
+                 <p className='text-xl font-medium'>22</p>
+                 </div>
+              <div className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
+              <NewsDislike/>
+                 <p className='text-xl font-medium'>0</p>
+              
+              </div>
+            </div>            
           </div>
+        </div>
+
+        <div className='rounded-3xl shadow-2xl flex flex-col gap-6 '>
+          <p className='font-bold text-2xl text-center'>نظر کاربران درباره این مقاله</p>
+
         </div>
 
 

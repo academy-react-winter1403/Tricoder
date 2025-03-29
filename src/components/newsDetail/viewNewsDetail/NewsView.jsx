@@ -2,11 +2,13 @@ import React from 'react'
 import { EyeIcon } from '../../../assets/fonts/icons/landing/NewsIcon/EyeIcon'
 import { DataIcon } from '../../../assets/fonts/icons/landing/category/littleIcon/DataIcon'
 import { NewsDate } from '../../../assets/fonts/icons/landing/NewsIcon/NewsDate'
+import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart'
 
 const NewsView = () => {
   return (
     <div className='flex px-20 pt-14 gap-8 '>
-      <img src='./public/newsDetail/photo.png'/>
+      <img className='relative' src='./public/newsDetail/Rectangle34.png'/>
+      <div className='absolute  top-40 right-30 h-12 bg-[#FFFFFF] px-4 rounded-3xl flex items-center gap-1.5'> <FullHeart/> <p className='text-[#F44336] text-2xl font-medium'>12</p></div>
       <div className='flex flex-col '>
         <p className='text-[32px]  font-bold'>چگونه مطالعه موثر را برای شما آسانتر کنیم.</p>
         <p className='font-normal text-[#455A64] text-base leading-7'>همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش یک موضوع خاص مثل آموزش از کتاب، ویدئو یا هر آنچه که برای آموزش است نخواهد بود و این مقاله به صورت جامع در مورد چگونگی آموزش دیدن و یادگیری است.همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش یک موضوع خاص مثل آموزش از کتاب، ویدئو یا هر آنچه که همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش  دیدن و یادگیری است.همانطور که از عنوان مقاله.
