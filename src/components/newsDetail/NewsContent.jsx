@@ -17,8 +17,32 @@ const NewsContent = () => {
       {icon:<FullStar/>},
      
   ]
+  function LikeButton() {  
+    const [likes, setLikes] = useState(0);  
+  
+  
+
+    useEffect(() => {  
+      const fetchLikes = async () => {  
+        const response = await axios.get('http://localhost:5000/api/likes');  
+        setLikes(response.data.likes);  
+      };  
+  
+      fetchLikes();  
+    }, []);  
+  
+  
+    const handleLike = async () => {  
+      try {  
+        const response = await axios.post('http:///News/NewsLike/:NewsId');  
+        setLikes(response.data.likes);
+      } catch (error) {  
+        console.error('Error liking the item:', error);  
+      }  
+    };  }
+  
   return (
-    <div className='pt-12 mx-auto w-[54%]  flex flex-col gap-16 '>
+    <div className='pt-12 mx-auto w-[54%]  flex flex-col gap-16 text-justify '>
       <div>
       <p className='text-2xl font-bold leading-19'>چگونه اموزش ببینیم ؟</p>
         <p className='leading-6 text-[#455A64] '>قبل از هر چیزی باید بدانیم که نمیشه یک روند یا روش خاصی رو برای همه افراد که ذهنیت های متفاوتی هم از هم دارند، در نظر گرفت. ولی خب هدف تمامی این افراد آموزش دیدن و رسیدن به درک عمیقی از اون مطلب است ولی آیا برای تمامی افراد آموزش دیدن به این جا ختم میشود و همه به درک عمیقی از اون مطلب میرسند؟ قطعا خیر. در ادامه به نحوه رسیدن به درک عمیق مطلب، مناسب برای تمامی افراد صحبت خواهیم کرد</p>
@@ -47,7 +71,7 @@ const NewsContent = () => {
       </div>
 
 
-      <img src='./public/newsDetail/VideoPlayer.png'/>
+      <img className='' src='./public/newsDetail/VideoPlayer.png'/>
 
       <div className='flex flex-col gap-4'>
         <p className='text-[#455A64] leading-7'>این مثال برای آموزش از روی کتاب بود ولی برای ویدئو یا پادکست یا هر آنچه که میتوانید از آن مطلبی یاد بگیرید هم صدق میکند. شما در مثال بالا با هر بار از نو آموزش دیدن، هم مطلب را مرور میکنید و هم نکته هایی مهم که در طول آموزش متوجه نشده بودین را متوجه میشوید و این اصل قضیه است.</p>
@@ -79,10 +103,10 @@ const NewsContent = () => {
             </div>
             <div className='flex gap-5 items-center'>
               <div className='font-medium text-[#455A64] whitespace-nowrap '>آیا از این مقاله راضی بودید؟</div>
-              <div className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
+              <button className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
                  <NewsLike/>
                  <p className='text-xl font-medium'>22</p>
-                 </div>
+                 </button>
               <div className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
               <NewsDislike/>
                  <p className='text-xl font-medium'>0</p>
@@ -94,9 +118,9 @@ const NewsContent = () => {
 
         <div className='rounded-3xl shadow-2xl flex flex-col gap-6 px-8 py-8'>
           <p className='font-bold text-2xl text-center'>نظر کاربران درباره این مقاله</p>
-          <div className='flex flex-col gap-4'>
-            <input className='h-25 pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3' placeholder='نظر خودتو بنویس...'/>
-            <div className='h-12 w-fit rounded-4xl px-6 leading-12 bg-[#2196F3] text-base font-bold text-white'>ارسال</div>
+          <div className='flex flex-col gap-4 items-center'>
+            <input className='h-25 w-full pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3' placeholder='نظر خودتو بنویس...'/>
+            <div className='h-12 w-fit rounded-4xl px-6 leading-12 bg-[#2196F3] text-base font-bold text-white '>ارسال</div>
           </div>
 
         </div>
