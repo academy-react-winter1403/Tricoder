@@ -44,6 +44,12 @@
   color: #263238;
   direction: rtl;
   font-family: 'yekan-medium';
-  overflow-x: hidden
-
+  overflow-x: hidden;
+  
+  overflow-x: hidden;
+ }
+ .heroBG{
+  background-image: url("/public/landing/hero-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
  }
