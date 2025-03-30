@@ -96,7 +96,7 @@ const NewsContent = () => {
           <p className='font-bold text-2xl text-center'>نظر کاربران درباره این مقاله</p>
           <div className='flex flex-col gap-4'>
             <input className='h-25 pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3' placeholder='نظر خودتو بنویس...'/>
-            <div className='h-12  bg-[#2196F3] text-base font-bold text-white'>ارسال</div>
+            <div className='h-12 w-fit rounded-4xl px-6 leading-12 bg-[#2196F3] text-base font-bold text-white'>ارسال</div>
           </div>
 
         </div>
