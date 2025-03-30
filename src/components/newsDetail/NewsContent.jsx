@@ -53,6 +53,7 @@ const NewsContent = () => {
           <p className='font-medium leading-6'>افزایش انرژی: 
               <span className='text-[#455A64] font-normal'> کافئین به‌عنوان یک محرک عصبی عمل می‌کند و با ورود به جریان خون، کافئین به مغز می‌رود و سیستم عصب مرکزی را تحریک می‌کند. این احتشام ممکن است احساس افزایش انرژی و کاهش خستگی را در شما به ارمغان بیاورد.</span>
           </p>
+          
         </div>
         <div className='flex gap-4 pt-3'>
         <div className='w-2 h-1.5 bg-[#2196F3] rounded-[10px] mt-2 '></div>

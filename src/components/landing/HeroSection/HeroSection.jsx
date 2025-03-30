@@ -20,7 +20,7 @@ const HeroSection = () => {
 
      <div>
        
-     <div className='px-96  text-center tracking-tight whitespace-nowrap pt-10 mx-auto bg-amber-500
+     <div className='px-96  text-center tracking-tight whitespace-nowrap pt-10 mx-auto 
         max-md:px-8 max-lg:px-30 max-lg:pt-1 max-xl:px-10 max-xl:w-[80%] max-xl:'>
           <p className='text-2xl font-medium  pt-30
         max-md:hidden'>پلتفرم اموزش طراحی وب</p>
