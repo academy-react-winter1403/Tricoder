@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState,useEffect } from 'react'
 import { Share } from '../../assets/fonts/icons/newsDetail/Share'
 import { NewsMedia } from '../../assets/fonts/icons/newsDetail/NewsMedia'
 import { NewsTwitter } from '../../assets/fonts/icons/newsDetail/NewsTwitter'
@@ -7,6 +7,7 @@ import { FullStar } from '../../assets/fonts/icons/newsDetail/FullStar'
 import { EmptyStar } from '../../assets/fonts/icons/newsDetail/EmptyStar'
 import { NewsLike } from '../../assets/fonts/icons/newsDetail/NewsLike'
 import { NewsDislike } from '../../assets/fonts/icons/newsDetail/NewsDislike'
+import http from '../../core/services/interceptor'
 
 const NewsContent = () => {
   const  star=[
@@ -17,29 +18,50 @@ const NewsContent = () => {
       {icon:<FullStar/>},
      
   ]
-  function LikeButton() {  
-    const [likes, setLikes] = useState(0);  
+  function LikeDislikeComponent() {  
+    const [likesCount, setLikesCount] = useState(0);  
+    const [dislikesCount, setDislikesCount] = useState(0);  
+  
+   
+    const fetchCounts = async () => {  
+      try {  
+        const response = await axios.get('http://News/NewsLike/:NewsId');  
+        setLikesCount(response.data.likes);  
+        setDislikesCount(response.data.dislikes);  
+      } catch (error) {  
+        console.error('Error fetching counts:', error);  
+      }  
+    };  
+  
+    useEffect(() => {  
+      fetchCounts();
+    }, []);  
+  
+    // تابع برای لایک کردن  
+    const handleLike = async () => {  
+      try {  
+        const response = await axios.post('http://News/NewsLike/:NewsId');  
+        setLikesCount(response.data.likes);  
+        setDislikesCount(response.data.dislikes);  
+      } catch (error) {  
+        console.error('Error liking:', error);  
+      }  
+    };  
+  
+    // تابع برای دیسلایک کردن  
+    const handleDislike = async () => {  
+      try {  
+        const response = await axios.post('http://News/NewsDissLike/:NewsId');  
+        setLikesCount(response.data.likes);  
+        setDislikesCount(response.data.dislikes);  
+      } catch (error) {  
+        console.error('Error disliking:', error);  
+      }  
+    };  
+}  
   
   
 
-    useEffect(() => {  
-      const fetchLikes = async () => {  
-        const response = await axios.get('http://localhost:5000/api/likes');  
-        setLikes(response.data.likes);  
-      };  
-  
-      fetchLikes();  
-    }, []);  
-  
-  
-    const handleLike = async () => {  
-      try {  
-        const response = await axios.post('http:///News/NewsLike/:NewsId');  
-        setLikes(response.data.likes);
-      } catch (error) {  
-        console.error('Error liking the item:', error);  
-      }  
-    };  }
   
   return (
     <div className='pt-12 mx-auto w-[54%]  flex flex-col gap-16 text-justify '>
@@ -53,7 +75,7 @@ const NewsContent = () => {
           <p className='font-medium leading-6'>افزایش انرژی: 
               <span className='text-[#455A64] font-normal'> کافئین به‌عنوان یک محرک عصبی عمل می‌کند و با ورود به جریان خون، کافئین به مغز می‌رود و سیستم عصب مرکزی را تحریک می‌کند. این احتشام ممکن است احساس افزایش انرژی و کاهش خستگی را در شما به ارمغان بیاورد.</span>
           </p>
-          
+
         </div>
         <div className='flex gap-4 pt-3'>
         <div className='w-2 h-1.5 bg-[#2196F3] rounded-[10px] mt-2 '></div>
@@ -104,15 +126,15 @@ const NewsContent = () => {
             </div>
             <div className='flex gap-5 items-center'>
               <div className='font-medium text-[#455A64] whitespace-nowrap '>آیا از این مقاله راضی بودید؟</div>
-              <button className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
+              <button onClick={handleLike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
                  <NewsLike/>
                  <p className='text-xl font-medium'>22</p>
                  </button>
-              <div className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
+              <button onClick={handleDislike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
               <NewsDislike/>
                  <p className='text-xl font-medium'>0</p>
               
-              </div>
+              </button>
             </div>            
           </div>
         </div>
