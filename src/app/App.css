@@ -47,3 +47,8 @@
   overflow-x: hidden
 
  }
+ .heroBG{
+  background-image: url("/public/landing/hero-bg.png");
+  background-repeat: no-repeat;
+  background-size: contain;
+ }
