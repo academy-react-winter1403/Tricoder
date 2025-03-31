@@ -64,7 +64,7 @@ const LandingCourse = () => {
 
                 {course.map((data,ind)=>(
                              <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl py-4 pr-4 shadow-2xl
-                            max-lg:w-58 '>
+                            max-lg:w-60 '>
                              <img   src={data.img} alt=''
                              className='max-md:w-43'/>
                              <p className='font-bold text-base font-yekan-600 my-4 
