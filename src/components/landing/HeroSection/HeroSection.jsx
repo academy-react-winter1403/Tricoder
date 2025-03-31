@@ -15,24 +15,27 @@ import { Service } from './Service'
 const HeroSection = () => {
   return (
     <div className=' relative  h-240 w-full
-    max-md:h-80 max-xl:h-200' style={{ backgroundImage: "url('../../../../public/landing/hero-bg.png')" , backgroundRepeat:"no-repeat", backgroundSize:"100%" }}>
+    max-md:h-80 max-xl:h-200' >
       {/* <img src='./public/landing/hero-bg.png ' className='w-full relative  ' alt='' /> */}
 
-     <div>
+     <div className='pt-26    flex flex-col gap-9 items-center
+     max-lg:gap-1 max-lg:pt-8'>
        
-     <div className='px-96  text-center tracking-tight whitespace-nowrap pt-10 mx-auto bg-amber-500
-        max-md:px-8 max-lg:px-30 max-lg:pt-1 max-xl:px-10 max-xl:w-[80%] max-xl:'>
-          <p className='text-2xl font-medium  pt-30
-        max-md:hidden'>پلتفرم اموزش طراحی وب</p>
+     <div className=' text-center tracking-tight whitespace-nowrap pt-10 mx-auto 
+     max-md:leading-7 '>
+          <p className='text-2xl font-medium  
+      max-md:hidden '>پلتفرم اموزش طراحی وب</p>
           <p className='text-[80px] font-black
-        max-md:text-2xl max-lg:text-5xl max-xl:leading-15 max-xl:text-5xl'>مرجع اموزش برنامه نویسی</p>
+     max-md:text-[23px] '>مرجع اموزش برنامه نویسی</p>
           <p className='text-2xl font-medium 
-        max-md:hidden max-lg:text-xl'>مرجع اموزش زنده و تعاملی دسترسی به بیش از هفت هزار ویدیوی اموزشی به زبان فارسی .</p>
-
-          <input className='w-182 pr-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative
-        max-md:w-[300px] max-md:h-7 text-xs max-md:pr-3 max-md:my-3 max-md:rounded-[10px] max-lg:h-12 max-lg:my-10 max-xl:my-5' placeholder='چی میخوای یاد بگیری ؟' />
+       max-md:text-xs'>مرجع اموزش زنده و تعاملی دسترسی به بیش از هفت هزار ویدیوی اموزشی به زبان فارسی .</p>
+           </div>
+        <div className='  max-lg max-lg:w-3/5 max-lg: '>
+        <input className='w-[99%] px-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative
+      max-lg:my-3 max-md:h-8 max-lg:text-xs' placeholder='چی میخوای یاد بگیری ؟' />
           <div className='max-md:hidden max-lg:hidden '>  <SearchIcon /></div>
-         <div className='m'> <WebsiteInfo /></div>
+         <div className=''> <WebsiteInfo /></div>
+        
         </div>
      </div>
     
