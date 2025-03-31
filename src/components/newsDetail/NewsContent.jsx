@@ -34,10 +34,8 @@ const NewsContent = () => {
       }
     };
 
-    const handleLike = () => {
-      axios.
-      }
-    }
+  
+  
   
     useEffect(() => {
       handleLike();
