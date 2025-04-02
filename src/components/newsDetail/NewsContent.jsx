@@ -19,53 +19,21 @@ const NewsContent = () => {
     { icon: <FullStar /> },
 
   ]
-  function LikeDislikeComponent() {
-    const [likesCount, setLikesCount] = useState(0);
-    const [dislikesCount, setDislikesCount] = useState(0);
-
-
-    const fetchCounts = async () => {
-      try {
-        const response = await axios.get('http://News/NewsLike/:NewsId');
-        setLikesCount(response.data.likes);
-        setDislikesCount(response.data.dislikes);
-      } catch (error) {
-        console.error('Error fetching counts:', error);
-      }
-    };
-
+  const LikeDislike = () => {  
+    const [likes, setLikes] = useState();  
+    const [dislikes, setDislikes] = useState(0);  
   
+    const handleLike = () => {  
+      setLikes(likes + 1);  
+    };  
   
-  
-    useEffect(() => {
-      handleLike();
-    }, []);
+    const handleDislike = () => {  
+      setDislikes(dislikes + 1);  
+    };  
 
-    // تابع برای لایک کردن  
-    // const handleLike = async () => {  
-    //   try {  
-    //     const response = await axios.post('http://News/NewsLike/:NewsId');  
-    //     setLikesCount(response.data.likes);  
-    //     setDislikesCount(response.data.dislikes);  
-    //   } catch (error) {  
-    //     console.error('Error liking:', error);  
-    //   }  
-    // };  
-
-    // تابع برای دیسلایک کردن  
-    // const handleDislike = async () => {  
-    //   try {  
-    //     const response = await axios.post('http://News/NewsDissLike/:NewsId');  
-    //     setLikesCount(response.data.likes);  
-    //     setDislikesCount(response.data.dislikes);  
-    //   } catch (error) {  
-    //     console.error('Error disliking:', error);  
-    //   }  
-    // };  
   }
-
-
-
+  
+  
 
   return (
     <div className='pt-12 mx-auto w-[54%]  flex flex-col gap-16 text-justify '>
@@ -130,13 +98,13 @@ const NewsContent = () => {
           </div>
           <div className='flex gap-5 items-center'>
             <div className='font-medium text-[#455A64] whitespace-nowrap '>آیا از این مقاله راضی بودید؟</div>
-            <button className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
+            <button  onClick={handleLike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
               <NewsLike />
-              <p className='text-xl font-medium'>22</p>
+              <p className='text-xl font-medium'>22{likes}</p>
             </button>
-            <button className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
+            <button  onClick={handleDisLike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
               <NewsDislike />
-              <p className='text-xl font-medium'>0</p>
+              <p className='text-xl font-medium'>0 {dislikes}</p>
 
             </button>
           </div>
