@@ -19,8 +19,8 @@ const NewsContent = () => {
     { icon: <FullStar /> },
 
   ]
-  const LikeDislike = () => {  
-    const [likes, setLikes] = useState();  
+
+    const [likes, setLikes] = useState(0);  
     const [dislikes, setDislikes] = useState(0);  
   
     const handleLike = () => {  
@@ -28,10 +28,10 @@ const NewsContent = () => {
     };  
   
     const handleDislike = () => {  
-      setDislikes(dislikes + 1);  
+      setDislikes(dislikes  -1);  
     };  
 
-  }
+  
   
   
 
@@ -100,11 +100,11 @@ const NewsContent = () => {
             <div className='font-medium text-[#455A64] whitespace-nowrap '>آیا از این مقاله راضی بودید؟</div>
             <button  onClick={handleLike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
               <NewsLike />
-              <p className='text-xl font-medium'>22{likes}</p>
+              <p className='text-xl font-medium'>{likes}</p>
             </button>
-            <button  onClick={handleDisLike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
+            <button  onClick={handleDislike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
               <NewsDislike />
-              <p className='text-xl font-medium'>0 {dislikes}</p>
+              <p className='text-xl font-medium'>{dislikes}</p>
 
             </button>
           </div>
@@ -116,6 +116,7 @@ const NewsContent = () => {
         <div className='flex flex-col gap-4 items-center'>
           <input className='h-25 w-full pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3' placeholder='نظر خودتو بنویس...' />
           <div className='h-12 w-fit rounded-4xl px-6 leading-12 bg-[#2196F3] text-base font-bold text-white '>ارسال</div>
+          <div className='w-full'></div>
         </div>
 
       </div>
