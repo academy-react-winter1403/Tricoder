@@ -14,7 +14,7 @@ const LikeDislike = () => {
     useEffect(() => {  
       const fetchPostData = async () => {  
         try {  
-          const response = await http.get(`/News/NewsLike/${NewsId}`);  
+          const response = await http.get("/News/NewsLike/" + NewsId);  
           setLikesCount(response.data.likes);  
           setDislikesCount(response.data.dislikes);  
         } catch (error) {  
@@ -23,12 +23,12 @@ const LikeDislike = () => {
       };  
   
       fetchPostData();  
-    }, []);  
+    }, [NewsId]);  
   
+
     const handleLike = () => {  
    
-      http.post(`/News/NewsLike/
-        `, {  NewsId })  
+      http.post("/News/NewsLike/"+  NewsId )  
         .then(response => {  
           setLikesCount(likesCount + 1); 
           console.log('Like response:', response.data);  
@@ -40,7 +40,7 @@ const LikeDislike = () => {
   
     const handleDislike = () => {  
   
-      http.post(`/News/NewsDissLike/`, {   NewsId })  
+      http.post("/News/NewsDissLike/"+ NewsId )  
         .then(response => {  
           setDislikesCount(dislikesCount - 1);  
           console.log('Dislike response:', response.data);  

@@ -29,7 +29,7 @@ export const routs = createBrowserRouter(
           path: "/newsDetail",
           element: <NewsDetailScreen />,
           children: [
-           {  path:"/newsDetail/:Newsid" , element: <LikeDislike/>}
+           {  path:"/newsDetail/:NewsId" , element: <LikeDislike/>}
           ]
         },
       ]
