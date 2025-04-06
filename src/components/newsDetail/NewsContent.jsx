@@ -9,6 +9,7 @@ import { NewsLike } from '../../assets/fonts/icons/newsDetail/NewsLike'
 import { NewsDislike } from '../../assets/fonts/icons/newsDetail/NewsDislike'
 import http from '../../core/services/interceptor'
 import axios from 'axios'
+import { LikeDislike } from './newsLikeRate/LikeDislike'
 
 const NewsContent = () => {
   const star = [
@@ -19,19 +20,9 @@ const NewsContent = () => {
     { icon: <FullStar /> },
 
   ]
+ 
 
-    const [likes, setLikes] = useState(0);  
-    const [dislikes, setDislikes] = useState(0);  
-  
-    const handleLike = () => {  
-      setLikes(likes + 1);  
-    };  
-  
-    const handleDislike = () => {  
-      setDislikes(dislikes  -1);  
-    };  
-
-  
+   
   
   
 
@@ -98,15 +89,7 @@ const NewsContent = () => {
           </div>
           <div className='flex gap-5 items-center'>
             <div className='font-medium text-[#455A64] whitespace-nowrap '>آیا از این مقاله راضی بودید؟</div>
-            <button  onClick={handleLike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
-              <NewsLike />
-              <p className='text-xl font-medium'>{likes}</p>
-            </button>
-            <button  onClick={handleDislike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px] px-5 h-12'>
-              <NewsDislike />
-              <p className='text-xl font-medium'>{dislikes}</p>
-
-            </button>
+       <LikeDislike/>
           </div>
         </div>
       </div>
