@@ -4,7 +4,7 @@ import { DataIcon } from '../../../assets/fonts/icons/landing/category/littleIco
 import { NewsDate } from '../../../assets/fonts/icons/landing/NewsIcon/NewsDate'
 import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart'
 
-const NewsView = () => {
+const NewsView = ({userFullName}) => {
   return (
     <div className='flex px-20 pt-14 gap-8 '>
       <img className='relative' src='./public/newsDetail/Rectangle34.png'/>
@@ -31,7 +31,7 @@ const NewsView = () => {
           </div>
           <div className=' bg-white flex gap-3 justify-center rounded-2xl p-3 shadow-2xl'>
           <img className='w-10 h-10 rounded-xl' src='./public/landing/slider/teacher2.png'/>
-            <p className='font-bold  leading-10 pl-3'>بهاره یزدانی</p>
+            <p className='font-bold  leading-10 pl-3'>{userFullName}</p>
 
           </div>
         </div>
