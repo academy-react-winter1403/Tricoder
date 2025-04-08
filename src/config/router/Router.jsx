@@ -6,6 +6,7 @@ import { AuthenticationLayout } from "../../app/layouts/AuthenticationLayout";
 import { LandingScreen } from "../../pages/landing";
 import { NewsDetailScreen } from "../../pages/newsDetail/NewsDetailScreen";
 import { LikeDislike } from "../../components/newsDetail/newsLikeRate/LikeDislike";
+import { NewsDetail } from "../../components/newsDetail/NewsDetail";
 
 
 export const routs = createBrowserRouter(
@@ -26,10 +27,10 @@ export const routs = createBrowserRouter(
           element: <Course />
         },
         {
-          path: "/newsDetail",
+          path: "/newsDetail/:NewsId",
           element: <NewsDetailScreen />,
           children: [
-           {  path:"/newsDetail/:NewsId" , element: <LikeDislike/>}
+       
           ]
         },
       ]
