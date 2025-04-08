@@ -29,7 +29,7 @@ const NewsDetail = () => {
   return (
     <div>
       <NewsView detailsNewsDto={detailsNewsDto}  />
-      <NewsContent  detailsNewsDto={detailsNewsDto}/>
+      <NewsContent  detailsNewsDto={detailsNewsDto} />
       
     </div>
   )

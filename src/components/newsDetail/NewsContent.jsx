@@ -10,6 +10,8 @@ import { NewsDislike } from '../../assets/fonts/icons/newsDetail/NewsDislike'
 import http from '../../core/services/interceptor'
 import axios from 'axios'
 import { LikeDislike } from './newsLikeRate/LikeDislike'
+import { NewsCommentLike } from '../../assets/fonts/icons/newsDetail/newsComment/NewsCommentLike'
+import { CommentReply } from '../../assets/fonts/icons/newsDetail/newsComment/CommentReply'
 
 const NewsContent = ({detailsNewsDto}) => {
   const star = [
@@ -89,7 +91,7 @@ const NewsContent = ({detailsNewsDto}) => {
           </div>
           <div className='flex gap-5 items-center'>
             <div className='font-medium text-[#455A64] whitespace-nowrap '>آیا از این مقاله راضی بودید؟</div>
-       <LikeDislike detailsNewsDto={detailsNewsDto}/>
+       <LikeDislike detailsNewsDto={detailsNewsDto} />
           </div>
         </div>
       </div>
@@ -99,7 +101,8 @@ const NewsContent = ({detailsNewsDto}) => {
         <div className='flex flex-col gap-4 items-center'>
           <input className='h-25 w-full pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3' placeholder='نظر خودتو بنویس...' />
           <div className='h-12 w-fit rounded-4xl px-6 leading-12 bg-[#2196F3] text-base font-bold text-white '>ارسال</div>
-          <div className='w-full flex flex-col gap-2'>
+         
+          <div className='w-full flex flex-col gap-2.5'>
 
              <div className='flex justify-between'>
              <div className='flex gap-2'>
@@ -110,7 +113,17 @@ const NewsContent = ({detailsNewsDto}) => {
              </div>
 
               <p className='text-sm text-[#455A64]'>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است چاپگرها و متون بلکه روزنامه و مجله در ستون.</p>
-              <div></div>
+             
+              <div className='flex gap-3'>
+                <div className='flex gap-1'>
+                  <p className='text-[#F44336] text-sm font-bold'>7</p>
+                  <NewsCommentLike/>
+                </div>
+                <div className='flex gap-1'>
+                  <p className='text-[#455A64] text-sm font-normal'>پاسخ</p>
+                  <CommentReply/>
+                </div>
+              </div>
           </div>
         </div>
 

@@ -7,21 +7,20 @@ import http from '../../../core/services/interceptor';
 import { NewsLike } from '../../../assets/fonts/icons/newsDetail/NewsLike';
 import { NewsDislike } from '../../../assets/fonts/icons/newsDetail/NewsDislike';
 
-const LikeDislike = ({detailsNewsDto}) => {
+const LikeDislike = ({detailsNewsDto }) => {
     const { NewsId } = useParams();
-  
+      
     const [currentLikeCount, setLikesCount] = useState();  
     const [currentDissLikeCount, setDislikesCount] = useState();  
-   
-  
-   
+    const [action , setAction]=useState()
+      
     useEffect(() => {  
         const fetchPostData = async () => {  
             try {  
               const response = await http.get("/News/" +NewsId);  
               console.log(response);
-              setLikesCount(response.detailsNewsDto)
-              setDislikesCount(response.detailsNewsDto)
+              setLikesCount(response.detailsNewsDto.currentLikeCount)
+              setDislikesCount(response.detailsNewsDto.currentDissLikeCount)
             } catch (error) {  
               console.error('Error fetching post data:', error);  
             }  
@@ -29,7 +28,7 @@ const LikeDislike = ({detailsNewsDto}) => {
           };  
       
           fetchPostData();  
-    }, []);  
+    }, [NewsId]);  
   
 
     const handleLike = () => {  
@@ -37,8 +36,9 @@ const LikeDislike = ({detailsNewsDto}) => {
       http.post("/News/NewsLike/" + NewsId )  
         .then(response => {  
           console.log('Like response:', response);  
-          setDislikesCount(currentDissLikeCount => currentDissLikeCount - 1);
-          setLikesCount(currentLikeCount => currentLikeCount + 1); 
+          setLikesCount(  detailsNewsDto.currentLikeCount =  currentLikeCount + 1)
+          setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount - 1);
+
         })  
         .catch(error => {  
           console.error('Error liking post:', error);  
@@ -50,8 +50,8 @@ const LikeDislike = ({detailsNewsDto}) => {
       http.post("/News/NewsDissLike/"+NewsId )  
         .then(response => {  
           console.log(response);  
-          setDislikesCount(currentDissLikeCount => currentDissLikeCount + 1);
-          setLikesCount(currentLikeCount => currentLikeCount - 1); 
+          setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount + 1);
+          setLikesCount(detailsNewsDto.currentLikeCount = currentLikeCount - 1); 
         })  
         .catch(error => {  
           console.error('Error disliking post:', error);  
@@ -60,7 +60,7 @@ const LikeDislike = ({detailsNewsDto}) => {
 
   return (
     <div className='flex gap-1'>
-           <button  onClick={handleLike} className='flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'>
+           <button  onClick={handleLike} className={'flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'}>
               <NewsLike />
               <p className='text-xl font-medium'>{detailsNewsDto.currentLikeCount}</p>
             </button>
