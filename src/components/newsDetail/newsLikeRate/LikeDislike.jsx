@@ -29,6 +29,7 @@ const LikeDislike = ({detailsNewsDto }) => {
       
           fetchPostData();  
     }, [NewsId]);  
+ 
   
 
     const handleLike = () => {  
@@ -38,6 +39,7 @@ const LikeDislike = ({detailsNewsDto }) => {
           console.log('Like response:', response);  
           setLikesCount(  detailsNewsDto.currentLikeCount =  currentLikeCount + 1)
           setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount - 1);
+      
 
         })  
         .catch(error => {  
@@ -57,10 +59,31 @@ const LikeDislike = ({detailsNewsDto }) => {
           console.error('Error disliking post:', error);  
         });  
     }; 
+    const DeleteCount = () => {  
+  
+      http.delete("/News/DeleteLikeNews" )  
+        .then(response => {  
+          console.log(response);  
+          // setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount - 1);
+          // // setLikesCount(detailsNewsDto.currentLikeCount = currentLikeCount - 1); 
+          if(detailsNewsDto.currentUserIsLike=true){
+            setLikesCount(false)
+
+          }
+          else if( detailsNewsDto.currentUserIsDissLike = true){
+            setDislikesCount(false)
+          }
+
+      
+        })  
+        .catch(error => {  
+          console.error('Error disliking post:', error);  
+        });  
+    }; 
 
   return (
     <div className='flex gap-1'>
-           <button  onClick={handleLike} className={'flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'}>
+           <button  onClick={handleLike }   className={'flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'}>
               <NewsLike />
               <p className='text-xl font-medium'>{detailsNewsDto.currentLikeCount}</p>
             </button>
