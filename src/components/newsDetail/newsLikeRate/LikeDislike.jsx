@@ -64,15 +64,9 @@ const LikeDislike = ({detailsNewsDto }) => {
       http.delete("/News/DeleteLikeNews" )  
         .then(response => {  
           console.log(response);  
-          // setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount - 1);
-          // // setLikesCount(detailsNewsDto.currentLikeCount = currentLikeCount - 1); 
-          if(detailsNewsDto.currentUserIsLike=true){
-            setLikesCount(false)
-
-          }
-          else if( detailsNewsDto.currentUserIsDissLike = true){
-            setDislikesCount(false)
-          }
+          setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount - 1);
+           setLikesCount(detailsNewsDto.currentLikeCount = currentLikeCount - 1); 
+    
 
       
         })  
@@ -83,7 +77,7 @@ const LikeDislike = ({detailsNewsDto }) => {
 
   return (
     <div className='flex gap-1'>
-           <button  onClick={handleLike }   className={'flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'}>
+           <button  onClick={detailsNewsDto.currentUserIsLike=true ? handleLike  : DeleteCount }   className={'flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'}>
               <NewsLike />
               <p className='text-xl font-medium'>{detailsNewsDto.currentLikeCount}</p>
             </button>
