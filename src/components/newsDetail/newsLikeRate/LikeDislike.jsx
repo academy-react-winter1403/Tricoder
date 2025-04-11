@@ -77,7 +77,7 @@ const LikeDislike = ({detailsNewsDto }) => {
 
   return (
     <div className='flex gap-1'>
-           <button  onClick={detailsNewsDto.currentUserIsLike=true ? handleLike  : DeleteCount }   className={'flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'}>
+           <button  onClick={detailsNewsDto.currentUserIsLike ? handleLike  : DeleteCount }   className={'flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'}>
               <NewsLike />
               <p className='text-xl font-medium'>{detailsNewsDto.currentLikeCount}</p>
             </button>

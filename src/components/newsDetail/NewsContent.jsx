@@ -81,15 +81,15 @@ const NewsContent = ({detailsNewsDto}) => {
           </div>
         </div>
 
-        <div className='flex justify-between'>
-          <div className='flex gap-4 items-center'>
+        <div className='flex justify-between  max-lg:flex-col'>
+          <div className='flex gap-4 items-center '>
             {star.map((data, ind) => (
               <div className='flex gap-2'>{data.icon}</div>
             ))}
             <p className='font-medium  '>امتیاز {detailsNewsDto.currentRate} نفر</p>
             <div className='bg-[#2196F3] text-white font-bold text-xs w-20 h-8 rounded-[80px] text-center leading-8'>ثبت دیدگاه</div>
           </div>
-          <div className='flex gap-5 items-center'>
+          <div className='flex gap-5 items-center max-lg:flex-col'>
             <div className='font-medium text-[#455A64] whitespace-nowrap '>آیا از این مقاله راضی بودید؟</div>
        <LikeDislike detailsNewsDto={detailsNewsDto} />
           </div>
