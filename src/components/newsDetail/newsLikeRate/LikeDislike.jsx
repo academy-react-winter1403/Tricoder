@@ -12,7 +12,7 @@ const LikeDislike = ({detailsNewsDto }) => {
       
     const [currentLikeCount, setLikesCount] = useState();  
     const [currentDissLikeCount, setDislikesCount] = useState();  
-    const [action , setAction]=useState()
+     const [currentUserIsLike, setCurrentLike] = useState(false)
       
     useEffect(() => {  
         const fetchPostData = async () => {  
@@ -59,13 +59,15 @@ const LikeDislike = ({detailsNewsDto }) => {
           console.error('Error disliking post:', error);  
         });  
     }; 
-    const DeleteCount = () => {  
+    const handleUnLike = () => {  
   
       http.delete("/News/DeleteLikeNews" )  
         .then(response => {  
           console.log(response);  
-          setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount - 1);
-           setLikesCount(detailsNewsDto.currentLikeCount = currentLikeCount - 1); 
+         
+            setLikesCount(detailsNewsDto.currentLikeCount = currentLikeCount - 1),
+          setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount - 1)
+          
     
 
       
@@ -77,7 +79,7 @@ const LikeDislike = ({detailsNewsDto }) => {
 
   return (
     <div className='flex gap-1'>
-           <button  onClick={detailsNewsDto.currentUserIsLike ? handleLike  : DeleteCount }   className={'flex items-center gap-1.5 bg-[#ECEFF1] rounded-[50px]  px-5 h-12'}>
+           <button  onClick={detailsNewsDto.currentUserIsLike ? handleUnLike  :   handleLike }  className={ `flex items-center gap-1.5 ${detailsNewsDto.currentUserIsLike ? "bg-gray-400" : "bg-[#ECEFF1]"} bg-[#ECEFF1] rounded-[50px]  px-5 h-12 `}>
               <NewsLike />
               <p className='text-xl font-medium'>{detailsNewsDto.currentLikeCount}</p>
             </button>
