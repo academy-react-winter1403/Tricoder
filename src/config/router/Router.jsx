@@ -32,23 +32,39 @@ export const routs = createBrowserRouter(
           ]
 
         },
-    {
-      path:"/courses",
-      element:<Course/>,
-      
-    },
-     {
-      path:"/news",
-      element:<News/>,
-      
-    },
+        {
+          path: "/courses",
+          element: <Course />,
+
+        },
+        {
+          path: "/news",
+          element: <News />,
+
+        },
         {
           path: "/newsDetail/:NewsId",
           element: <NewsDetailScreen />,
           children: [
-       
+
           ]
         },
+        {
+          path: "/Studentpanel",
+          element: <StudentPanelPage />,
+          children: [
+            { path: "/Studentpanel/change-password", element: <ChangePasswordPage /> },
+            { path: "/Studentpanel/comment", element: <CommentPage /> },
+            { path: "/Studentpanel/mycourse", element: <CoursePage /> },
+            { path: "/Studentpanel/dashboard", element: <DashboardPage /> },
+            { path: "/Studentpanel/editprofile", element: <EditProfilePage /> },
+            { path: "/Studentpanel/logout", element: <LogoutPage /> },
+          ],
+        },
+        {
+          path: "/courseDetail/:courseId",
+          element: <CourseDetailPage />,
+        }
       ]
     },
     {
@@ -57,23 +73,8 @@ export const routs = createBrowserRouter(
       children: [
 
       ]
-    }
-    {
-      path: "/Studentpanel",
-      element: <StudentPanelPage />,
-      children: [
-        { path: "/Studentpanel/change-password", element: <ChangePasswordPage /> },
-        { path: "/Studentpanel/comment", element: <CommentPage /> },
-        { path: "/Studentpanel/mycourse", element: <CoursePage /> },
-        { path: "/Studentpanel/dashboard", element: <DashboardPage /> },
-        { path: "/Studentpanel/editprofile", element: <EditProfilePage /> },
-        { path: "/Studentpanel/logout", element: <LogoutPage /> },
-      ],
     },
-    {
-      path:"/courseDetail/:courseId",
-      element:<CourseDetailPage/>,
-    }
+
   ]
 )
 
