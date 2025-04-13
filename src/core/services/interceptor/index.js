@@ -41,7 +41,9 @@ http.interceptors.request.use((opt)=>{
     }
     return opt 
 })
+  
 
+ 
 
-export default http
+export default http;
 
