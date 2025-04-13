@@ -15,7 +15,6 @@ function App() {
 
 
  <Fragment>
- <CourseDetailPage/>
       <Header/>
         <Outlet/>
         <Footer/>

@@ -11,6 +11,7 @@ import DashboardPage from "../../components/panel/DashboardPage/DashboardPage";
 import EditProfilePage from "../../components/panel/EditProfilePage/EditProfilePage";
 import LogoutPage from "../../components/panel/LogoutPage/LogoutPage";
 import StudentPanelPage from "../../pages/StudentPanel";
+import CourseDetailPage from "../../pages/courseDetail/CourseDetail";
 
 export const routs = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ export const routs = createBrowserRouter([
           { path: "/Studentpanel/logout", element: <LogoutPage /> },
         ],
       },
+      {
+        path:"/courseDetail/:courseId",
+        element:<CourseDetailPage/>,
+      }
     ],
   },
 ]);
