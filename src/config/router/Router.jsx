@@ -1,6 +1,5 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../../app";
-import { Landing } from "../../components/landing/Landing";
 import { Course } from "../../components/courses/course";
 import { AuthenticationLayout } from "../../app/layouts/AuthenticationLayout";
 import { LandingScreen } from "../../pages/landing";
@@ -12,43 +11,69 @@ import EditProfilePage from "../../components/panel/EditProfilePage/EditProfileP
 import LogoutPage from "../../components/panel/LogoutPage/LogoutPage";
 import StudentPanelPage from "../../pages/StudentPanel";
 import CourseDetailPage from "../../pages/courseDetail/CourseDetail";
+import { NewsDetailScreen } from "../../pages/newsDetail/NewsDetailScreen";
 
-export const routs = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    children: [
-      {
-        path: "/",
-        element: <LandingScreen />,
-        children: [
-          {
-            path: "/authentication",
-            element: <AuthenticationLayout />,
-            children: [],
-          },
-        ],
-      },
-      {
-        path: "/courses",
-        element: <Course />,
-      },
-      {
-        path: "/Studentpanel",
-        element: <StudentPanelPage />,
-        children: [
-          { path: "/Studentpanel/change-password", element: <ChangePasswordPage /> },
-          { path: "/Studentpanel/comment", element: <CommentPage /> },
-          { path: "/Studentpanel/mycourse", element: <CoursePage /> },
-          { path: "/Studentpanel/dashboard", element: <DashboardPage /> },
-          { path: "/Studentpanel/editprofile", element: <EditProfilePage /> },
-          { path: "/Studentpanel/logout", element: <LogoutPage /> },
-        ],
-      },
-      {
-        path:"/courseDetail/:courseId",
-        element:<CourseDetailPage/>,
-      }
-    ],
-  },
-]);
+import { News } from "../../pages/news/News";
+
+
+
+
+export const routs = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        {
+          path: "/",
+          element: <LandingScreen />,
+          children: [
+
+          ]
+
+        },
+    {
+      path:"/courses",
+      element:<Course/>,
+      
+    },
+     {
+      path:"/news",
+      element:<News/>,
+      
+    },
+        {
+          path: "/newsDetail/:NewsId",
+          element: <NewsDetailScreen />,
+          children: [
+       
+          ]
+        },
+      ]
+    },
+    {
+      path: "/authentication",
+      element: <AuthenticationLayout />,
+      children: [
+
+      ]
+    }
+    {
+      path: "/Studentpanel",
+      element: <StudentPanelPage />,
+      children: [
+        { path: "/Studentpanel/change-password", element: <ChangePasswordPage /> },
+        { path: "/Studentpanel/comment", element: <CommentPage /> },
+        { path: "/Studentpanel/mycourse", element: <CoursePage /> },
+        { path: "/Studentpanel/dashboard", element: <DashboardPage /> },
+        { path: "/Studentpanel/editprofile", element: <EditProfilePage /> },
+        { path: "/Studentpanel/logout", element: <LogoutPage /> },
+      ],
+    },
+    {
+      path:"/courseDetail/:courseId",
+      element:<CourseDetailPage/>,
+    }
+  ]
+)
+

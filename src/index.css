@@ -1,6 +1,5 @@
 
 @import "tailwindcss";
-@plugin "daisyui";
 
 @font-face {
   font-family: 'yekan-hairline';
@@ -66,6 +65,9 @@
     --font-yekan-700:"yekan-bold";
     --font-yekan-800:"yekan-extera-bold";
     --font-yekan-900:"yekan-fat";
+
+
+    
   }
   
  

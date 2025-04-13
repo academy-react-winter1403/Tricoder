@@ -9,21 +9,17 @@ import CourseDetailPage from '../pages/courseDetail/CourseDetail'
 
 
 function App() {
-  
+
   return (
- <>
-
-
- <Fragment>
-      <Header/>
-        <Outlet/>
-        <Footer/>
-    </Fragment>
+    <div>
+      <Header />
+      
+      <Outlet />
+      <Footer />
+    </div>
 
 
   
-
- </>
   )
 }
 
