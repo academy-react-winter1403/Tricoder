@@ -4,7 +4,7 @@ import  { AccordionList } from './filtersAccordion/FiltersAccrdion'
 
 const Filters = () => {
   return (
-    <div className='  rounded-[24px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)] pt-[12px]'>
+    <div className=' h-fit rounded-[24px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)] pt-[12px]'>
         <div className='mx-[12px]  h-[48px] rounded-[16px]  m-auto bg-[#ECEFF1] flex flex-row-reverse justify-center gap-[166px] items-center mb-[20px]'>
             <span 
             style={{ backgroundImage: "url('public/icons/Delete.png')" }}

@@ -48,6 +48,7 @@ const SearchHeader = () => {
                 </div>
                 
             </div>
+            
             <div className='w-[100px] h-[56px] rounded-[16px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)] flex flex-row-reverse justify-center 
             items-center bg-[#ECEFF1]'>
                 <span 
