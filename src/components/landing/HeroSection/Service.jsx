@@ -36,9 +36,13 @@ const Service = () => {
             max-lg: max-md:mt-28 max-lg:grid-cols-2 max-lg:grid-rows-2   max-lg:gap-2 max-lg:-mr-20 max-lg:'>
 
           {service.map((data,ind)=>(
+
                  <div style={{boxShadow: ind % 2 === 1 ? '0 9px 32px -14px ' : '',}} className='bg-[#FAFEFF2E] h-70 w-99 border-[2px] border-[#fff3f33b] rounded-3xl
                max-lg:w-64 max-lg:h-58 max-lg:'>
                  <div className='max-lg:-mr-20'>{data.icon}</div>
+
+              
+ 
                  <p className='text-2xl font-black text-center leading-12 
                  max-md:text-xl max-lg:leading-8'>{data.title}</p>
                  <p className='text-base font-bold text-center text-[#455A64]

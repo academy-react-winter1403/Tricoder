@@ -25,6 +25,7 @@ const HeroSection = () => {
      max-md:leading-7 '>
           <p className='text-2xl font-medium  
       max-md:hidden '>پلتفرم اموزش طراحی وب</p>
+
           <p className='text-[80px] font-black
      max-md:text-[23px] '>مرجع اموزش برنامه نویسی</p>
           <p className='text-2xl font-medium 
@@ -34,11 +35,11 @@ const HeroSection = () => {
         <input className='w-[99%] px-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative
       max-lg:my-3 max-md:h-8 max-lg:text-xs' placeholder='چی میخوای یاد بگیری ؟' />
           <div className='max-md:hidden max-lg:hidden '>  <SearchIcon /></div>
-         <div className=''> <WebsiteInfo /></div>
-        
+          <div className='m'> <WebsiteInfo /></div>
+
         </div>
-     </div>
-    
+      </div>
+
 
 
 
