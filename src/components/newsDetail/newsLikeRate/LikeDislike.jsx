@@ -61,13 +61,14 @@ const LikeDislike = ({detailsNewsDto }) => {
     }; 
     const handleUnLike = () => {  
   
-      http.delete("/News/DeleteLikeNews" )  
+      http.delete("/News/DeleteLikeNews",{data:{"deleteEntityId": "<uuid>"}})
         .then(response => {  
           console.log(response);  
          
             setLikesCount(detailsNewsDto.currentLikeCount = currentLikeCount - 1),
           setDislikesCount(detailsNewsDto.currentDissLikeCount = currentDissLikeCount - 1)
           
+
     
 
       
