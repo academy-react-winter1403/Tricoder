@@ -1,3 +1,4 @@
+
 import React, { useEffect, useState } from 'react'
 import { NewsView } from './viewNewsDetail/NewsView'
 import { NewsContent } from './NewsContent'
@@ -30,6 +31,7 @@ const NewsDetail = () => {
     <div>
       <NewsView detailsNewsDto={detailsNewsDto}  />
       <NewsContent  detailsNewsDto={detailsNewsDto} />
+
       
     </div>
   )

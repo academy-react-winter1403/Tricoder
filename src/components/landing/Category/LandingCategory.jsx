@@ -44,18 +44,18 @@ const LandingCategory = () => {
 
 
   return (
-    <div className='h-188 my-35
+    <div className='h-188 my-45
     max-md:my-39 max-xl:my-80 '>
       <div className='max-md:hidden max-xl:hidden'><LittleRectangle /></div>
      <div className='max-md:hidden max-xl:hidden'> <GroupIcon /></div>
-      <div className='absolute top-703 right-155 
+      <div className='absolute top-725 right-153
       max-md:hidden max-xl:hidden'>  <CircleIcon /> </div>
-      <div className='absolute right-122 top-589
-      max-md:top-520 max-md:right-3 max-xl:top-650 max-xl:right-50'><BigRectangle /></div>
-      <div className='absolute right-30 top-630
+      <div className='absolute right-110 top-610
+      max-md:top-520 max-md:right-3 max-xl:top-673- max-xl:right-50'><BigRectangle /></div>
+      <div className='absolute right-20 top-660
       max-md:hidden max-xl:top-560 max-xl:hidden'><TextIcon /></div>
 
-      <div className='w-172   absolute top-548 right-175 grid grid-cols-2 grid-rows-2 gap-8 
+      <div className='w-172   absolute top-580 right-170 grid grid-cols-2 grid-rows-2 gap-8 
       max-md:right-7 max-md:top-510 max-md:gap-5 max-md:w-102 max-xl:right-50 max-xl:top-620 '>
 
         {CategoryItem.map((data, ind) => (
