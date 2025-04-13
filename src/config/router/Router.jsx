@@ -57,7 +57,7 @@ export const routs = createBrowserRouter(
       children: [
 
       ]
-    }
+    },
     {
       path: "/Studentpanel",
       element: <StudentPanelPage />,
