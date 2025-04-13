@@ -4,6 +4,9 @@ import { Landing } from "../../components/landing/Landing";
 import { Course } from "../../components/courses/course";
 import { AuthenticationLayout } from "../../app/layouts/AuthenticationLayout";
 import { LandingScreen } from "../../pages/landing";
+import { View1 } from "../../components/courses/view1/View1";
+import { View2 } from "../../components/courses/view2/View2";
+
 
 
  export const routs = createBrowserRouter(
@@ -24,12 +27,14 @@ import { LandingScreen } from "../../pages/landing";
                 ]
             }
           ]
-        },
-        {
-          path:"/courses",
-          element:<Course/>
         }
       ]
-    }   
+    },
+    {
+      path:"/courses",
+      element:<Course/>,
+      
+    } ,
+      
 ]
  )

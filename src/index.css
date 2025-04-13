@@ -1,5 +1,9 @@
 
 @import "tailwindcss";
+@plugin "daisyui";
+
+
+
 
 @font-face {
   font-family: 'yekan-hairline';
