@@ -52,18 +52,19 @@ const LandingCourse = () => {
         },
     ]
   return (
-    <div className=' mx-21 mt-26 h-147
-     max-md:w-100 max-md:mt-70 max-md:mx-6 max-xl:w-200 '>
+    <div className=' mx-30 h-147 my-40
+     max-md:w-100 max-md:mt-70  '>
          <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
-          max-md:h-9 max-md:w-30  max-xl:mx-96  '>
+          max-md:h-9 max-md:w-30   max-lg:hidden '>
         <p className='text-[40px] text-center whitespace-nowrap 
          max-md:text-xl'>دوره‌های اموزشی  </p> 
             </div> 
             <div className='h-97  my-12 gap-8 flex
-            max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-6  max-xl:mr-40  '>
+            max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:-mr-20 max-lg:gap-9  '>
 
                 {course.map((data,ind)=>(
-                             <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl py-4 pr-4 shadow-2xl'>
+                             <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl py-4 pr-4 shadow-2xl
+                            max-lg:w-60 '>
                              <img   src={data.img} alt=''
                              className='max-md:w-43'/>
                              <p className='font-bold text-base font-yekan-600 my-4 
