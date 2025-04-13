@@ -23,25 +23,26 @@ const Service = () => {
           
         }
     ]
+    //
   return (
-    <div className=' h-97  mx-20 mt-20
-    max-md:w-100 max-md:mt-7  max-xl:mx-8 max-xl:mt-1 max-xl:'>
-        <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125 border-b-gradient-to-r from-[#2196F300] via-[#2196F3] to-[#2196F300]
-        max-md:h-9 max-md:w-30 max-md:mx-20 max-xl:mx-96 '>
+    <div className=' h-97  mx-30 mt-20 
+   '>
+        <div  className='w-70 h-18 border-b-4 b  mx-125  border-[#2196F3]  border-b-gradient-to-r from-[#2196F300] via-[#2196F3] to-[#2196F300] 
+        max-md:h-9 max-md:w-30  max-md:hidden  max-lg:hidden'>
         <p className='text-[40px] text-center 
-        max-md:text-xl max-md:'>خدمات ما</p> 
+        max-md:text-xl '>خدمات ما</p> 
             </div> 
             <div className='h-70  my-20 flex gap-8 
-            max-md:flex-col max-md:-my-5  max-md:gap-1 max-xl:my-10 '>
+            max-lg: max-md:mt-28 max-lg:grid-cols-2 max-lg:grid-rows-2   max-lg:gap-2 max-lg:-mr-20 max-lg:'>
 
           {service.map((data,ind)=>(
-                 <div style={{boxShadow: ind % 2 === 1 ? '#0000000D ' : '',}} className='bg-[#FAFEFF2E] h-70 w-99 border-[2px] border-[#fff3f33b] rounded-3xl
-                 max-md:w-70  max-md:h-46 max-xl:w-80 max-xl:flex flex-col justify-center'>
-                 <div className='max-md:-mx-15 max-xl:-mx-9'>{data.icon}</div>
+                 <div style={{boxShadow: ind % 2 === 1 ? '0 9px 32px -14px ' : '',}} className='bg-[#FAFEFF2E] h-70 w-99 border-[2px] border-[#fff3f33b] rounded-3xl
+               max-lg:w-64 max-lg:h-58 max-lg:'>
+                 <div className='max-lg:-mr-20'>{data.icon}</div>
                  <p className='text-2xl font-black text-center leading-12 
-                 max-md:text-xl'>{data.title}</p>
+                 max-md:text-xl max-lg:leading-8'>{data.title}</p>
                  <p className='text-base font-bold text-center text-[#455A64]
-                 max-md:text-xs max-xl:text-sm'>{data.desc}</p>
+                 max-md:text-xs max-xl:text-sm max-lg:text-[10px]'>{data.desc}</p>
                  </div>
  
           ))}
