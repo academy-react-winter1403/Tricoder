@@ -1,12 +1,15 @@
 
-body{
-  color: #263238;
-  direction: rtl;
-  margin: 10px;
-}
+
 
 .heroBG{
   background-image: url("/public/landing/hero-bg.png");
   background-repeat: no-repeat;
   background-size: contain;
 }
+body{
+  color: #263238;
+  direction: rtl;
+  font-family: 'yekan-medium';
+  overflow-x: hidden
+
+ }
