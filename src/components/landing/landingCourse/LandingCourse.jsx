@@ -44,7 +44,7 @@ const LandingCourse = () => {
             title:"دوره جامع pyton صفر تا صد",
             note:"376درس",
             time:"12ساعت",
-            date:"6اذ81404",
+            date:"6اذ1404",
             teacher:"دکتر قاسمی",
             student:"276دانش اموز",
             like:12,
@@ -52,7 +52,7 @@ const LandingCourse = () => {
         },
     ]
   return (
-    <div className=' mx-30 h-147 my-40
+    <div className=' mx-30  my-40 flex  flex-col justify-center
      max-md:w-100 max-md:mt-70  '>
          <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
           max-md:h-9 max-md:w-30   max-lg:hidden '>
@@ -63,27 +63,27 @@ const LandingCourse = () => {
             max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:-mr-20 max-lg:gap-9  '>
 
                 {course.map((data,ind)=>(
-                             <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl py-4 pr-4 shadow-2xl
+                             <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col
                             max-lg:w-60 '>
                              <img   src={data.img} alt=''
                              className='max-md:w-43'/>
                              <p className='font-bold text-base font-yekan-600 my-4 
                              max-md:text-xs'>{data.title}</p>
-                             <div className='w-66 h-10 rounded-3xl  bg-[#ECEFF1] flex  whitespace-nowrap my-3.5
+                             <div className='w-66 h-10 rounded-3xl  bg-[#ECEFF1]  whitespace-nowrap my-3.5 flex justify-between py-2.5 px-4
                              max-md:w-45 max-md: max-md:'>
-                                <div className='py-3  w-14.5 flex  mx-4
+                                <div className='  w-14.5 flex  
                                 max-md:mx-2'>
                                 <div className='max-md:hidden'> <Note/></div>
                                  <p className='text-xs font-medium mr-1'>{data.note}</p>
                                 </div>
              
-                                <div className='py-3  w-14.5 flex  mx-4
+                                <div className=' w-14.5 flex 
                                 max-md:mx-2'>
                                 <div className='max-md:hidden'> <Clock/></div>
                                  <p className='text-xs font-medium mr-1 tracking-tight'>{data.time}</p>
                                 </div>
              
-                                <div className='py-3  w-14.5 flex  mx-5
+                                <div className=' w-14.5 flex  
                                max-md:mx-4 '>
                                 <div className='max-md:hidden '> <Calender/></div>
                                  <p className='text-xs font-medium mr-1 '>{data.date}</p>
@@ -91,15 +91,15 @@ const LandingCourse = () => {
              
                              </div>
              
-                             <div className='text-sm flex my-4 
+                             <div className='text-sm flex justify-between  my-4 
                              max-md:whitespace-nowrap'>
-                                 <span className='font-bold 
-                                 max-md:text-xs'>مدرس:</span> <span className='max-md:text-xs'>{data.teacher} </span>
-                                 <p className='mr-19
+                                 <span className='font-bold whitespace-nowrap
+                                 max-md:text-xs'>مدرس:  <span className='max-md:text-xs whitespace-nowrap font-normal'>{data.teacher} </span></span>
+                                 <p className=' whitespace-nowrap
                                  max-md:mr-4 max-md:text-xs'>{data.student}  </p>
                              </div>
              
-                                 <div className='flex gap-33 my-3.5 *
+                                 <div className='flex gap-30 my-2.5
                                  max-md:gap-14'>
                                      <div className='w-13 h-8 rounded-3xl bg-[#FFEBEE] flex gap-1'>
                                          <LikeIcon/>
@@ -120,9 +120,9 @@ const LandingCourse = () => {
     
 
             </div>
-            <div className='w-33 h-12 bg-[#2196F3] rounded-[80px] mx-144 
+            <div className='w-fit bg-[#2196F3] rounded-[80px] px-6 py-3 mx-140
             max-md:mx-35 max-md:mt-110 '>
-                <p className='font-bold text-center text-white leading-13 '>مشاهده همه</p>
+                <p className='font-bold text-center text-white  whitespace-nowrap '>مشاهده همه</p>
 
             </div>
 
