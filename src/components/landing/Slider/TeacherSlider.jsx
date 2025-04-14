@@ -73,10 +73,7 @@ const TeacherSlider = () => {
                   </div>
                 </div>
              ))}
-            <button className='absolute  right-276 
-            max-md:right-63 max-md:top-70 max-xl:right-180 max-xl:top-70' ><LeftBtn/></button>
-            <button className='absolute -right-8
-            max-md:-right-36  max-md:top-70 max-xl:top-70' ><RightBtn/></button>
+     
           
         </div>
              <div className='w-24 h-4 flex mx-138 gap-6 mt-9
