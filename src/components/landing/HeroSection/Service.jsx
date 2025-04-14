@@ -25,7 +25,7 @@ const Service = () => {
     ]
     //
   return (
-    <div className=' h-97  mx-30 mt-20 
+    <div className=' h-97  mx-30 mt-20 max-lg:flex-col 
    '>
         <div  className='w-70 h-18 border-b-4 b  mx-125  border-[#2196F3]  border-b-gradient-to-r from-[#2196F300] via-[#2196F3] to-[#2196F300] 
         max-md:h-9 max-md:w-30  max-md:hidden  max-lg:hidden'>

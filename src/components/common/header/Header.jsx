@@ -21,9 +21,8 @@ const Header = ()=>{
             max-md:gap-1 max-md:">
                 <div className="w-12 h-12 rounded-4xl bg-[#FFFF] px-3 py-3 relative 
                max-md:w-9 max-md:h-9 max-md:px-1.5 max-md:py-1 max-md:mt-1.5">
-                    <div className="w-5 h-5 rounded-4xl bg-[#2196F3] text-center absolute -top-1 -right-1
-                    max-md:-top-1.5 max-md:-right-1.5">2</div>
-                    <Shop/>
+                <img src="public/header/darkmode_1198543.jpg"/>
+                   
                 </div>
                 <div className=" w-33 h-12 bg-[#2196F3] rounded-[80px]
                 max-md:w-17 max-md:h-8 max-md:rounded-3xl max-md:mt-1.5 ">
