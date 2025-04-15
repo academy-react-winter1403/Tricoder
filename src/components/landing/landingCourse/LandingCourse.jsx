@@ -53,24 +53,24 @@ const LandingCourse = () => {
     ]
   return (
     <div className=' mx-30  my-40 flex  flex-col justify-center
-     max-md:w-100 max-md:mt-70  '>
+      max-md:mt-70  '>
          <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
           max-md:h-9 max-md:w-30   max-lg:hidden '>
         <p className='text-[40px] text-center whitespace-nowrap 
          max-md:text-xl'>دوره‌های اموزشی  </p> 
             </div> 
             <div className='h-97  my-12 gap-8 flex
-            max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:-mr-20 max-lg:gap-9  '>
+            max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:gap-9  '>
 
                 {course.map((data,ind)=>(
                              <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col
-                            max-lg:w-60 '>
+                            max-lg:px-4 max-lg:h-fit '>
                              <img   src={data.img} alt=''
                              className='max-md:w-43'/>
                              <p className='font-bold text-base font-yekan-600 my-4 
                              max-md:text-xs'>{data.title}</p>
                              <div className='w-66 h-10 rounded-3xl  bg-[#ECEFF1]  whitespace-nowrap my-3.5 flex justify-between py-2.5 px-4
-                             max-md:w-45 max-md: max-md:'>
+                             max-md: max-md: max-md:'>
                                 <div className='  w-14.5 flex  
                                 max-md:mx-2'>
                                 <div className='max-md:hidden'> <Note/></div>

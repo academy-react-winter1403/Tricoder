@@ -1,6 +1,8 @@
 
 @import "tailwindcss";
 
+
+
 @font-face {
   font-family: 'yekan-hairline';
   src: url("./assets/fonts/Yekan_Bakh_Fanum_Hairline.TTF");
@@ -41,7 +43,7 @@
 @font-face {
   font-family: 'yekan-fat';
   src: url("./assets/fonts/Yekan_Bakh_Fanum_Fat.TTF");
-  
+
 }
 
 
@@ -65,8 +67,6 @@
     --font-yekan-700:"yekan-bold";
     --font-yekan-800:"yekan-extera-bold";
     --font-yekan-900:"yekan-fat";
-
-
     
   }
   
