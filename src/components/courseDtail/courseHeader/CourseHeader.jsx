@@ -18,22 +18,22 @@ const CourseHeader = ({coursedid}) => {
       <div   className='h-[36rem]'>
 
        
-        <img src={course?.imageAddress}   className=''
+        <img src={course?.imageAddress==null?HtmlCourse:course?.imageAddress}   className='w-[100%]   h-[100%]  rounded-2xl'
           alt="" />
 
        <div className='relative   bottom-[92%] right-[5%]   rounded-full   p-2 w-[78px]   h-[2.5rem]  bg-white  flex items-center justify-around'>
           <h2   className='text-[#F44336]'>12</h2>
-          <img src={heart}  alt="" />
+          <img src={heart} alt="" />
         </div>
 
 
-        <div className='relative   bottom-[7rem] right-[70%]   rounded-full   p-2  w-[6rem]   h-[2.5rem]  bg-white  flex items-center justify-around'>
+        <div className='relative   bottom-[7rem] md:right-[60%]  right-[45%]   rounded-full   p-2  w-[6rem]   h-[2.5rem]  bg-white  flex items-center justify-around'>
           <img src={note} alt="" />
           <h2 className='font-bold text-sm   text-[#263238] '>202درس</h2>
 
         </div>
 
-        <div className='relative   bottom-[9.5rem]  right-[85%]  rounded-full  p-2  w-[6rem]   h-[2.5rem]  bg-white   flex items-center justify-around'>
+        <div className='relative   bottom-[9.5rem]  md:right-[80%] right-[70%]   rounded-full  p-2  w-[6rem]   h-[2.5rem]  bg-white   flex items-center justify-around'>
           <img src={clock} alt="" />
           <h2 className=' font-bold text-sm   text-[#263238]  '>12ساعت</h2>
         </div>
