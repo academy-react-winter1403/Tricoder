@@ -34,7 +34,7 @@ const Sidebar = () => {
           <h3 className=" text-white  text-lg font-semibold">بیتا قنبری</h3>
         </div>
 
-        <ul className="text-white  text-right  ">
+        <ul className="text-white  text-right ">
           <NavLink
             to="/Studentpanel/dashboard"
             className={({ isActive }) =>
@@ -99,6 +99,36 @@ const Sidebar = () => {
             }
           >
             نظرات ثبت شده
+          </NavLink>
+          <NavLink
+            to="/Studentpanel/myFavoritecourse"
+            className={({ isActive }) =>
+              ` block py-2 px-4  ${
+                isActive && "bg-[#6033FE]"
+              }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
+            }
+          >
+        دوره های مورد علاقه من
+          </NavLink>
+          <NavLink
+            to="/Studentpanel/MyReservedCourse"
+            className={({ isActive }) =>
+              ` block py-2 px-4  ${
+                isActive && "bg-[#6033FE]"
+              }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
+            }
+          >
+        دوره های رزرو شده من
+          </NavLink>
+          <NavLink
+            to="/Studentpanel/MyFavoriteNews"
+            className={({ isActive }) =>
+              ` block py-2 px-4  ${
+                isActive && "bg-[#6033FE]"
+              }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
+            }
+          >
+        اخبار مورد علاقه من
           </NavLink>
         </ul>
       </div>

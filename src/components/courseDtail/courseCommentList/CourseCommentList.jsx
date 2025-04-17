@@ -6,7 +6,7 @@ import { CommentReply } from '../../../assets/fonts/icons/newsDetail/newsComment
 
  const CourseCommentList = () => {
   return (
-    <div>
+    <div>3
       <div>
         <div className='rounded-3xl shadow-2xl flex flex-col gap-6 px-8 py-8'>
               <div className='flex flex-col gap-4 items-center'>
