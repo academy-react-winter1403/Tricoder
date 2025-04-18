@@ -24,7 +24,6 @@ const NewsContent = ({detailsNewsDto}) => {
 
   ]
  
-
    
   
   
@@ -97,7 +96,7 @@ const NewsContent = ({detailsNewsDto}) => {
         </div>
       </div>
 
-    <NewsDetailComment/>
+    <NewsDetailComment />
 
     </div>
   )

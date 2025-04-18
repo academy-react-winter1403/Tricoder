@@ -12,7 +12,7 @@ const Header = ()=>{
             </div>
             <div className="w-86.5 h-8 flex gap-10 text-base font-medium tracking-tight whitespace-nowrap leading-13 mr-25
             max-md:text-[12px] max-md:gap-3 max-md:mx-6">
-                <p>دوره‌ها</p>
+                <p>   دوره‌ها     </p>
                 <p>اساتید</p>
                 <p>ارتباط با ما</p>
                 <p>اخبار مقالات</p>
