@@ -11,11 +11,13 @@ import CourseDetailPage from '../pages/courseDetail/CourseDetail'
 function App() {
 
   return (
-    <div>
-      <Header/>
+    <>
+        <Header/>
       <Outlet />
       <Footer/>
-    </div>
+      </>
+  
+    
 
   
 

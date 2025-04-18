@@ -32,7 +32,7 @@ const HeroSection = () => {
        max-md:text-xs'>مرجع اموزش زنده و تعاملی دسترسی به بیش از هفت هزار ویدیوی اموزشی به زبان فارسی .</p>
            </div>
         <div className='  max-lg max-lg:w-3/5 max-lg: '>
-        <input className='w-[99%] px-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative
+        <input className=' z-20 w-[99%] px-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative
       max-lg:my-3 max-md:h-8 max-lg:text-xs' placeholder='چی میخوای یاد بگیری ؟' />
           <div className='max-md:hidden max-lg:hidden '>  <SearchIcon /></div>
           <div className='m'> <WebsiteInfo /></div>
