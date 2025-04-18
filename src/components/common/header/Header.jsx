@@ -3,7 +3,7 @@ import { Shop } from "../../../assets/fonts/icons/header/Shop"
 
 const Header = ()=>{
     return(
-        <div className=" w-full h-12.5  px-20 mt-8 flex justify-between
+        <div className=" w-full h-15 px-20 flex  items-center justify-between
           max-md:whitespace-nowrap max-md:mt-2">
             <div className=" h-8 flex gap-1 pt-2 
             max-md:-mr-20">

@@ -17,7 +17,7 @@ const TeacherInfo = ({courseid}) => {
 
    
   
-     <div    className=' m-auto  flex    items-center gap-4 w-[80%]     md-w-[80%]  h-[100px] rounded-2xl  shadow-2xl pr-3 pl-2 mt-10 '>
+     <div    className=' m-auto  flex    items-center gap-4 w-[100%]     md:w-[80%]  h-[100px] rounded-2xl  shadow-2xl pr-3 pl-2 mt-10 '>
      <img src={teacherImg}   alt="" />
     <div>
       <span   className='flex     '>
