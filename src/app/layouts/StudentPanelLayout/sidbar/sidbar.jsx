@@ -62,6 +62,7 @@ const Sidebar = () => {
             className={({ isActive }) =>
               ` block py-2 px-4  ${
                 isActive && "bg-[#6033FE]"
+                
               }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
             }
           >
