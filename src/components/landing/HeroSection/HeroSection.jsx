@@ -14,7 +14,7 @@ import { Service } from './Service'
 
 const HeroSection = () => {
   return (
-    <div className=' relative  h-240 w-full
+    <div className='  h-240 w-full 
     max-md:h-80 max-xl:h-200' >
       {/* <img src='./public/landing/hero-bg.png ' className='w-full relative  ' alt='' /> */}
 

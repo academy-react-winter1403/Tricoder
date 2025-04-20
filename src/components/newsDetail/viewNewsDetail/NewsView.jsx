@@ -6,7 +6,8 @@ import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart'
 
 const NewsView = ({ detailsNewsDto }) => {
   return (
-    <div className='flex px-20 pt-14 gap-8 w-[]'>
+    <div className='flex px-20 pt-14 gap-8 
+    max-lg:flex-col'>
       <div className="border-2 rounded-3xl w-[80%]">
         <img className='relative' src={(detailsNewsDto.currentImageAddress) ? detailsNewsDto.currentImageAddress : "notfound.jpg"} />
 
@@ -30,12 +31,14 @@ const NewsView = ({ detailsNewsDto }) => {
 
             <div className='flex gap-1'>
               <NewsDate />
-              <p className='text-sm text-[#2196F3] '>{detailsNewsDto.insertDate}</p>
+              <p className='text-sm text-[#2196F3]
+              max-lg:hidden '>{detailsNewsDto.insertDate}</p>
             </div>
           </div>
           <div className=' bg-white flex gap-3 justify-center rounded-2xl p-3 shadow-2xl'>
             <img className='w-10 h-10 rounded-xl' src='./public/landing/slider/teacher2.png' />
-            <p className='font-bold  leading-10 pl-3'>{detailsNewsDto.addUserFullName}</p>
+            <p className='font-bold  leading-10 pl-3
+            max-lg:whitespace-nowrap'>{detailsNewsDto.addUserFullName}</p>
 
           </div>
         </div>

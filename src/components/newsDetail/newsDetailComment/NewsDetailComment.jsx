@@ -1,6 +1,7 @@
 import React from 'react'
 import { NewsCommentLike } from "../../../assets/fonts/icons/newsDetail/newsComment/NewsCommentLike"
 import { CommentReply } from '../../../assets/fonts/icons/newsDetail/newsComment/CommentReply'
+import { NewsDetailReply } from './NewsDetailReply'
 
 
 const NewsDetailComment = () => {
@@ -43,7 +44,7 @@ const NewsDetailComment = () => {
                   </div>
                 {/* ))}  */}
                
-
+                <NewsDetailReply/>
               </div>
       
             </div>
