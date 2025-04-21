@@ -29,7 +29,7 @@ const CourseInfo = ({courseid}) => {
  
 
   return (
-    <div className="   md:w-[80%]    h-[501px] rounded-2xl  shadow-xl  flex  items-center m-auto  flex-col    ">
+    <div className="   md:w-[80%]    h-[501px]  w-[100%] rounded-2xl  shadow-xl  mt-3 flex  items-center m-auto  flex-col    ">
       <h1 className=" text-[22px]  font-bold  mt-5  text-[#263238]">
         مشخصات دوره
       </h1>
