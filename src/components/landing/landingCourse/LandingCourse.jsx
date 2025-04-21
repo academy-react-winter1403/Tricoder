@@ -51,6 +51,11 @@ const LandingCourse = () => {
             price:68000
         },
     ]
+
+
+
+ 
+
   return (
     <div className=' mx-30  my-40 flex  flex-col justify-center
       max-md:mt-70  '>
@@ -122,7 +127,10 @@ const LandingCourse = () => {
             </div>
             <div className='w-fit bg-[#2196F3] rounded-[80px] px-6 py-3 mx-140
             max-md:mx-35 max-md:mt-110 '>
-                <p className='font-bold text-center text-white  whitespace-nowrap '>مشاهده همه</p>
+                <button
+        
+                 className='font-bold text-center text-white  whitespace-nowrap '
+                >مشاهده همه</button>
 
             </div>
 
