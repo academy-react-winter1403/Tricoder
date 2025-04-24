@@ -45,7 +45,7 @@ const AccordionList =()=>{
         const items = [
           { title: " دسته بندی ها ", content:"" , gap:"gap-[149px]" },
           { title: " قیمت ", content: <PriceFilter/>, gap:"gap-[197px]" },
-          { title: " موضوعات ", content: " k kj kj", gap:"gap-[172px]" },
+          { title: " نوع دوره ", content: " k kj kj", gap:"gap-[182px]" },
           { title: " مدت زمان ", content: <DurationList/>, gap:"gap-[175px]" },
           { title: " اساتید دوره ", content: <Teachers/>, gap:"gap-[165px]" },
         ];

@@ -9,7 +9,7 @@ import { motion } from "framer-motion";
 const Course = ()=>{
     return(
         <div 
-        className="  w-full overflow-hidden  ">
+        className="  w-full overflow-hidden  mt-[40px] mb-[80px]">
             <div className=" w-full  mb-[50px]">
                 <div className=" ml-[120px]  flex justify-center items-center gap-[50px]">
                     <motion.div 

@@ -8,7 +8,7 @@ const Teachers = () => {
     const getTeacherInfo = async()=>{
         try {
             const result =await http.get("/Home/GetTeachers")
-            console.log(result);
+            // console.log(result);
             setTeacher(result)
             
             
@@ -31,12 +31,12 @@ const Teachers = () => {
             className='border-1 w-full h-[46px] rounded-[12px] border-[#ECEFF1] pr-[16px] text-[14px] font-yekan-500' 
             placeholder='جستجوی استاد' />
         </div>
-        <div className="max-w-lg mx-auto space-y-4">
+        <div className="max-w-lg mx-auto space-y-4 overflow-auto pb-[30px] h-[142px] ">
             {teacher?.map((item, index) => (
               <NameList key={index} fullName={item.fullName} teacherId={item.teacherId}  />
             ))}
         </div>
-        <button className='font-yekan-500 text-[14px] text-[#2196F3] underline mb-[24px]'> مشاهده بیشتر</button>
+        {/* <button className='font-yekan-500 text-[14px] text-[#2196F3] underline mb-[24px]'> مشاهده بیشتر</button> */}
        
     </div>
   )
