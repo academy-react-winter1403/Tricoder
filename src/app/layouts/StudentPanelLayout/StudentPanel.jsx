@@ -6,7 +6,7 @@ import notification from "../../../assets/icons/notification.png";
 const StudentPanel = ({ children }) => {
   return (
     <>
-      <div className="  border  w-[100%]  h-auto  lg:h-[110vh]  bg-[#EEF2FF]   flex  p-7 gap-7 "   style={{direction:"ltr"}}>
+      <div className="  border  w-[100%]     h-auto   lg:h-[110vh]  bg-[#EEF2FF]   flex  p-7 gap-7 "   style={{direction:"ltr"}}>
         <div className="md:w-[80%]  w-[99%]  h-[98%]    ">
           <div className="w-[100%]   h-[100%]   rounded-2xl bg-white  ">
             <header className="w[98%]  h-[4rem] flex  items-center  justify-between   p-6 ">
