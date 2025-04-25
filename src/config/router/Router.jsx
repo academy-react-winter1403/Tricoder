@@ -17,10 +17,15 @@ import { News } from "../../pages/news/News";
 import { MyFavoriteCourse } from "../../components/panel/myFavoritCourse/myFavoriteCourse";
 import { MyFavoriteNews } from "../../components/panel/myFavoriteNews/MyFavoriteNews";
 import { MyReservedCourse } from "../../components/panel/myReservedcourse/MyReservedCourse";
-import Login from "../../app/layouts/Login";
+
 // import { Dropdown } from "../../components/courses/filters/ِdropDown/DropDown";
 
 
+import { Login } from "../../components/authentication/login/Login";
+
+import { SignUp } from "../../components/authentication/sighnup/SighnUp";
+import { Code } from "../../components/authentication/code/Code";
+import { CreateAcount } from "../../components/authentication/createacount/createAcount";
 
 
 export const routs = createBrowserRouter(
@@ -30,11 +35,8 @@ export const routs = createBrowserRouter(
       element: <App />,
       children: [
         {
-          path: "/",
-          element: <LandingScreen />,
-          children: [
-
-          ]
+          path:"/",
+          element:<LandingScreen/>,
 
         },
         {
@@ -54,6 +56,38 @@ export const routs = createBrowserRouter(
 
           ]
         },
+        
+        {
+          path: "/courseDetail/:courseId",
+          element: <CourseDetailPage />,
+        }
+
+      ]
+    },
+    {
+      path:"/authentication",
+        element:<AuthenticationLayout/>,
+          children:[
+            {
+              path:"/authentication/login",
+              element:<Login/>
+            } ,
+            {
+              path:"/authentication/CreateAcount",
+              element:<CreateAcount/>
+            },
+            {
+              path:"/authentication/signup",
+              element:<SignUp/>
+            },
+            {
+              path:"/authentication/code",
+              element:<Code/>
+            }
+          ]
+    }
+,
+
         {
           path: "/Studentpanel",
           element: <StudentPanelPage />,
@@ -69,19 +103,8 @@ export const routs = createBrowserRouter(
             { path: "/Studentpanel/MyReservedCourse", element: <MyReservedCourse/> },
           ],
         },
-        {
-          path: "/courseDetail/:courseId",
-          element: <CourseDetailPage />,
-        }
-      ]
-    },
-    {
-      path: "/authentication",
-      element: <AuthenticationLayout />,
-      children: [
-        { path: "/authentication/login", element: <Login/> }
-      ]
-    },
+      
+
     
   ]
 )
