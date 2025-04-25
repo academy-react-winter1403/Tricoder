@@ -18,6 +18,13 @@ import { PanelReserve } from '../../../assets/fonts/icons/userPanel/PanelReserve
       coursePrice:"95000 تومان",
       delete:<FullHeart/>
   },
+  {
+    courseType:"پایتون ",
+    courseTeacher:" نام مدرس دوره",
+    startDate:"1402/7/15",
+    coursePrice:"25000 تومان",
+    delete:<PanelReserve/>
+},
    
 ]
   return (
