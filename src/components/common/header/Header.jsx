@@ -5,6 +5,7 @@ import moonIcon from '../../../../public/header/4458120.png'
 import sunIcon from '../../../../public/header/sun.png'
 import { Link } from "react-router-dom"
 
+
 const Header = ()=>{
 
     const [darkMode, setDarkMode] = useState(false);  
@@ -30,11 +31,13 @@ const Header = ()=>{
             localStorage.setItem('darkMode', JSON.stringify(darkMode));  
             }, [darkMode]);  
             
+            
             const ThemeDarkMode = () => {  
             setDarkMode(!darkMode);  
             console.log(ThemeDarkMode)
             setThemeIcon(prevIcon => (prevIcon === sunIcon ? moonIcon : sunIcon));  
-            };  
+            
+            }
  
 
            
