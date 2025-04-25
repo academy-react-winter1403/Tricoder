@@ -1,19 +1,33 @@
 import React, { useEffect, useState } from 'react'
 import { NewsList } from '../NewsList/NewsList'
 import http from '../../../core/services/interceptor'
+import { useDebounce } from '../../../core/hooks/useDebounce'
 
 const SearchNews = () => {
     const [NewsData, setNewsdata] = useState([])
+    const [searchQuery, setSearchQuery] = useState(undefined);
+    const debouncedSearchTerm = useDebounce(searchQuery, 700);
 
-    const getNewsData =async()=>{
+    const getNewsData =async(Query)=>{
         try {
-            const response =await http.get("/News")
+            const response =await http.get("/News", {
+                params: {Query:Query }
+            })
             setNewsdata(response.news)
 
         } catch (error) {
             console.log(error);
         }
     }
+
+    useEffect(() => {
+        if (debouncedSearchTerm === undefined) {
+          return;
+        }
+        if (debouncedSearchTerm) {
+          getNewsData( searchQuery);
+        }
+      }, [debouncedSearchTerm, searchQuery]);
 
     useEffect(() => {
       getNewsData()
@@ -27,6 +41,9 @@ const SearchNews = () => {
                 <input 
                 type="text"
                 placeholder='دنبال چی میگردی؟' 
+                onChange={(e) =>
+                    setSearchQuery(e.target.value ? e.target.value : undefined)
+                }
                 className='rounded-[16px] outline-[#2196F3] w-full h-full pr-[20px] text-right text-[16px]
                 font-yekan-500 text-[#607D8B] max-md:text-[13px] max-md:w-[200px]'  />
             </div>

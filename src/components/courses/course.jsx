@@ -11,15 +11,15 @@ const Course = ()=>{
         <div 
         className="  w-full overflow-hidden  mt-[40px] mb-[80px]">
             <div className=" w-full  mb-[50px]">
-                <div className=" ml-[120px]  flex justify-center items-center gap-[50px]">
+                <div className="   flex justify-center items-center gap-[50px]">
                     <motion.div 
-                    className="h-[425px]"
+                    className="h-[425px] mr-[5px] "
                     initial={{ opacity: 0, y: 50 }} 
                     animate={{ opacity: 1, y: 0 }} 
                     transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }} 
                     whileHover={{ scale: 1.03 }}
                     >
-                       <img src={pic} alt="image1" className="w-full h-full object-cover"  />
+                       <img src={pic} alt="image1" className="w-full h-full object-cover "  />
 
                     </motion.div>
 

@@ -3,6 +3,41 @@ import { Note } from '../../../assets/fonts/icons/landing/courseIcon/Note'
 import { Clock } from '../../../assets/fonts/icons/landing/courseIcon/Clock'
 import { Calender } from '../../../assets/fonts/icons/landing/courseIcon/Calender'
 import { LikeIcon } from '../../../assets/fonts/icons/landing/courseIcon/LikeIcon'
+import { motion } from "framer-motion";
+
+const containerVariants = {
+    hidden: { opacity: 0 },
+    show: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2,
+        delayChildren: 0.3
+      }
+    }
+  };
+  
+  const itemVariants = {
+    hidden: { opacity: 0, y: 50 },
+    show: {
+      opacity: 1,
+      y: 0,
+      transition: { type: "spring", stiffness: 100 }
+    }
+  };
+  
+  const cardHover = {
+    scale: 1.03,
+    boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.1)",
+    transition: { type: "spring", stiffness: 400, damping: 10 }
+  };
+  
+  const buttonTap = {
+    scale: 0.95,
+    transition: { duration: 0.1 }
+  };
+
+
+
 
 const LandingCourse = () => {
     const course=[
@@ -51,42 +86,67 @@ const LandingCourse = () => {
             price:68000
         },
     ]
+
   return (
-    <div className=' mx-30  my-40 flex  flex-col justify-center
+    <motion.div 
+    initial="hidden"
+    whileInView="show"
+    viewport={{ once: true, margin: "-100px" }}
+    variants={containerVariants} 
+    className=' mx-30  my-40 flex  flex-col justify-center
       max-md:mt-70  '>
-         <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
-          max-md:h-9 max-md:w-30   max-lg:hidden '>
-        <p className='text-[40px] text-center whitespace-nowrap 
-         max-md:text-xl'>دوره‌های اموزشی  </p> 
-            </div> 
-            <div className='h-97  my-12 gap-8 flex
+        <motion.div 
+        variants={itemVariants}
+        className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
+        max-md:h-9 max-md:w-30   max-lg:hidden '>
+
+            <p className='text-[40px] text-center whitespace-nowrap 
+            max-md:text-xl'>دوره‌های اموزشی  </p>
+
+        </motion.div> 
+            <div
+                
+            className='h-97  my-12 gap-8 flex
             max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:gap-9  '>
 
                 {course.map((data,ind)=>(
-                             <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col
-                            max-lg:px-4 max-lg:h-fit  '>
-                             <img   src={data.img} alt=''
+                        <motion.div 
+                        variants={itemVariants}
+                        whileHover={{ 
+                        scale: 1.03,
+                        boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.1)",
+                        transition: { type: "spring", stiffness: 400, damping: 10 }
+                        }}
+                        key={ind} 
+                        className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col
+                        max-lg:px-4 max-lg:h-fit  '>
+                             <motion.img    
+                             src={data.img} 
+                             alt=''
+                             whileHover={{ scale: 1.05 }}
                              className='max-md:w-43'/>
+                             
                              <p className='font-bold text-base font-yekan-600 my-4 
                              max-md:text-xs'>{data.title}</p>
+
                              <div className='w-66 h-10 rounded-3xl  bg-[#ECEFF1]  whitespace-nowrap my-3.5 flex justify-between py-2.5 px-4
                              max-md: max-md: max-md:'>
                                 <div className='  w-14.5 flex  
                                 max-md:mx-2'>
-                                <div className='max-md:hidden'> <Note/></div>
-                                 <p className='text-xs font-medium mr-1'>{data.note}</p>
+                                    <div className='max-md:hidden'> <Note/></div>
+                                    <p className='text-xs font-medium mr-1'>{data.note}</p>
                                 </div>
              
                                 <div className=' w-14.5 flex 
                                 max-md:mx-2'>
-                                <div className='max-md:hidden'> <Clock/></div>
-                                 <p className='text-xs font-medium mr-1 tracking-tight'>{data.time}</p>
+                                    <div className='max-md:hidden'> <Clock/></div>
+                                    <p className='text-xs font-medium mr-1 tracking-tight'>{data.time}</p>
                                 </div>
              
                                 <div className=' w-14.5 flex  
                                max-md:mx-4 '>
-                                <div className='max-md:hidden '> <Calender/></div>
-                                 <p className='text-xs font-medium mr-1 '>{data.date}</p>
+                                    <div className='max-md:hidden '> <Calender/></div>
+                                    <p className='text-xs font-medium mr-1 '>{data.date}</p>
                                 </div>
              
                              </div>
@@ -114,21 +174,25 @@ const LandingCourse = () => {
              
                                  </div>
              
-                          </div>
+                        </motion.div>
                 ))}
 
     
 
             </div>
-            <div className='w-fit bg-[#2196F3] rounded-[80px] px-6 py-3 mx-140
+            <motion.div 
+            variants={itemVariants}
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className='w-fit bg-[#2196F3] rounded-[80px] px-6 py-3 mx-140
             max-lg:hidden '>
                 <p className='font-bold text-center text-white  whitespace-nowrap '>مشاهده همه</p>
 
-            </div>
+            </motion.div>
 
 
       
-    </div>
+    </motion.div>
   )
 }
 

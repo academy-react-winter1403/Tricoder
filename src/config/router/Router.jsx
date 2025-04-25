@@ -18,6 +18,7 @@ import { MyFavoriteCourse } from "../../components/panel/myFavoritCourse/myFavor
 import { MyFavoriteNews } from "../../components/panel/myFavoriteNews/MyFavoriteNews";
 import { MyReservedCourse } from "../../components/panel/myReservedcourse/MyReservedCourse";
 import Login from "../../app/layouts/Login";
+// import { Dropdown } from "../../components/courses/filters/ِdropDown/DropDown";
 
 
 
@@ -81,7 +82,7 @@ export const routs = createBrowserRouter(
         { path: "/authentication/login", element: <Login/> }
       ]
     },
-
+    
   ]
 )
 

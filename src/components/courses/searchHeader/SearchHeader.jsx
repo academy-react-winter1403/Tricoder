@@ -8,7 +8,6 @@ import { View1 } from "../view1/View1";
 import { View2 } from "../view2/View2";
 import { ChangePage } from "./../searchHeader/changePage/changePage";
 import http from "../../../core/services/interceptor";
-import { useParams } from "react-router-dom";
 import { useDebounce } from "../../../core/hooks/useDebounce";
 
 const SearchHeader = () => {
@@ -17,16 +16,29 @@ const SearchHeader = () => {
   const [coursesItems, setCoursesItems] = useState([]);
   const [totalCount, setTotalCount] = useState(undefined);
   const [searchQuery, setSearchQuery] = useState(undefined);
+  const [isSortOpen, setIsSortOpen] = useState(false);
   const debouncedSearchTerm = useDebounce(searchQuery, 700);
-  console.log(debouncedSearchTerm);
 
-  const getCourseData = async (page = currentPage, Query) => {
+  const sortOptions = [
+    { value: "mostPopular", label: "محبوب ترین ها" },
+    { value: "mostViewed", label: "پربازدیدترین ها" },
+    { value: "newest", label: "جدیدترین ها" },
+    { value: "all", label: "همه" }
+  ];
+
+  // Set default sort to "محبوب ترین ها"
+  const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
+
+  const getCourseData = async (page = currentPage, Query, sortType = selectedSort.value) => {
     try {
       const result = await http.get(`/Home/GetCoursesWithPagination`, {
-        params: { PageNumber: page, Query: Query },
+        params: { 
+          PageNumber: page, 
+          Query: Query,
+          SortType: sortType 
+        },
       });
-      console.log(result);
-
+      
       setCoursesItems(result.courseFilterDtos);
       setTotalCount(result.totalCount);
     } catch (error) {
@@ -34,11 +46,9 @@ const SearchHeader = () => {
       setCoursesItems([]);
     }
   };
+
   useEffect(() => {
     if (debouncedSearchTerm === undefined) {
-    //   setSearchQuery(undefined);
-    //   getCourseData(currentPage, searchQuery);
-
       return;
     }
     if (debouncedSearchTerm) {
@@ -46,72 +56,84 @@ const SearchHeader = () => {
     }
   }, [debouncedSearchTerm, searchQuery]);
 
+  // Load data with default sort on initial render
   useEffect(() => {
-    console.log("Calling API...");
-
     getCourseData(currentPage, searchQuery);
-  }, [currentPage]);
+  }, [currentPage, selectedSort]);
 
   const handlePageChange = (newPage) => {
     setCurrentPage(newPage);
-    getCourseData(newPage);
   };
 
-  const filteredItems = coursesItems.filter((item) =>
-    item.title?.includes(searchQuery)
-  );
+  const handleSortChange = (option) => {
+    setSelectedSort(option);
+    setIsSortOpen(false);
+    setCurrentPage(1);
+  };
 
   return (
     <div>
-      <div className="w-[952px] h-[56px] flex justify-between flex-row-reverse gap-[16px] lg:">
-        <div
-          className="  h-[56px] rounded-[16px] flex  items-center justify-center gap-[26px] 
-            shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)]"
-        >
-          <div className="  h-[25px] font-yekan-500 text-[16px] whitespace-nowrap flex gap-[12px] justify-center">
-            <div className="  h-[16px] mr-[16px] ">
-              <Sort />
-            </div>
-            <div className="  h-[25px] "> محبوب ترین ها </div>
-            <div className=" ml-[20px] h-[24px] bg-center flex justify-center items-center mr-[5px]">
-              <Arrow />
+      <div className="max-w-[952px] mx-auto w-full h-[56px] flex justify-between flex-row-reverse gap-[16px]">
+        {/* Sort Dropdown */}
+        <div className="relative h-[56px] rounded-[16px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)]">
+          <div 
+            className="h-full rounded-[16px] flex items-center justify-center gap-[26px] cursor-pointer"
+            onClick={() => setIsSortOpen(!isSortOpen)}
+          >
+            <div className="h-[25px] font-yekan-500 text-[16px] whitespace-nowrap flex gap-[12px] justify-center">
+              <div className="h-[16px] mr-[16px]">
+                <Sort />
+              </div>
+              <div className="h-[25px]">{selectedSort.label}</div>
+              <div className={`ml-[20px] h-[24px] bg-center flex justify-center items-center mr-[5px] transition-transform ${isSortOpen ? "rotate-180" : ""}`}>
+                <Arrow />
+              </div>
             </div>
           </div>
+          
+          {/* Dropdown Menu */}
+          {isSortOpen && (
+            <div className="absolute top-full right-0 mt-1 w-full min-w-[200px] bg-white rounded-[16px] shadow-lg z-50 overflow-hidden">
+              {sortOptions.map((option) => (
+                <div
+                  key={option.value}
+                  className={`px-4 py-3 hover:bg-gray-100 cursor-pointer text-right ${selectedSort.value === option.value ? "bg-gray-100 font-bold" : ""}`}
+                  onClick={() => handleSortChange(option)}
+                >
+                  {option.label}
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
-        <div
-          className=" w-[620px] h-[56px] rounded-[16px] overflow-hidden bg-[20px_16px]
-            shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)]"
-        >
+        {/* Search Input */}
+        <div className="w-[620px] h-[56px] rounded-[16px] overflow-hidden bg-[20px_16px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)] relative">
           <input
             type="text"
             className="w-full h-full outline-none border-none text-right text-[16px] font-yekan-500 color-fontColor-3 pr-[20px]"
             placeholder="چی میخوای یاد بگیری؟"
-            value={searchQuery}
+            value={searchQuery || ""}
             onChange={(e) =>
               setSearchQuery(e.target.value ? e.target.value : undefined)
             }
           />
-          <div className="relative z-200">
+          <div className="absolute left-5 top-1/2 transform -translate-y-1/2 z-200">
             <SearchIcons />
           </div>
         </div>
 
-        <div
-          className="w-[100px] h-[56px] rounded-[16px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)] flex flex-row-reverse justify-center 
-            items-center bg-[#ECEFF1]"
-        >
+        {/* View Toggle */}
+        <div className="w-[100px] h-[56px] rounded-[16px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)] flex flex-row-reverse justify-center items-center bg-[#ECEFF1]">
           <span
             onClick={() => setView(false)}
-            className={` block w-[40px] h-[40px] rounded-[16px] flex justify-center items-center cursor-pointer transition-all duration-200 
-                ${!View ? "bg-white shadow-md" : "bg-transparent"}`}
+            className={`block w-[40px] h-[40px] rounded-[16px] flex justify-center items-center cursor-pointer transition-all duration-200 ${!View ? "bg-white shadow-md" : "bg-transparent"}`}
           >
             <Grid2 />
           </span>
           <span
             onClick={() => setView(true)}
-            className={`block w-[40px] h-[40px]  rounded-[16px]  flex justify-center items-center cursor-pointer transition-all duration-200 
-                ${View ? "bg-white shadow-md" : "bg-transparent"}`}
+            className={`block w-[40px] h-[40px] rounded-[16px] flex justify-center items-center cursor-pointer transition-all duration-200 ${View ? "bg-white shadow-md" : "bg-transparent"}`}
           >
             <Grid1 />
           </span>
@@ -119,9 +141,6 @@ const SearchHeader = () => {
       </div>
 
       <div className="mt-[32px] flex flex-wrap justify-center gap-[32px] w-[952px] h-[1231px] overflow-hidden">
-        {/*  */}
-        {/* { } */}
-
         {View
           ? coursesItems.map((items, index) => (
               <View1 key={index} data={items} />
@@ -130,7 +149,8 @@ const SearchHeader = () => {
               <View2 key={index} data={items} />
             ))}
       </div>
-      <div className=" m-auto mt-[37px]">
+      
+      <div className="m-auto mt-[37px]">
         <ChangePage
           currentPage={currentPage}
           totalPages={Math.floor(+totalCount / 9)}
