@@ -4,6 +4,8 @@ import { Clock } from '../../../assets/fonts/icons/landing/courseIcon/Clock'
 import { Calender } from '../../../assets/fonts/icons/landing/courseIcon/Calender'
 import { LikeIcon } from '../../../assets/fonts/icons/landing/courseIcon/LikeIcon'
 
+
+
 const LandingCourse = () => {
     const course=[
         {
@@ -63,8 +65,8 @@ const LandingCourse = () => {
             max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-80 max-lg:items-center  max-lg:gap-9  '>
 
                 {course.map((data,ind)=>(
-                             <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col
-                            max-lg:px-4 max-lg:h-fit  '>
+                             <div key={ind} className={`w-74 h-97 bg-[#ffff] rounded-3xl p-4  shadow-2xl flex-col
+                            max-lg:px-4 max-lg:h-fit  `}>
                              <img   src={data.img} alt=''
                              className='max-md:w-43'/>
                              <p className='font-bold text-base font-yekan-600 my-4 
