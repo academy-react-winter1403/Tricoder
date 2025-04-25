@@ -1,10 +1,13 @@
 import { Logo } from "../../../assets/fonts/icons/header/Logo"
 import { Shop } from "../../../assets/fonts/icons/header/Shop"
 import { useState, useEffect } from "react"
+import moonIcon from '../../../../public/header/4458120.png'
+import sunIcon from '../../../../public/header/sun.png'
 
 const Header = ()=>{
 
     const [darkMode, setDarkMode] = useState(false);  
+    const [themeIcon, setThemeIcon] = useState(moonIcon);
 
     useEffect(() => {   
         const savedMode = localStorage.getItem('darkMode');  
@@ -28,8 +31,13 @@ const Header = ()=>{
             const ThemeDarkMode = () => {  
             setDarkMode(!darkMode);  
             console.log(ThemeDarkMode)
+            setThemeIcon(prevIcon => (prevIcon === sunIcon ? moonIcon : sunIcon));  
             };  
  
+
+           
+
+      
 
 
     return(
@@ -53,7 +61,7 @@ const Header = ()=>{
                max-md:w-9 max-md:h-9 max-md:px-1.5 max-md:py-1 max-md:mt-1.5 " >
               
                 
-                <img className="" src="/header/4458120.png"/>
+                <img className="" src={themeIcon}/>
                    
                 </button>
                 <div className=" w-33 h-12 bg-[#2196F3] rounded-[80px]
