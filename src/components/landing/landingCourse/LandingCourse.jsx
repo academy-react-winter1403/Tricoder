@@ -60,7 +60,7 @@ const LandingCourse = () => {
          max-md:text-xl'>دوره‌های اموزشی  </p> 
             </div> 
             <div className='h-97  my-12 gap-8 flex
-            max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:gap-9  '>
+            max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-80 max-lg:items-center  max-lg:gap-9  '>
 
                 {course.map((data,ind)=>(
                              <div key={ind} className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col

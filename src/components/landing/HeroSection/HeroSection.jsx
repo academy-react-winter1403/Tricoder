@@ -15,13 +15,13 @@ import { Service } from './Service'
 const HeroSection = () => {
   return (
     <div className='  h-240 w-full 
-    max-md:h-80 max-xl:h-200' >
+    max-md:h-80 max-xl:h-140' >
       {/* <img src='./public/landing/hero-bg.png ' className='w-full relative  ' alt='' /> */}
 
-     <div className='pt-26    flex flex-col gap-9 items-center
-     max-lg:gap-1 max-lg:pt-8'>
+     <div className='pt-2   flex flex-col gap-9 items-center
+     max-lg:gap-1 max-lg:'>
        
-     <div className=' text-center tracking-tight whitespace-nowrap pt-10 mx-auto 
+     <div className=' text-center tracking-tight whitespace-nowrap  mx-auto 
      max-md:leading-7 '>
           <p className='text-2xl font-medium  
       max-md:hidden '>پلتفرم اموزش طراحی وب</p>

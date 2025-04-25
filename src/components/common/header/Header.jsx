@@ -32,7 +32,7 @@ const Header = ()=>{
 
     return(
         <div className=" w-full h-24 px-20 flex  items-center justify-between
-          max-md:whitespace-nowrap max-md:mt-2">
+          max-md:whitespace-nowrap max-md:">
             <div className=" h-8 flex gap-1 pt-2 
             max-md:-mr-20">
                <Logo/>
