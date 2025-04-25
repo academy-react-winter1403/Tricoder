@@ -1,10 +1,15 @@
 import { Logo } from "../../../assets/fonts/icons/header/Logo"
 import { Shop } from "../../../assets/fonts/icons/header/Shop"
 import { useState, useEffect } from "react"
+import moonIcon from '../../../../public/header/4458120.png'
+import sunIcon from '../../../../public/header/sun.png'
+import { Link } from "react-router-dom"
 
 const Header = ()=>{
 
     const [darkMode, setDarkMode] = useState(false);  
+    const [themeIcon, setThemeIcon] = useState(moonIcon);
+    
 
     useEffect(() => {   
         const savedMode = localStorage.getItem('darkMode');  
@@ -28,8 +33,13 @@ const Header = ()=>{
             const ThemeDarkMode = () => {  
             setDarkMode(!darkMode);  
             console.log(ThemeDarkMode)
+            setThemeIcon(prevIcon => (prevIcon === sunIcon ? moonIcon : sunIcon));  
             };  
  
+
+           
+
+      
 
 
     return(
@@ -42,18 +52,19 @@ const Header = ()=>{
             </div>
             <div className="w-86.5 h-8 flex gap-10 text-base font-medium tracking-tight whitespace-nowrap leading-13 mr-25
             max-md:text-[12px] max-md:gap-3 max-md:mx-6  ">
-                <p>   دوره‌ها     </p>
+                
+                <Link to={"/courses"}>   دوره‌ها     </Link>
                 <p>اساتید</p>
                 <p>ارتباط با ما</p>
-                <p>اخبار مقالات</p>
+                <Link to={"news"}>اخبار مقالات</Link>
             </div>
             <div className="w-50 h-12.5 flex justify-between gap-4 
-            max-md:gap-1 max-md:">
-                <button onClick={ThemeDarkMode}  className="w-12 h-12 rounded-4xl bg-[#FFFF]  relative  cursor-pointer 
+            max-md:gap-1 max-md:mt-6">
+                <button onClick={ThemeDarkMode}  className="w-12 h-12 rounded-4xl   relative  cursor-pointer 
                max-md:w-9 max-md:h-9 max-md:px-1.5 max-md:py-1 max-md:mt-1.5 " >
               
                 
-                <img className="" src="/header/4458120.png"/>
+                <img className="" src={themeIcon}/>
                    
                 </button>
                 <div className=" w-33 h-12 bg-[#2196F3] rounded-[80px]

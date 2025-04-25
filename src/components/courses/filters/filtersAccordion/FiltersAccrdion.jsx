@@ -4,6 +4,8 @@ import ArrowDown from "../../../../../public/icons/ArrowDown";
 import {  DurationList } from "../duration/Duration";
 import {  Teachers} from "../teachers/Teachers";
 import { PriceFilter } from "../PriceRange/PriceFilter";
+import { Technologis } from "../technologis/Technologis";
+import { CourseType } from "../courseType/CourseType";
 
 
 const AccordionInfo = ({title,content,gap}) => {
@@ -43,9 +45,9 @@ const AccordionInfo = ({title,content,gap}) => {
 const AccordionList =()=>{
     
         const items = [
-          { title: " دسته بندی ها ", content:"" , gap:"gap-[149px]" },
+          { title: " تکنولوژی ها", content:<Technologis/> , gap:"gap-[158px]" },
           { title: " قیمت ", content: <PriceFilter/>, gap:"gap-[197px]" },
-          { title: " موضوعات ", content: " k kj kj", gap:"gap-[172px]" },
+          { title: " نوع دوره ", content: <CourseType/>, gap:"gap-[182px]" },
           { title: " مدت زمان ", content: <DurationList/>, gap:"gap-[175px]" },
           { title: " اساتید دوره ", content: <Teachers/>, gap:"gap-[165px]" },
         ];

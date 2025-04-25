@@ -29,34 +29,34 @@ const NewsDetail = () => {
   }, [NewsId]);  
 
 
-  const [comments, setComments] = useState([]);
-  const [error, setError] = useState([]);
+  // const [comments, setComments] = useState([]);
+  // const [error, setError] = useState([]);
  
 
  
-  useEffect(() => {  
-    const fetchComments = async () => {  
-      try {  
-        const response = await axios.get(`/News/GetNewsComments${NewsId}=<uuid>`); 
-        setComments(response.commentDtos);  
-        localStorage.setItem('comments', JSON.stringify(response.commentDtos));  
-        console.log(response)
-      } catch (error) {  
-        setError('Error fetching comments');  
-        console.error('Error fetching comments', error);  
-      }  
-    };  
+  // useEffect(() => {  
+  //   const fetchComments = async () => {  
+  //     try {  
+  //       const response = await axios.get(`/News/GetNewsComments${NewsId}=<uuid>`); 
+  //       setComments(response.commentDtos);  
+  //       localStorage.setItem('comments', JSON.stringify(response.commentDtos));  
+  //       console.log(response)
+  //     } catch (error) {  
+  //       setError('Error fetching comments');  
+  //       console.error('Error fetching comments', error);  
+  //     }  
+  //   };  
 
-    fetchComments();  
+  //   fetchComments();  
     
-  }, []);  
+  // }, []);  
 
   
 
   return (
     <div>
       <NewsView detailsNewsDto={detailsNewsDto}  />
-      <NewsContent  detailsNewsDto={detailsNewsDto} commentDtos={comments} />
+      <NewsContent  detailsNewsDto={detailsNewsDto}  />
 
       
     </div>

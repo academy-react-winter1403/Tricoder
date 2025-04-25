@@ -59,7 +59,7 @@ const NewsContent = ({detailsNewsDto}) => {
       </div>
 
 
-      <img className='' src='./public/newsDetail/VideoPlayer.png' />
+      <img className='' src='/newsDetail/VideoPlayer.png' />
 
       <div className='flex flex-col gap-4'>
         <p className='text-[#455A64] leading-7'>این مثال برای آموزش از روی کتاب بود ولی برای ویدئو یا پادکست یا هر آنچه که میتوانید از آن مطلبی یاد بگیرید هم صدق میکند. شما در مثال بالا با هر بار از نو آموزش دیدن، هم مطلب را مرور میکنید و هم نکته هایی مهم که در طول آموزش متوجه نشده بودین را متوجه میشوید و این اصل قضیه است.</p>

@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import { RightArrow } from '../../../../../public/icons/RightArrow';
 import { LeftArroe } from '../../../../../public/icons/LeftArroe';
 
-const ChangePage = ({ totalPages = 24, siblingCount = 1 }) => {
-  const [currentPage, setCurrentPage] = useState(6);
+const ChangePage = ({ totalPages = 24, siblingCount = 1,currentPage, onPageChange }) => {
+  // const [currentPage, setCurrentPage] = useState(6);
 
   const getPageNumbers = () => {
     const totalPageNumbers = siblingCount * 2 + 5;
@@ -30,28 +30,29 @@ const ChangePage = ({ totalPages = 24, siblingCount = 1 }) => {
 
   const changePage = (page) => {
     if (page === '...') return;
-    setCurrentPage(page);
+    onPageChange(page);
   };
 
   const goToPrevious = () => {
-    if (currentPage > 1) setCurrentPage(currentPage - 1);
+    if (currentPage > 1) onPageChange(currentPage - 1);
   };
 
   const goToNext = () => {
-    if (currentPage < totalPages) setCurrentPage(currentPage + 1);
+    if (currentPage < totalPages) onPageChange(currentPage + 1);
   };
 
   return (
     <div className="flex justify-center items-center gap-2 mt-8 text-[16px] font-yekan-500 flex-row-reverse">
-      {/* قبلی */}
+     
       <button
         onClick={goToPrevious}
+        disabled={currentPage === 1}
         className="w-[32px] h-[32px] flex justify-center items-center bg-[#ECEFF1] text-white  rounded-full"
       >
         <span className='' > <LeftArroe/> </span>
       </button>
 
-      {/* شماره صفحات */}
+      
       {getPageNumbers().map((page, index) => (
         <button
           key={index}
@@ -66,9 +67,10 @@ const ChangePage = ({ totalPages = 24, siblingCount = 1 }) => {
         </button>
       ))}
 
-      {/* بعدی */}
+      
       <button
         onClick={goToNext}
+        disabled={currentPage === totalPages}
         className="w-[32px] h-[32px] flex justify-center items-center bg-[#ECEFF1] text-white rounded-full rotate-180"
       >
         <LeftArroe/>

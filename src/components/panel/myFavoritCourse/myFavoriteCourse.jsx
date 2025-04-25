@@ -1,21 +1,23 @@
 import React from 'react'
 import { DeleteCourse } from "../../../assets/icons/studentPanel/DeleteCourse";
+import { LikeIcon } from '../../../assets/fonts/icons/landing/courseIcon/LikeIcon';
+import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart';
 
-export const MyFavoriteCourse = () => {
+ const MyFavoriteCourse = () => {
   const favoriteCourse=[
     {
       courseType:"ری اکت",
       courseTeacher:" نام مدرس دوره",
       startDate:"1402/7/19",
       coursePrice:"35000 تومان",
-      delete:<DeleteCourse/>
+      delete:<FullHeart/>
   },
   {
       courseType:"نکست ",
       courseTeacher:" نام مدرس دوره",
       startDate:"1402/7/18",
       coursePrice:"95000 تومان",
-      delete:<DeleteCourse/>
+      delete:<FullHeart/>
   },
    
 ]
@@ -41,7 +43,7 @@ export const MyFavoriteCourse = () => {
         {favoriteCourse.map((data,ind) =>(
                   <div key={ind} className="flex gap-32.5 text-center py-3.5 w-full px-10 whitespace-nowrap rounded-[10px] bg-gray-200 justify-center leading-8
                   max-lg:gap-5 max-md:text-xs max-md:gap-4">
-                         <DeleteCourse/>
+                         <FullHeart/>
                          <p>{data.coursePrice}</p>
                          <p>{data.startDate}</p>
                          <p>{data.courseTeacher}</p>
@@ -61,3 +63,4 @@ export const MyFavoriteCourse = () => {
     </div>
   )
 }
+export { MyFavoriteCourse}

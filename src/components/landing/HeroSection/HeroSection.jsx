@@ -1,5 +1,4 @@
 import React from 'react'
-import { Header } from '../../common/header/Header'
 import { SearchIcon } from '../../../assets/fonts/icons/landing/SearchIcon'
 import { WebsiteInfo } from './websiteInfo/WebsiteInfo'
 import { SassIcon } from '../../../assets/fonts/icons/landing/heroSection/smallIcon/SassIcon'
@@ -10,19 +9,18 @@ import { ReactIcon } from '../../../assets/fonts/icons/landing/heroSection/small
 import { AngularIcon } from '../../../assets/fonts/icons/landing/heroSection/smallIcon/AngularIcon'
 import { CssIcon } from '../../../assets/fonts/icons/landing/heroSection/smallIcon/CssIcon'
 import { HtmlIcon } from '../../../assets/fonts/icons/landing/heroSection/smallIcon/HtmlIcon'
-import { Service } from './Service'
 
 const HeroSection = () => {
   return (
     <div className='  h-240 w-full 
-    max-md:h-30 max-xl:h-140' >
+    max-md:h-40 max-xl:h-200' >
       {/* <img src='./public/landing/hero-bg.png ' className='w-full relative  ' alt='' /> */}
 
-     <div className='pt-2   flex flex-col gap-9 items-center
+     <div className='pt-7    flex flex-col gap-9 items-center
      max-lg:gap-1 max-lg:'>
        
-     <div className=' text-center tracking-tight whitespace-nowrap  mx-auto 
-     max-md:leading-7 '>
+     <div className=' text-center tracking-tight whitespace-nowrap pt-10 mx-auto 
+     max-md:leading-7  max-md:-mt-17'>
           <p className='text-2xl font-medium  
       max-md:hidden '>پلتفرم اموزش طراحی وب</p>
 
@@ -65,4 +63,4 @@ const HeroSection = () => {
   )
 }
 
-export { HeroSection } 
+export { HeroSection }

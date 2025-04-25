@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 const NewsPage = () => {
   return (
-    <div>
+    <div className='overflow-hidden'>
         <motion.div 
         className="ml-[120px] max-xl:ml-[80px] max-lg:ml-[50px] max-md:ml-[30px]"
         initial={{ opacity: 0, y: 50 }} 
@@ -16,7 +16,7 @@ const NewsPage = () => {
             <img src={image} alt="" />
         </motion.div>
         <div className=' mt-[80px] mx-[70px] max-lg:mx-[50px]  max-md:mx-[30px] max-sm:mx-[0px]'>
-            <SearchNews/>
+          <SearchNews/>
         </div>
     </div>
   )
