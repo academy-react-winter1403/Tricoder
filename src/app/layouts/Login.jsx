@@ -10,17 +10,18 @@ const Login = () => {
         console.log(remember)
         e.preventDefault();
         const dto = { phoneOrGmail: email, password: password, rememberMe: remember }
-        http.post('/Sign/Login', dto)
-            .then((res) => 
-                { 
-                    localStorage.setItem('token', res.token); 
-                    console.log(res)
-                }
-            ).catch((err) => 
-                {
-                    console.log(err)
-                }
-            )
+        console.log(dto)
+        // http.post('/Sign/Login', dto)
+        //     .then((res) => 
+        //         { 
+        //             localStorage.setItem('token', res.token); 
+        //             console.log(res)
+        //         }
+        //     ).catch((err) => 
+        //         {
+        //             console.log(err)
+        //         }
+        //     )
     }
 
     return (
