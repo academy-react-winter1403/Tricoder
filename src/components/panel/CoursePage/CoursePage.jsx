@@ -1,7 +1,22 @@
+import { useEffect } from "react";
 import { DeleteCourse } from "../../../assets/icons/studentPanel/DeleteCourse";
-
+import http from "../../../core/services/interceptor"
 
  const CoursePage = () => {
+
+    useEffect(() => {
+        const fetchPostData = async () => {
+          try {
+            const response = await http.get("/SharePanel/GetMyCourses?PageNumber=1&RowsOfPage=10&SortingCol=DESC&SortType=LastUpdate&Query=");
+            console.log(response);
+          } catch (error) {
+            console.log('Error fetching post data:', error);
+          }
+        };
+    
+        fetchPostData();
+      }, []);
+
     const myCourse =[
         {
             courseType:"ری اکت",

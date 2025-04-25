@@ -31,7 +31,7 @@ const Header = ()=>{
 
 
     return(
-        <div className=" w-full h-15 px-20 flex  items-center justify-between
+        <div className=" w-full h-24 px-20 flex  items-center justify-between
           max-md:whitespace-nowrap max-md:mt-2">
             <div className=" h-8 flex gap-1 pt-2 
             max-md:-mr-20">
@@ -50,7 +50,7 @@ const Header = ()=>{
                 <button onClick={DarkMode}  className="w-12 h-12 rounded-4xl bg-[#FFFF]  relative  cursor-pointer 
                max-md:w-9 max-md:h-9 max-md:px-1.5 max-md:py-1 max-md:mt-1.5" >
                 
-                <img className="" src="public/header/4458120.png"/>
+                <img className="" src="/header/4458120.png"/>
                    
                 </button>
                 <div className=" w-33 h-12 bg-[#2196F3] rounded-[80px]
@@ -59,9 +59,7 @@ const Header = ()=>{
                     max-md:text-[10px] max-md:leading-8.5">ورود به حساب</p>
 
                 </div>
-                 
             </div>
-              
         </div>
     )
 }

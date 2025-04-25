@@ -17,6 +17,7 @@ import { News } from "../../pages/news/News";
 import { MyFavoriteCourse } from "../../components/panel/myFavoritCourse/myFavoriteCourse";
 import { MyFavoriteNews } from "../../components/panel/myFavoriteNews/MyFavoriteNews";
 import { MyReservedCourse } from "../../components/panel/myReservedcourse/MyReservedCourse";
+import Login from "../../app/layouts/Login";
 
 
 
@@ -77,7 +78,7 @@ export const routs = createBrowserRouter(
       path: "/authentication",
       element: <AuthenticationLayout />,
       children: [
-
+        { path: "/authentication/login", element: <Login/> }
       ]
     },
 
