@@ -57,7 +57,7 @@ const Header = ()=>{
             </div>
             <div className="w-50 h-12.5 flex justify-between gap-4 
             max-md:gap-1 max-md:">
-                <button onClick={ThemeDarkMode}  className="w-12 h-12 rounded-4xl bg-[#FFFF]  relative  cursor-pointer 
+                <button onClick={ThemeDarkMode}  className="w-12 h-12 rounded-4xl   relative  cursor-pointer 
                max-md:w-9 max-md:h-9 max-md:px-1.5 max-md:py-1 max-md:mt-1.5 " >
               
                 
