@@ -3,11 +3,13 @@ import { Shop } from "../../../assets/fonts/icons/header/Shop"
 import { useState, useEffect } from "react"
 import moonIcon from '../../../../public/header/4458120.png'
 import sunIcon from '../../../../public/header/sun.png'
+import { Link } from "react-router-dom"
 
 const Header = ()=>{
 
     const [darkMode, setDarkMode] = useState(false);  
     const [themeIcon, setThemeIcon] = useState(moonIcon);
+    
 
     useEffect(() => {   
         const savedMode = localStorage.getItem('darkMode');  
@@ -50,10 +52,11 @@ const Header = ()=>{
             </div>
             <div className="w-86.5 h-8 flex gap-10 text-base font-medium tracking-tight whitespace-nowrap leading-13 mr-25
             max-md:text-[12px] max-md:gap-3 max-md:mx-6  ">
-                <p>   دوره‌ها     </p>
+                
+                <Link to={"/courses"}>   دوره‌ها     </Link>
                 <p>اساتید</p>
                 <p>ارتباط با ما</p>
-                <p>اخبار مقالات</p>
+                <Link to={"news"}>اخبار مقالات</Link>
             </div>
             <div className="w-50 h-12.5 flex justify-between gap-4 
             max-md:gap-1 max-md:">
