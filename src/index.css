@@ -57,6 +57,7 @@
     --color-fontColor-2: #455A64 ;
     --color-fontColor-3: #607D8B ;
     --color-red: #F44336 ;
+    --color-overlay: rgba(0,0,0,0.4); 
    
     
     --font-yekan-100:"yekan-hairline";
@@ -72,6 +73,10 @@
   }
   
  
-
+body,ul,li{
+  margin: 0;
+  padding: 0;
+  
+}
 
 

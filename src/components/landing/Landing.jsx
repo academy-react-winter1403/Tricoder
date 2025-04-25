@@ -17,6 +17,7 @@ const Landing = () => {
             <LandingNews />
 
         </div>
+        
     )
 }
 

@@ -90,7 +90,7 @@ const LandingCourse = () => {
     viewport={{ once: true, margin: "-100px" }}
     variants={containerVariants} 
     className=' mx-30  my-40 flex  flex-col justify-center
-      max-md:mt-70  '>
+      max-md:mt-70 '>
         <motion.div 
         variants={itemVariants}
         className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
@@ -103,7 +103,7 @@ const LandingCourse = () => {
             <div
                 
             className='h-97  my-12 gap-8 flex
-            max-md:grid grid-cols-2 max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:gap-9  '>
+            max-md:grid grid-cols-4 max-md: max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:gap-9  '>
 
                 {course.map((data,ind)=>(
                         <motion.div 
@@ -115,7 +115,7 @@ const LandingCourse = () => {
                         }}
                         key={ind} 
                         className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col
-                        max-lg:px-4 max-lg:h-fit  '>
+                        max-lg:px-4 max-lg:h-fit max-md:w-fit '>
                              <motion.img    
                              src={data.img} 
                              alt=''
