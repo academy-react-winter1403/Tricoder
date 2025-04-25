@@ -26,7 +26,7 @@ const SearchHeader = () => {
     { value: "all", label: "همه" }
   ];
 
-  // Set default sort to "محبوب ترین ها"
+ 
   const [selectedSort, setSelectedSort] = useState(sortOptions[0]);
 
   const getCourseData = async (page = currentPage, Query, sortType = selectedSort.value) => {
@@ -56,7 +56,7 @@ const SearchHeader = () => {
     }
   }, [debouncedSearchTerm, searchQuery]);
 
-  // Load data with default sort on initial render
+ 
   useEffect(() => {
     getCourseData(currentPage, searchQuery);
   }, [currentPage, selectedSort]);
