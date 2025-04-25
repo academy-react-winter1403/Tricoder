@@ -14,4 +14,10 @@ body{
   overflow-x: hidden
 
  }
+
+ body.dark{
+  background: #03031b;
+  color:#a1a1f4;
+  
+ }
  

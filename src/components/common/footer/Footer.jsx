@@ -7,12 +7,12 @@ import { WhatsApp } from "../../../assets/fonts/icons/footer/footerMediaIcon/Wha
 
 const Footer = ()=>{
     return(
-        <div className="bg-[#252641] h-138.5
-        max-md:mt-50">
+        <div className="bg-[#252641] h-138.5 mt-20
+        max-md:mt-80">
             <div className="w-115 text-center mx-122 pt-14
-            max-md:mx-3 max-md:w-100">
+            max-md:mx-6 max-md:w-100">
               <div className="px-36
-              max-md:px-25"><FooterLogo/></div>
+              max-md:px-28"><FooterLogo/></div>
               <p className="text-[#FFFFFF] text-xl font-normal
               max-md:text-sm">هدف ما سهولت دسترسی و دریافت  خدمات از همه ی نقاط کشور با کمترین تعرفه و بدون نیاز  مراجعه حضوری در کل فرایند ثبت </p>          
             </div>
@@ -30,7 +30,7 @@ const Footer = ()=>{
             </div>
 
             <div className="h-6 w-107 pt-14 mx-127 flex leading-5 
-            max-md:mx-7 max-md:text-sm">
+            max-md:mx-7 max-md:text-sm ">
                 <p className="font-normal text-[#FFFFFF99] pl-10">دوره های اموزشی </p>
                 <div className="border-l-2 border-r-2 border-r-[#FFFFFF99] border-l-[#FFFFFF99]  h-5 px-10"><p className="font-normal text-[#FFFFFF99]">درباره ما</p></div>
                 <p className="font-normal text-[#FFFFFF99] pr-10">قوانین و مقررات</p>

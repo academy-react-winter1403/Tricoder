@@ -48,7 +48,7 @@ const LandingNews = () => {
         </div> 
 
         <div className='h-148.5  my-10 flex gap-10
-        max-md:grid max-md:gap-4 max-md:-mr-9'>
+        max-md:grid max-md:gap-4 max-md:'>
 
           <div className='w-154 
           max-md:w-90 '>
