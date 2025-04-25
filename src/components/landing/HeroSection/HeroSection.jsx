@@ -13,14 +13,14 @@ import { HtmlIcon } from '../../../assets/fonts/icons/landing/heroSection/smallI
 const HeroSection = () => {
   return (
     <div className='  h-240 w-full 
-    max-md:h-80 max-xl:h-200' >
+    max-md:h-40 max-xl:h-200' >
       {/* <img src='./public/landing/hero-bg.png ' className='w-full relative  ' alt='' /> */}
 
      <div className='pt-7    flex flex-col gap-9 items-center
-     max-lg:gap-1 max-lg:pt-8'>
+     max-lg:gap-1 max-lg:'>
        
      <div className=' text-center tracking-tight whitespace-nowrap pt-10 mx-auto 
-     max-md:leading-7 '>
+     max-md:leading-7  max-md:-mt-17'>
           <p className='text-2xl font-medium  
       max-md:hidden '>پلتفرم اموزش طراحی وب</p>
 
