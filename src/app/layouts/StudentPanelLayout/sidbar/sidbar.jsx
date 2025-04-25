@@ -2,6 +2,12 @@ import { Link, NavLink } from "react-router-dom";
 import { FiX } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import { closeMenu } from "../../../../redux/Store/menuSlice";
+import { BookOpenCheck, BookOpenText, CalendarHeart, FileHeart, KeyRound, LayoutDashboard, LucideUserCircle2, MessageCircleMore, Power,} from "lucide-react";
+import { User2Icon } from "lucide-react";
+import { FaUserCircle } from "react-icons/fa";
+// import { LayoutDashboard } from "lucide-react";
+// import { LayoutDashboard } from "lucide-react";
+// import { LayoutDashboard } from "lucide-react";
 
 const Sidebar = () => {
   const itsOpen = useSelector((state) => state.menu.isOpen);
@@ -34,71 +40,111 @@ const Sidebar = () => {
           <h3 className=" text-white  text-lg font-semibold">بیتا قنبری</h3>
         </div>
 
-        <ul className="text-white  text-right  ">
+        <ul className="text-white  text-right ">
           <NavLink
             to="/Studentpanel/dashboard"
             className={({ isActive }) =>
-              ` block py-2 px-4  ${
+              ` block py-2 px-4 flex justify-end  gap-3 ${
                 isActive && "bg-[#6033FE]"
-              }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
+              }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50   `
             }
           >
-            داشبرد
+           داشبرد
+           <LayoutDashboard/>
           </NavLink>
 
           <NavLink
             to="/Studentpanel/editprofile"
             className={({ isActive }) =>
-              ` block py-2 px-4  ${
+              ` block py-2 px-4  flex justify-end  gap-3 ${
                 isActive && "bg-[#6033FE]"
               }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
             }
           >
             ویرایش پروفایل
+            <LucideUserCircle2/>
           </NavLink>
 
           <NavLink
             to="/Studentpanel/mycourse"
             className={({ isActive }) =>
-              ` block py-2 px-4  ${
+              ` block py-2 px-4 flex justify-end  gap-3 ${
                 isActive && "bg-[#6033FE]"
+                
               }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
             }
           >
             دوره های من
+            <BookOpenText/>
           </NavLink>
 
           <NavLink
             to="/Studentpanel/change-password"
             className={({ isActive }) =>
-              ` block py-2 px-4  ${
+              ` block py-2 px-4 flex justify-end  gap-3 ${
                 isActive && "bg-[#6033FE]"
               }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
             }
           >
             تغییر رمز عبور
+            <KeyRound />
           </NavLink>
 
           <NavLink
             to="/Studentpanel/logout"
             className={({ isActive }) =>
-              ` block py-2 px-4  ${
+              ` block py-2 px-4 flex justify-end  gap-3 ${
                 isActive && "bg-[#6033FE]"
               }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
             }
           >
             خروج از حساب
+            <Power/>
           </NavLink>
 
           <NavLink
             to="/Studentpanel/comment"
             className={({ isActive }) =>
-              ` block py-2 px-4  ${
+              ` block py-2 px-4 flex justify-end  gap-3 ${
                 isActive && "bg-[#6033FE]"
               }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
             }
           >
             نظرات ثبت شده
+            <MessageCircleMore />
+          </NavLink>
+          <NavLink
+            to="/Studentpanel/myFavoritecourse"
+            className={({ isActive }) =>
+              ` block py-2 px-4 flex justify-end  gap-3 ${
+                isActive && "bg-[#6033FE]"
+              }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
+            }
+          >
+        دوره های مورد علاقه من
+        <CalendarHeart/>
+          </NavLink>
+          <NavLink
+            to="/Studentpanel/MyReservedCourse"
+            className={({ isActive }) =>
+              ` block py-2 px-4 flex justify-end  gap-3 ${
+                isActive && "bg-[#6033FE]"
+              }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
+            }
+          >
+        دوره های رزرو شده من
+        <BookOpenCheck/>
+          </NavLink>
+          <NavLink
+            to="/Studentpanel/MyFavoriteNews"
+            className={({ isActive }) =>
+              ` block py-2 px-4 flex justify-end  gap-3 ${
+                isActive && "bg-[#6033FE]"
+              }    rounded-lg cursor-pointer  m-2   hover:bg-[#6033FF]/50`
+            }
+          >
+        اخبار مورد علاقه من
+        <FileHeart/>
           </NavLink>
         </ul>
       </div>

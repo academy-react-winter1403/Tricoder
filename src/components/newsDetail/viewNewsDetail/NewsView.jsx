@@ -6,7 +6,8 @@ import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart'
 
 const NewsView = ({ detailsNewsDto }) => {
   return (
-    <div className='flex px-20 pt-14 gap-8 w-[]'>
+    <div className='flex px-20 pt-14 gap-8 
+    max-lg:flex-col'>
       <div className="border-2 rounded-3xl w-[80%]">
         <img className='relative' src={(detailsNewsDto.currentImageAddress) ? detailsNewsDto.currentImageAddress : "notfound.jpg"} />
 
@@ -16,7 +17,7 @@ const NewsView = ({ detailsNewsDto }) => {
       <div className='flex flex-col '>
         <p className='text-[32px]  font-bold'>{detailsNewsDto.title}</p>
         <p className='font-normal text-[#455A64] text-base leading-7'>همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش یک موضوع خاص مثل آموزش از کتاب، ویدئو یا هر آنچه که برای آموزش است نخواهد بود و این مقاله به صورت جامع در مورد چگونگی آموزش دیدن و یادگیری است.همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش یک موضوع خاص مثل آموزش از کتاب، ویدئو یا هر آنچه که همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش  دیدن و یادگیری است.همانطور که از عنوان مقاله.
-          قبل از هر چیزی باید بدانیم که نمیشه یک روند یا روش خاصی رو برای همه افراد که ذهنیت های متفاوتی هم از هم دارند، در نظر گرفت. ولی خب هدف تمامی این افراد آموزش دیدن و رسیدن به درک عمیقی از اون مطلب است ولی آیا برای تمامی افراد آموزش دیدن به این جا ختم میشود و همه به درک عمیقی از اون مطلب میرسند؟ قطعا خیر.</p>
+          قبل از هر چیزی باید بدانیم که نمیشه یک روند یا روش خاصی رو برای همه افراد که ذهنیت های متفاوتی هم از هم دارند، در نظر گرفت. ولی خب هدف تمامی این افراد آموزش دیدن و رسیدن به درک عمیقی از اون مطلب است ولی آیا برای تمامی افراد آموزش دیدن به این جا ختم میشود و همه به درک عمیقی از اون مطلب میرسند؟ قطعا خیر.{detailsNewsDto.miniDescribe}</p>
 
         <div className='flex justify-between  pt-4 items-center'>
 
@@ -30,12 +31,14 @@ const NewsView = ({ detailsNewsDto }) => {
 
             <div className='flex gap-1'>
               <NewsDate />
-              <p className='text-sm text-[#2196F3] '>{detailsNewsDto.insertDate}</p>
+              <p className='text-sm text-[#2196F3]
+              max-lg:hidden '>{detailsNewsDto.insertDate}</p>
             </div>
           </div>
           <div className=' bg-white flex gap-3 justify-center rounded-2xl p-3 shadow-2xl'>
             <img className='w-10 h-10 rounded-xl' src='./public/landing/slider/teacher2.png' />
-            <p className='font-bold  leading-10 pl-3'>{detailsNewsDto.addUserFullName}</p>
+            <p className='font-bold  leading-10 pl-3
+            max-lg:whitespace-nowrap'>{detailsNewsDto.addUserFullName}</p>
 
           </div>
         </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 
 
 
+
  const DashboardPage = () => {
     return (
         <div className="  h-[590px]">
@@ -128,5 +129,9 @@ import { Link } from "react-router-dom";
 }
 
 
-export default DashboardPage;
+
+
+
+
+export default   DashboardPage ;
 

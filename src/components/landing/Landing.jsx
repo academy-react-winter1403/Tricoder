@@ -8,7 +8,7 @@ import { TeacherSlider } from "./Slider/TeacherSlider"
 
 const Landing = () => {
     return (
-        <div className="-z-10 w-full relative -top-20.5 heroBG">
+        <div className="w-full">
             <HeroSection />
             <Service />
             <LandingCourse />

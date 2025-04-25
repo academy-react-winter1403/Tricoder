@@ -14,6 +14,10 @@ import CourseDetailPage from "../../pages/courseDetail/CourseDetail";
 import { NewsDetailScreen } from "../../pages/newsDetail/NewsDetailScreen";
 
 import { News } from "../../pages/news/News";
+import { MyFavoriteCourse } from "../../components/panel/myFavoritCourse/myFavoriteCourse";
+import { MyFavoriteNews } from "../../components/panel/myFavoriteNews/MyFavoriteNews";
+import { MyReservedCourse } from "../../components/panel/myReservedcourse/MyReservedCourse";
+import Login from "../../app/layouts/Login";
 
 
 
@@ -53,12 +57,15 @@ export const routs = createBrowserRouter(
           path: "/Studentpanel",
           element: <StudentPanelPage />,
           children: [
-            { path: "/Studentpanel/change-password", element: <ChangePasswordPage /> },
-            { path: "/Studentpanel/comment", element: <CommentPage /> },
-            { path: "/Studentpanel/mycourse", element: <CoursePage /> },
-            { path: "/Studentpanel/dashboard", element: <DashboardPage /> },
-            { path: "/Studentpanel/editprofile", element: <EditProfilePage /> },
-            { path: "/Studentpanel/logout", element: <LogoutPage /> },
+            { path: "/Studentpanel/change-password", element: <ChangePasswordPage/> },
+            { path: "/Studentpanel/comment", element: <CommentPage/> },
+            { path: "/Studentpanel/mycourse", element: <CoursePage/> },
+            { path: "/Studentpanel/dashboard", element: <DashboardPage/> },
+            { path: "/Studentpanel/editprofile", element: <EditProfilePage/> },
+            { path: "/Studentpanel/logout", element: <LogoutPage/> },
+            { path: "/Studentpanel/myFavoritecourse", element: <MyFavoriteCourse/> },
+            { path: "/Studentpanel/MyFavoriteNews", element: <MyFavoriteNews/> },
+            { path: "/Studentpanel/MyReservedCourse", element: <MyReservedCourse/> },
           ],
         },
         {
@@ -71,7 +78,7 @@ export const routs = createBrowserRouter(
       path: "/authentication",
       element: <AuthenticationLayout />,
       children: [
-
+        { path: "/authentication/login", element: <Login/> }
       ]
     },
 
