@@ -14,30 +14,27 @@ const containerVariants = {
         delayChildren: 0.3
       }
     }
-  };
+};
   
-  const itemVariants = {
+const itemVariants = {
     hidden: { opacity: 0, y: 50 },
     show: {
       opacity: 1,
       y: 0,
       transition: { type: "spring", stiffness: 100 }
     }
-  };
+};
   
-  const cardHover = {
+const cardHover = {
     scale: 1.03,
     boxShadow: "0px 10px 25px rgba(0, 0, 0, 0.1)",
     transition: { type: "spring", stiffness: 400, damping: 10 }
-  };
+};
   
-  const buttonTap = {
+const buttonTap = {
     scale: 0.95,
     transition: { duration: 0.1 }
-  };
-
-
-
+};
 
 const LandingCourse = () => {
     const course=[
@@ -86,7 +83,6 @@ const LandingCourse = () => {
             price:68000
         },
     ]
-
   return (
     <motion.div 
     initial="hidden"
@@ -176,24 +172,18 @@ const LandingCourse = () => {
              
                         </motion.div>
                 ))}
-
-    
-
             </div>
+            
             <motion.div 
-            variants={itemVariants}
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            className='w-fit bg-[#2196F3] rounded-[80px] px-6 py-3 mx-140
-            max-lg:hidden '>
-                <p className='font-bold text-center text-white  whitespace-nowrap '>مشاهده همه</p>
-
+                variants={itemVariants}
+                whileHover={{ scale: 1.05 }}
+                whileTap={buttonTap}
+                className='w-fit bg-[#2196F3] rounded-[80px] px-6 py-3 mx-140 max-lg:hidden'
+            >
+                <p className='font-bold text-center text-white whitespace-nowrap'>مشاهده همه</p>
             </motion.div>
-
-
-      
-    </motion.div>
-  )
+        </motion.div>
+    )
 }
 
-export {LandingCourse} 
+export {LandingCourse}

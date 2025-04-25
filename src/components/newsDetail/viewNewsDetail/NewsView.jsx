@@ -8,8 +8,8 @@ const NewsView = ({ detailsNewsDto }) => {
   return (
     <div className='flex px-20 pt-14 gap-8 
     max-lg:flex-col'>
-      <div className="border-2 rounded-3xl w-[80%]">
-        <img className='relative' src={(detailsNewsDto.currentImageAddress) ? detailsNewsDto.currentImageAddress : "notfound.jpg"} />
+      <div className="border-2 rounded-[5px] w-[82%]">
+        <img className='relative' src={(detailsNewsDto.currentImageAddress) ? detailsNewsDto.currentImageAddress : "./notfound.jpg"} />
 
       </div>
       <div className='absolute  top-40 right-30 h-12 bg-[#FFFFFF] px-4 rounded-3xl flex items-center gap-1.5'> <FullHeart /> <p className='text-[#F44336] text-2xl font-medium'>{detailsNewsDto
