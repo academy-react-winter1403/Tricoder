@@ -4,9 +4,8 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeMenu } from "../../../../redux/Store/menuSlice";
 import { BookOpenCheck, BookOpenText, CalendarHeart, FileHeart, KeyRound, LayoutDashboard, LucideUserCircle2, MessageCircleMore, Power,} from "lucide-react";
 
-
 const Sidebar = () => {
-  const itsOpen = useSelector((state) => state.menu.isOpen);
+  const itsOpen = useSelector((state) => state?.menu?.isOpen);
   const manuDispatch = useDispatch();
 
  

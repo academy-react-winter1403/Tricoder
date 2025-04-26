@@ -1,8 +1,6 @@
 import { Link } from "react-router-dom";
 import http from "../../../core/services/interceptor/index";
 import { useEffect, useState } from "react";
-import { useScroll } from "framer-motion";
-import axios from "axios";
 
 
 
@@ -10,21 +8,27 @@ const DashboardPage = () => {
 
     const [studentData, setStudentData] = useState(null);
 
+
     useEffect(() => {
         const fetchData = async () => {
             try {
-                const panelRes = await axios.get("https://classapi.sepehracademy.ir/api/SharePanel/GetProfileInfo");
-                console.log(panelRes);
-                setStudentData(panelRes?.data)
+                const panelRes = await http.get("/SharePanel/GetProfileInfo");
+                //
+          
+               if (panelRes) {
+            
+                setStudentData(panelRes)
+               }
+            //    panelRes&&   
             } catch (error) {
-                console.error("error")
+                console.error(error)
             }
         };
 
         fetchData();
     }, []);
 
-
+    // console.log(studentData)
 
     return (
         <div className="  h-[590px]">
@@ -33,17 +37,18 @@ const DashboardPage = () => {
 
                 <div className=" flex justify-around mt-[20px]">
                     <div className=" ">
+                    
                         <span className="text-[20px] font-yekan-500 text-[#8f979a]"> شماره همراه: </span>
-                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px] tracking-[5px]">09010114397</span>
+                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px] tracking-[5px]">{studentData?.phoneNumber}</span>
                     </div>
                     <div className=" ">
                         <span className="text-[20px] font-yekan-500 text-[#8f979a]"> تاریخ تولد: </span>
-                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px] tracking-[5px]"> 1404/01/21 </span>
+                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px] tracking-[5px]"> {studentData?.birthDay}</span>
                     </div>
 
                     <div className=" ">
                         <span className="text-[20px] font-yekan-500 text-[#8f979a]"> نام و نام خانوادگی: </span>
-                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]"> بیتا قنبری </span>
+                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]">{studentData?.lName} </span>
                     </div>
 
 
@@ -52,11 +57,11 @@ const DashboardPage = () => {
 
                     <div className="flex flex-row-reverse " >
                         <span className="text-[20px] font-yekan-500 text-[#8f979a]"> :ایمیل</span>
-                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px] tracking-[3px]"> bitaqanbari@gmail.com</span>
+                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px] tracking-[3px]"> {studentData?.email}</span>
                     </div>
                     <div className=" ">
                         <span className="text-[20px] font-yekan-500 text-[#8f979a]"> شماره ملی: </span>
-                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]"> 1234567890 </span>
+                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]"> {studentData?.nationalCode} </span>
                     </div>
 
                 </div>
@@ -99,10 +104,8 @@ const DashboardPage = () => {
                                 <div className="  text-[15px] font-yekan-500 flex gap-[5px]">
                                     <span className="block"> تومان </span>
                                     <span className="block text-[#6d0092] text-[17px]"> 500,000</span>
-
                                 </div>
                                 <div className=" text-[12px] text-[#7a7a7a] font-yekan-500"> دکتر بحرالعلوم</div>
-
                             </div>
                         </div>
 
