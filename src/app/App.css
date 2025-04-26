@@ -7,6 +7,9 @@
   background-repeat: no-repeat;
   background-size: contain;
 }
+.heroBG.dark{
+  display: none;
+}
 body{
   color: #263238;
   direction: rtl;
@@ -15,9 +18,12 @@ body{
 
  }
 
- body.dark{
+ .dark{
   background: #03031b;
   color:#b2b2f2; 
+  
  }
+
+ 
 
  
