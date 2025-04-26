@@ -114,8 +114,8 @@ const LandingCourse = () => {
                         transition: { type: "spring", stiffness: 400, damping: 10 }
                         }}
                         key={ind} 
-                        className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col
-                         max-lg:h-fit max-md:w-60 max-lg:justify-center '>
+                        className={`w-74 h-97 bg-[#FFFF] rounded-3xl p-4  shadow-2xl flex-col 
+                         max-lg:h-fit max-md:w-60 max-lg:justify-center `}>
                              <motion.img    
                              src={data.img} 
                              alt=''
