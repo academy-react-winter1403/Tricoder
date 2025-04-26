@@ -105,7 +105,7 @@ const LandingCourse = () => {
             <div
                 
             className='  my-12 gap-x-8 flex
-             max-lg:gap-y-4  max-lg:flex-col'>
+             max-lg:gap-y-4  max-lg:flex-col '>
 
                 {course.map((data,ind)=>(
                         <motion.div 

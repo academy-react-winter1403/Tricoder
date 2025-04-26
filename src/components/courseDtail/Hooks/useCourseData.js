@@ -13,8 +13,7 @@ const UseCourseDate = (id) => {
     useEffect(()=>{
         const fetchCourse = async () => {
             try{
-                const result = await
-                getcoursebyId(id);
+                const result = await getcoursebyId(id);
                 setCourse(result);
             }catch(errore){
                 setError(errore.response?.data?.massage||"خطا دریافت شد ");
