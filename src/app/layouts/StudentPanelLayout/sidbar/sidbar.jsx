@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import { FiX } from "react-icons/fi";
 import { useSelector, useDispatch } from "react-redux";
 import { closeMenu } from "../../../../redux/Store/menuSlice";
-import { BookOpenCheck, BookOpenText, CalendarHeart, FileHeart, KeyRound, LayoutDashboard, LucideUserCircle2, MessageCircleMore, Power,} from "lucide-react";
+import { BookOpenCheck,HomeIcon, BookOpenText, CalendarHeart, FileHeart, KeyRound, LayoutDashboard, LucideUserCircle2, MessageCircleMore, Power,} from "lucide-react";
 
 const Sidebar = () => {
   const itsOpen = useSelector((state) => state?.menu?.isOpen);
@@ -28,6 +28,7 @@ const Sidebar = () => {
         {console.log("itsOpen:", itsOpen)}
 
         <div className="flex   h-[30%]  flex-col  justify-center items-center mb-6">
+          <Link   to="/" className="relative   text-white   left-[40%]  "   ><HomeIcon/></Link>
           <img
             src=""
             className="  w-[8rem] h-[8rem]   xl:w-[8rem] xl:h-[8rem]  lg:w-[6rem] lg:h-[6rem]   
