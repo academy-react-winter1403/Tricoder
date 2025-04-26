@@ -111,14 +111,14 @@ const LandingCategory = () => {
       <div className='absolute top-725 right-153
       max-md:hidden max-xl:hidden'>  <CircleIcon /> </div>
       <div className='absolute right-110 top-610
-      max-md:top-520 max-md:right-3 max-xl:top-673- max-xl:right-50'><BigRectangle /></div>
+      max-md:top-690 max-md:right-3 max-xl:top-673- max-xl:right-50'><BigRectangle /></div>
       <div className='absolute right-20 top-660
       max-md:hidden max-xl:top-560 max-xl:hidden'><TextIcon /></div>
 
       <motion.div
       variants={container} 
       className='w-172   absolute top-580 right-170 grid grid-cols-2 grid-rows-2 gap-8 
-      max-md:right-7 max-md:top-510 max-md:gap-5 max-md:w-102 max-xl:right-50 max-xl:top-620 '>
+      max-md:right-7 max-md:top-700 max-md:gap-5 max-md:w-102 max-xl:right-50 max-xl:top-700 '>
 
         {CategoryItem.map((data, ind) => (
           <motion.div 

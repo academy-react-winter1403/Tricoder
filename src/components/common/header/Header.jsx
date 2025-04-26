@@ -14,36 +14,30 @@ const Header = ()=>{
 
     useEffect(() => {   
         const savedMode = localStorage.getItem('darkMode');  
-        if (savedMode) {  
-          setDarkMode(JSON.parse(savedMode));  
+        if (savedMode ==='true') {  
+        document.documentElement.classList.add('dark')
+        setDarkMode(true)
         }  
         }, []);  
 
-        useEffect(() => {  
-        
-            if (darkMode) {  
-              document.body.classList.add('dark');  
-            } else {  
-              document.body.classList.remove('dark');  
-            }  
-         
-       
-            localStorage.setItem('darkMode', JSON.stringify(darkMode));  
-            }, [darkMode]);  
-            
             
             const ThemeDarkMode = () => {  
-            setDarkMode(!darkMode);  
-            console.log(ThemeDarkMode)
+             const isDark = !darkMode;
+             console.log(isDark)
+             console.log(darkMode)
+             setDarkMode(isDark) 
+             if(isDark){
+              document.documentElement.classList.add('dark')
+             }
+             else{
+              document.documentElement.classList.remove('dark')
+
+             }
+             localStorage.setItem('darkMode', isDark)
+
             setThemeIcon(prevIcon => (prevIcon === sunIcon ? moonIcon : sunIcon));  
             
             }
- 
-
-           
-
-      
-
 
     return(
         <div className=" w-full h-24 px-20 flex  items-center justify-between
@@ -51,10 +45,10 @@ const Header = ()=>{
             <div className=" h-8 flex gap-1 pt-2 
             max-md:-mr-20">
                <Logo/>
-                <p className={`text-xl tracking-tight leading-9 max-md:text-sm  `}>هگزا اسکواد</p>
+                <p className={`text-xl tracking-tight leading-9 max-md:text-sm `}>هگزا اسکواد</p>
             </div>
             <div className="w-86.5 h-8 flex gap-10 text-base font-medium tracking-tight whitespace-nowrap leading-13 mr-25
-            max-md:text-[12px] max-md:gap-3 max-md:mx-6  ">
+            max-md:text-[12px] max-md:gap-3 max-md:mx-6 ">
                 
                 <Link to={"/courses"}>   دوره‌ها     </Link>
                 <p>اساتید</p>
