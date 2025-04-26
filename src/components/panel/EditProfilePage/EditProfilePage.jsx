@@ -7,23 +7,18 @@ import { useDispatch } from 'react-redux';
 import { setAvatar } from "../../../redux/Store/profileSlice"
 
 const EditProfilePage = () => {
-  const [initialValues, setInitialValues] = useState(null); 
-  const [preview, setPreview] = useState(null); 
-  const fileRef = useRef(); 
+  const [initialValues, setInitialValues] = useState(undefined);
+  const [preview, setPreview] = useState(undefined);
+  const fileRef = useRef(null);
 
   const dispatch = useDispatch();
-  const token = localStorage.getItem("eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6IjY4NTdmNjM5LTlhYzAtNDEyMS1iZjhlLTA5ZTZkZmQ1MDExZCIsInN1YiI6IjY4NTdmNjM5LTlhYzAtNDEyMS1iZjhlLTA5ZTZkZmQ1MDExZCIsImp0aSI6IjNiZDIzMmU4LTA0NWEtNGE0YS1hMzg0LTEyZWIyNzdhZWQxZSIsImVtYWlsIjoiZmF0ZW1laGFtaXJpOTc4QGdtYWlsLmNvbSIsIlVpZCI6IlBRWk5WVkQ1Ti9icUVDbVFzYW4xZXNLQTZ3ZktnTTlXdktSdllOcDFOUVU9RXM3ODg5OGU2MjQ3OTY4NGZjZDE1MjVlMDg0YWM2ZjNhYzNlMjE5ZWVlMzE4YjE1M2ZlMDE4YTNmNTFmYzU1NThkYTM0YSIsImV4cCI6MTc0NTY2MzMyNCwiaXNzIjoiU2VwZWhyQWNhZGVteSIsImF1ZCI6IlNlcGVockFjYWRlbXkifQ.l5dW6QFoapx52SlsFyasNCVxJk21-PsK3D_0lMh0qPU");
 
 
   useEffect(() => {
 
-   
-    http.get("/SharePanel/GetProfileInfo",{
-      headers: {
-        Authorization: token, // ست کردن توکن
-      },
-    }).then((res) => {
-      const data = res.data;
+
+    http.get("/SharePanel/GetProfileInfo").then((res) => {
+      const data = res;
       setInitialValues({
         fName: data.fName || "",
         lName: data.lName || "",
@@ -46,27 +41,26 @@ const EditProfilePage = () => {
 
 
 
-   
 
 
-  const handleSubmit = async (values, { setSubmitting }) => {
+
+  const handleSubmit = async (values) => {
     try {
       const formData = new FormData();
+      console.log(values)
 
-      
       for (const key in values) {
         if (values[key]) {
           formData.append(key, values[key]);
         }
       }
 
-  
+
 
 
       const response = await http.put("/SharePanel/UpdateProfileInfo", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
-          Authorization: token, // ست کردن توکن اینجا هم
         },
       });
 
@@ -75,13 +69,11 @@ const EditProfilePage = () => {
     } catch (error) {
       console.error("🛑 خطا:", error);
       alert("خطا در بروزرسانی اطلاعات");
-    } finally {
-      setSubmitting(false);
     }
   };
 
 
-   
+
 
   return (
     <div
@@ -108,7 +100,7 @@ const EditProfilePage = () => {
               >
                 <Camera />
               </div>
-          
+
               <input
                 type="file"
                 accept="image/*"
@@ -120,16 +112,16 @@ const EditProfilePage = () => {
                     const previewUrl = URL.createObjectURL(file);
                     setPreview(previewUrl);
                     setFieldValue("avatar", file);
-                    dispatch(setAvatar(previewUrl)); 
+                    dispatch(setAvatar(previewUrl));
 
-               
+
                   }
                 }}
-                
+
               />
             </div>
 
-            <div  className="  w-[85%]    flex   flex-wrap  gap-10 ">
+            <div className="  w-[85%]    flex   flex-wrap  gap-10 ">
               <div>
                 <label className="block mb-1">نام</label>
                 <Field
@@ -200,13 +192,6 @@ const EditProfilePage = () => {
                 className="bg-[#6033FE] w-[12rem] hover:bg-[#6033A0] text-white px-4 py-2 rounded-lg shadow"
               >
                 {isSubmitting ? "در حال ذخیره..." : "ثبت اطلاعات"}
-              </button>
-              <button
-                type="button"
-                className="text-gray-600 border px-4 py-2 rounded-lg shadow"
-                onClick={() => window.history.back()}
-              >
-                بازگشت
               </button>
             </div>
           </Form>
