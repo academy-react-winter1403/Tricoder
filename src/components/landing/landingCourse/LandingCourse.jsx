@@ -90,7 +90,7 @@ const LandingCourse = () => {
     viewport={{ once: true, margin: "-100px" }}
     variants={containerVariants} 
     className=' mx-30  my-40 flex  flex-col justify-center
-      max-md:mt-70 '>
+      max-md:mt-80 max-md:mx-27 '>
         <motion.div 
         variants={itemVariants}
         className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
@@ -102,8 +102,8 @@ const LandingCourse = () => {
         </motion.div> 
             <div
                 
-            className='h-97  my-12 gap-8 flex
-            max-md:grid grid-cols-4 max-md: max-xl:grid max-xl:grid-cols-2 max-xl:gap-x-90 max-lg:items-center  max-lg:gap-9  '>
+            className='  my-12 gap-x-8 flex
+             max-lg:gap-y-4  max-lg:flex-col'>
 
                 {course.map((data,ind)=>(
                         <motion.div 
@@ -115,18 +115,18 @@ const LandingCourse = () => {
                         }}
                         key={ind} 
                         className='w-74 h-97 bg-[#FFFFFF] rounded-3xl p-4  shadow-2xl flex-col
-                        max-lg:px-4 max-lg:h-fit max-md:w-fit '>
+                         max-lg:h-fit max-md:w-60 max-lg:justify-center '>
                              <motion.img    
                              src={data.img} 
                              alt=''
                              whileHover={{ scale: 1.05 }}
-                             className='max-md:w-43'/>
+                             className='max-md:w-60'/>
                              
                              <p className='font-bold text-base font-yekan-600 my-4 
                              max-md:text-xs'>{data.title}</p>
 
                              <div className='w-66 h-10 rounded-3xl  bg-[#ECEFF1]  whitespace-nowrap my-3.5 flex justify-between py-2.5 px-4
-                             max-md: max-md: max-md:'>
+                             max-md:w-54 max-md: max-md:'>
                                 <div className='  w-14.5 flex  
                                 max-md:mx-2'>
                                     <div className='max-md:hidden'> <Note/></div>
@@ -134,13 +134,13 @@ const LandingCourse = () => {
                                 </div>
              
                                 <div className=' w-14.5 flex 
-                                max-md:mx-2'>
+                                max-md:mx-1'>
                                     <div className='max-md:hidden'> <Clock/></div>
                                     <p className='text-xs font-medium mr-1 tracking-tight'>{data.time}</p>
                                 </div>
              
                                 <div className=' w-14.5 flex  
-                               max-md:mx-4 '>
+                               max-md:mx-2 '>
                                     <div className='max-md:hidden '> <Calender/></div>
                                     <p className='text-xs font-medium mr-1 '>{data.date}</p>
                                 </div>

@@ -64,7 +64,7 @@ const Service = () => {
     whileInView="show"
     viewport={{ once: true, margin: "-50px" }}
     variants={container}
-    className=' h-97  mx-30 mt-20 '>
+    className=' h-97  mx-30 mt-20      max-lg:mx-23 '>
         <motion.div
         variants={item}  
         className='w-70 h-18 border-b-4 b  mx-125  border-[#2196F3]  border-b-gradient-to-r from-[#2196F300] via-[#2196F3] to-[#2196F300] 

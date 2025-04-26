@@ -18,7 +18,7 @@ const Footer = ()=>{
             </div>
 
             <div className="mx-122 w-120 pt-12 relative
-            max-md:mx-8 max-md:w-90">
+            max-md:mx-13 max-md:w-90">
                 <p className="text-[#FFFFFF] text-base font-normal text-center pb-6
                 max-md:text-sm">برای دریافت اخبار از طریق ایمیل ثبت نام  کنید</p>
                     <input className="bg-[#FFFFFF] w-116 h-14 rounded-[50px] text-left pl-4
