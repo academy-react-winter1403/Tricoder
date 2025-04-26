@@ -2,7 +2,7 @@ import { Field, Formik } from "formik";
 import { Form, useNavigate } from "react-router-dom";
 import { Button } from "../../common/button/button";
 import { AuthSuggestion } from "../../common/AuthSuggestion/AuthSuggestion";
-import { useState } from "react";
+import { use, useState } from "react";
 
 import http from "../../../core/services/interceptor";
 
@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { setItem } from "../../../core/services/common/storage.services";
 
 const Login = () => {
+
   const [phoneOrGmail, setPhoneOrGmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
@@ -28,15 +29,24 @@ const Login = () => {
     };
 
     try {
-      const data = await http.post("/Sign/Login", user);
-      console.log(data);
-      toast.success("ورود با موفقیت انجام شد", {
-        theme: "colored",
-        className: "custom-toast",
-      });
+      console.log(user)
 
-      setItem("token", data?.token);
-      navigate("/");
+      const data = await http.post("/Sign/Login", user);
+      if (data.success) {
+        toast.success("ورود با موفقیت انجام شد", {
+          theme: "colored",
+          className: "custom-toast",
+        });
+  
+        setItem("token", data?.token);
+        navigate("/");
+      } else {
+        toast.error("ورود با موفقیت انجام نشد", {
+          theme: "colored",
+          className: "custom-toast",
+        });
+      }
+   
     } catch (error) {
       toast.error("اطلاعات ورودی نادرست است", {
         theme: "colored",
