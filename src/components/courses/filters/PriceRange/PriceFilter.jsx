@@ -1,6 +1,8 @@
 import Slider from "rc-slider";
 import "rc-slider/assets/index.css";
 import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+// import { setPriceRange } from "./";
 
 const PriceFilter = () => {
   const [priceRange, setPriceRange] = useState([150000, 1450000]);
