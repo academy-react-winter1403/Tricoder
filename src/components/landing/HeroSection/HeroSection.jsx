@@ -13,7 +13,7 @@ import { HtmlIcon } from '../../../assets/fonts/icons/landing/heroSection/smallI
 const HeroSection = () => {
   return (
     <div className='  h-240 w-full 
-    max-md:h-80 max-xl:h-200' >
+    max-md:h-40 max-xl:h-200' >
       {/* <img src='./public/landing/hero-bg.png ' className='w-full relative  ' alt='' /> */}
 
      <div className='pt-7    flex flex-col gap-9 items-center
