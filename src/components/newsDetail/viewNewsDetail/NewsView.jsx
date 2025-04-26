@@ -8,7 +8,7 @@ const NewsView = ({ detailsNewsDto }) => {
   return (
     <div className='flex px-20 pt-14 gap-8 
     max-lg:flex-col'>
-      <div className="border-2 rounded-[5px] w-[82%]">
+      <div className="border-2 rounded-[5px] w-[30%] ">
         <img className='relative' src={(detailsNewsDto.currentImageAddress) ? detailsNewsDto.currentImageAddress : "/newsDetail/notfound.jpg"} />
 
       </div>
@@ -16,8 +16,7 @@ const NewsView = ({ detailsNewsDto }) => {
         .inUsersFavoriteCount}</p></div>
       <div className='flex flex-col '>
         <p className='text-[32px]  font-bold'>{detailsNewsDto.title}</p>
-        <p className='font-normal text-[#455A64] text-base leading-7'>همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش یک موضوع خاص مثل آموزش از کتاب، ویدئو یا هر آنچه که برای آموزش است نخواهد بود و این مقاله به صورت جامع در مورد چگونگی آموزش دیدن و یادگیری است.همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش یک موضوع خاص مثل آموزش از کتاب، ویدئو یا هر آنچه که همانطور که از عنوان مقاله مشخص است، صحبت ما روی آموزش  دیدن و یادگیری است.همانطور که از عنوان مقاله.
-          قبل از هر چیزی باید بدانیم که نمیشه یک روند یا روش خاصی رو برای همه افراد که ذهنیت های متفاوتی هم از هم دارند، در نظر گرفت. ولی خب هدف تمامی این افراد آموزش دیدن و رسیدن به درک عمیقی از اون مطلب است ولی آیا برای تمامی افراد آموزش دیدن به این جا ختم میشود و همه به درک عمیقی از اون مطلب میرسند؟ قطعا خیر.{detailsNewsDto.miniDescribe}</p>
+        <p className='font-normal text-[#455A64] text-base leading-7'>{detailsNewsDto.describe}</p>
 
         <div className='flex justify-between  pt-4 items-center'>
 

@@ -4,15 +4,15 @@ import { Header } from '../components/common/header/Header'
 import { Footer } from '../components/common/footer/Footer'
 
 
-function App({darkMode}) {
+function App() {
 
   const location = useLocation()
   console.log(location);
 
   return (
-    <main className={`flex flex-col ${location.pathname === '/' && !darkMode  ? "heroBG" : ""} 
+    <main className={`flex flex-col ${location.pathname === '/'   ? "heroBG" : ""} 
      `}>
-      <Header darkMode={darkMode}/>
+      <Header />
       <Outlet />
       <Footer/>
     </main>
