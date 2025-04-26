@@ -4,6 +4,8 @@ import { Clock } from '../../../assets/fonts/icons/landing/courseIcon/Clock'
 import { Calender } from '../../../assets/fonts/icons/landing/courseIcon/Calender'
 import { LikeIcon } from '../../../assets/fonts/icons/landing/courseIcon/LikeIcon'
 import { motion } from "framer-motion";
+import { toast } from 'react-toastify';
+import { Link } from 'react-router-dom'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -90,7 +92,7 @@ const LandingCourse = () => {
     viewport={{ once: true, margin: "-100px" }}
     variants={containerVariants} 
     className=' mx-30  my-40 flex  flex-col justify-center
-      max-md:mt-80 max-md:mx-27 '>
+      max-md:mt-80 max-md:mx-27  '>
         <motion.div 
         variants={itemVariants}
         className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
@@ -174,7 +176,8 @@ const LandingCourse = () => {
                 ))}
             </div>
             
-            <motion.div 
+            <Link to={"/courses"}>
+                <motion.div 
                 variants={itemVariants}
                 whileHover={{ scale: 1.05 }}
                 whileTap={buttonTap}
@@ -182,6 +185,8 @@ const LandingCourse = () => {
             >
                 <p className='font-bold text-center text-white whitespace-nowrap'>مشاهده همه</p>
             </motion.div>
+            </Link>
+            
         </motion.div>
     )
 }

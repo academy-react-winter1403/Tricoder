@@ -85,10 +85,10 @@ const SearchNews = () => {
         if (debouncedSearchTerm) {
             getNewsData(debouncedSearchTerm,currentPage);
         }
-    }, [debouncedSearchTerm, sortConfig]);
+    }, [debouncedSearchTerm, sortConfig,currentPage]);
 
     useEffect(() => {
-        getNewsData();
+        getNewsData(debouncedSearchTerm, currentPage);
     }, []);
 
     const handlePageChange = (newPage) => {
@@ -153,7 +153,7 @@ const SearchNews = () => {
             <div className="m-auto mt-[37px]">
                 <ChangePage
                 currentPage={currentPage}
-                totalPages={Math.floor(+totalCount / 9)}
+                totalPages={Math.ceil(+totalCount / sortConfig.rowsOfPage)}
                 onPageChange={handlePageChange}
                 />
             </div>
