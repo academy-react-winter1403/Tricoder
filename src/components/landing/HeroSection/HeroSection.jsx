@@ -16,7 +16,7 @@ const HeroSection = () => {
     max-md:h-80 max-xl:h-200' >
       {/* <img src='./public/landing/hero-bg.png ' className='w-full relative  ' alt='' /> */}
 
-     <div className='pt-26    flex flex-col gap-9 items-center
+     <div className='pt-7    flex flex-col gap-9 items-center
      max-lg:gap-1 max-lg:pt-8'>
        
      <div className=' text-center tracking-tight whitespace-nowrap pt-10 mx-auto 
