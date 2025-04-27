@@ -35,7 +35,7 @@ const NewsView = ({ detailsNewsDto }) => {
               max-lg:hidden '>{detailsNewsDto.insertDate}</p>
             </div>
           </div>
-          <div className=' bg-white flex gap-3 justify-center rounded-2xl p-3 shadow-2xl'>
+          <div className=' bg-white flex gap-3 justify-center rounded-2xl p-3 shadow-2xl landingInput'>
             <img className='w-10 h-10 rounded-xl' src='./public/landing/slider/teacher2.png' />
             <p className='font-bold  leading-10 pl-3
             max-lg:whitespace-nowrap'>{detailsNewsDto.addUserFullName}</p>

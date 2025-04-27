@@ -7,7 +7,7 @@ import { WhatsApp } from "../../../assets/fonts/icons/footer/footerMediaIcon/Wha
 
 const Footer = ()=>{
     return(
-        <div className="bg-[#252641] h-138.5 mt-20
+        <div className="bg-[#252641] h-138.5 mt-20 LandingTeacher
         max-md:mt-80">
             <div className="w-115 text-center mx-122 pt-14
             max-md:mx-6 max-md:w-100">

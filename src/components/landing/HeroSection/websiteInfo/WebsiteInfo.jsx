@@ -26,7 +26,7 @@ const WebsiteInfo = () => {
    max-lg:gap-2  max-lg:w-full max-lg:-mr-4 '>
 
         {WebInfo.map((data,ind)=>(
-                 <div className='w-55 h-53 rounded-2xl bg-[#FFFFFF99] border-[4px] border-white whitespace-nowrap
+                 <div key={ind} className='w-55 h-53 rounded-2xl bg-[#FFFFFF99] border-[4px] border-white whitespace-nowrap landingInfo
               max-md:h-22 max-lg:' >
                  <img className='mx-18  mt-6
                  max-md:w-9 max-md:mx-7 max-md:mt-2 max-xl:' src={data.img} alt=''/>

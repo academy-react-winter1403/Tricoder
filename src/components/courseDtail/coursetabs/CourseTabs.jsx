@@ -30,7 +30,7 @@ const CourseTabs = () => {
                           <button  
                           key={index}
                           onClick={() =>{changeTab(index)}}
-                            className={`h-[3rem] text-lg border-b-2 border-blue-50  text-sm ${
+                            className={`h-[3rem] text-lg border-b-2 border-blue-50 courseTab text-sm ${
                               activeTab == index
                                 ? 'border-b-2 border-blue-400 text-blue-500'   
                                 : 'text-black'

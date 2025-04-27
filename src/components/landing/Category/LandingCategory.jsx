@@ -111,7 +111,7 @@ const LandingCategory = () => {
       <div className='absolute top-725 right-153
       max-md:hidden max-xl:hidden'>  <CircleIcon /> </div>
       <div className='absolute right-110 top-610
-      max-md:top-690 max-md:right-3 max-xl:top-673- max-xl:right-50'><BigRectangle /></div>
+      max-md:top-690 max-md:right-3 max-xl:top-673- max-xl:right-50 landingBigIcon'><BigRectangle /></div>
       <div className='absolute right-20 top-660
       max-md:hidden max-xl:top-560 max-xl:hidden'><TextIcon /></div>
 
@@ -124,7 +124,7 @@ const LandingCategory = () => {
           <motion.div 
           key={ind} 
           className='bg-white w-82 h-82 rounded-3xl shadow-2xl relative
-          max-md:w-51 max-md:h-57' 
+          max-md:w-51 max-md:h-57 landingInput' 
           variants={cardVariants}
             whileHover={{
               y: -10,

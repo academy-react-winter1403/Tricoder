@@ -2,6 +2,10 @@
 
 
 
+.dark .heroBG{
+  background-image: none !important
+}
+
 .heroBG{
   background-image: url("/public/landing/hero-bg.png");
   background-repeat: no-repeat;
@@ -21,7 +25,26 @@ body{
   color:#b2b2f2;
  
  }
+ .dark .landingInput{
+  background: rgba(0, 0, 0, 0.1);
+  border: 2px solid #b2b2f2;
+   
+ }
 
+ .dark .LandingTeacher{
+  background: #03031b;
+
+ }
+
+ .dark .landingInfo{
+  color:#03031b;
+ }
+.dark .landingBigIcon{
+  display: none;
+}
+.dark .courseTab{
+  color:#b2b2f2;
+}
 
  
 

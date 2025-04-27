@@ -13,9 +13,9 @@ const View2 = ({data}) => {
         <div className=' flex flex-col gap-[32px]'>
             <div className='border-1 h-[212px] rounded-[24px] flex flex-row-reverse justify-center gap-[20px] items-center'>
                 <div className=' w-[628px] h-[180px]'>
-                    <div className=' w-[190px] h-[25px] whitespace-nowrap text-[16px] font-yekan-700 place-self-start text-fontColor-1 '> {data.title}</div>
+                    <div className=' w-[190px] h-[25px] whitespace-nowrap text-[16px] font-yekan-700 place-self-start text-fontColor-1 courseTab'> {data.title}</div>
 
-                    <div className=' w-[628px] h-[66px] mt-[8px] text-right text-fontColor-1 text-[14px] font-yekan-500'>
+                    <div className=' w-[628px] h-[66px] mt-[8px] text-right text-fontColor-1 text-[14px] font-yekan-500 courseTab'>
                     محبوب ترین کتابخانه ی جاوااسکریپت حل مساله به
                     روش کدنویسی پیشرفته و تمیز؛ برای مسائل واقعی دنیای نرم افزار  محبوب ترین کتابخانه 
                     ی جاوااسکریپت محبوب ترین کتابخانه ی جاوااسکریپت حل مساله به روش کدنویسی پیشرفته 
@@ -29,7 +29,7 @@ const View2 = ({data}) => {
                         </div>
                         <div 
                         className=' w-[493px] h-[44px] rounded-[24px] bg-[#ECEFF1] flex text-[14px] font-yekan-500 
-                        justify-center gap-[16px] items-center'>
+                        justify-center gap-[16px] items-center landingInput'>
                             <div className='flex items-center gap-[2px]'> 
                                 <Teacher/>
                                 {data.teacherName}

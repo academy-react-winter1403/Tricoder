@@ -25,7 +25,7 @@ const TeacherInfo = ({courseid}) => {
         {course?.teacherName}
       </span>
       <span   className='text-[#455A64]    text-xs '>
-      {course?.miniDescribe}
+      
       </span>
     </div>
        

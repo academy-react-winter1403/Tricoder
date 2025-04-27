@@ -39,7 +39,7 @@ const TeacherSlider = () => {
 
   return (
     <div className='my-25 bg-[#E3F2FD] h-187 pt-16
-    max-md:h-150 max-xl:my-70'>
+    max-md:h-150 max-xl:my-70 LandingTeacher'>
         <div className='h-130    mx-29 relative  '>
 
         <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125

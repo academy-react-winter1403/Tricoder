@@ -6,6 +6,7 @@ import { LikeIcon } from '../../../assets/fonts/icons/landing/courseIcon/LikeIco
 import { motion } from "framer-motion";
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom'
+import http from '../../../core/services/interceptor'
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -39,6 +40,15 @@ const buttonTap = {
 };
 
 const LandingCourse = () => {
+
+    // const getData = ()=>{
+    //     try {
+            
+    //     } catch (error) {
+            
+    //     }
+    // }
+
     const course=[
         {
             img:"./public/landing/course/React.png",
@@ -85,6 +95,13 @@ const LandingCourse = () => {
             price:68000
         },
     ]
+
+
+    const getingdata =()=>{
+        const result = http.get("")
+    }
+
+
   return (
     <motion.div 
     initial="hidden"
@@ -117,7 +134,7 @@ const LandingCourse = () => {
                         }}
                         key={ind} 
                         className={`w-74 h-97 bg-[#FFFF] rounded-3xl p-4  shadow-2xl flex-col 
-                         max-lg:h-fit max-md:w-60 max-lg:justify-center `}>
+                         max-lg:h-fit max-md:w-60 max-lg:justify-center landingInput`}>
                              <motion.img    
                              src={data.img} 
                              alt=''
@@ -127,7 +144,7 @@ const LandingCourse = () => {
                              <p className='font-bold text-base font-yekan-600 my-4 
                              max-md:text-xs'>{data.title}</p>
 
-                             <div className='w-66 h-10 rounded-3xl  bg-[#ECEFF1]  whitespace-nowrap my-3.5 flex justify-between py-2.5 px-4
+                             <div className='w-66 h-10 rounded-3xl  bg-[#ECEFF1]  whitespace-nowrap my-3.5 flex justify-between py-2.5 px-4 landingInput
                              max-md:w-54 max-md: max-md:'>
                                 <div className='  w-14.5 flex  
                                 max-md:mx-2'>
