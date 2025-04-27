@@ -21,6 +21,7 @@ const NewsView = ({ detailsNewsDto }) => {
         <div className='flex justify-between  pt-4 items-center'>
 
           <div className='flex gap-4 mt-1 '>
+            
             <div className='flex gap-1'>
               <EyeIcon />
               <p className='text-sm text-[#2196F3] '>{detailsNewsDto.currentView}</p>
