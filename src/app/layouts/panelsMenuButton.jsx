@@ -9,7 +9,7 @@ const PanlsMenuButton = () => {
 return(
   <>
 
-    <button  className="md:hidden font-bold p-2  text-slate-500  text-xl  text-black "
+    <button  className="md:hidden font-bold p-2  text-slate-500  text-xl"
     onClick={() => dispatch(OpenMenu())}>
     ☰
     </button>

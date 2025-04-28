@@ -22,7 +22,8 @@ const WebsiteInfo = () => {
     ]
 
   return (
-    <div className='w-[70%] h-53 flex justify-between gap-8
+    <div className='m-auto'>
+          <div className='w-[70%] h-53 flex justify-between gap-8
    max-lg:gap-2  max-lg:w-full max-lg:-mr-4 '>
 
         {WebInfo.map((data,ind)=>(
@@ -42,6 +43,8 @@ const WebsiteInfo = () => {
        
       
     </div>
+    </div>
+  
   )
 }
 

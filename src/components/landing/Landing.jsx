@@ -8,7 +8,7 @@ import { TeacherSlider } from "./Slider/TeacherSlider"
 
 const Landing = () => {
     return (
-        <div className="w-full">
+        <div className="w-full flex flex-col justify-center">
             <HeroSection />
             <Service />
             <LandingCourse />

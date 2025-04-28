@@ -6,7 +6,7 @@ import { NewsDetailReply } from './NewsDetailReply'
 
 const NewsDetailComment = () => {
   
-
+  
   
   
   return (
