@@ -22,21 +22,23 @@ const WebsiteInfo = () => {
     ]
 
   return (
-    <div className='m-auto'>
-          <div className='w-[70%] h-53 flex justify-between gap-8
-   max-lg:gap-2  max-lg:w-full max-lg:-mr-4 '>
+    <div className='mx-auto '>
+          <div className='w-full  flex justify-between gap-8 items-center mx-auto
+   max-lg:gap-2  max-lg:w-full max-lg:-mr-2 '>
 
         {WebInfo.map((data,ind)=>(
-                 <div key={ind} className='w-55 h-53 rounded-2xl bg-[#FFFFFF99] border-[4px] border-white whitespace-nowrap landingInfo
+                 <div key={ind} className='w-55 h-53  mx-auto flex-col justify-center items-center rounded-2xl bg-[#FFFFFF99] border-[4px] border-white whitespace-nowrap landingInfo
               max-md:h-22 max-lg:' >
-                 <img className='mx-18  mt-6
+                <div className=' flex flex-col justify-center items-center mx-auto '>
+                <img className='  mt-6
                  max-md:w-9 max-md:mx-7 max-md:mt-2 max-xl:' src={data.img} alt=''/>
         
-                <p className='text-4xl font-black pt-4 px-20
+                <p className='text-4xl font-black pt-4 
                 max-md:text-[15px] max-md:pt-2 max-md:px-8'>{data.num}</p>
-                <p className='text-xl font-medium px-14
+                <p className='text-xl font-medium -mr-
                 max-md:text-[11px] max-md:px-4.5'> {data.info}</p>
                
+                </div>
              </div>
         ))}
         

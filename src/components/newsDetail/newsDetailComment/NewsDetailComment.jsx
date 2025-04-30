@@ -2,11 +2,39 @@ import React from 'react'
 import { NewsCommentLike } from "../../../assets/fonts/icons/newsDetail/newsComment/NewsCommentLike"
 import { CommentReply } from '../../../assets/fonts/icons/newsDetail/newsComment/CommentReply'
 import { NewsDetailReply } from './NewsDetailReply'
+import { useGetPostsQuery, usePostToDynamicUrlMutation } from '../../../core/services/interceptor/reduxIndex'
+import { useLocation, useParams } from 'react-router-dom'
 
 
-const NewsDetailComment = () => {
+const NewsDetailComment = () => { 
+  const { NewsId } = useParams();
+  const location = useLocation()
+  const [postToDynamicUrl] = usePostToDynamicUrlMutation();
+
+  const {data,error, isLoading } = useGetPostsQuery("/News/GetNewsComments?NewsId=" + NewsId)
   
-  
+  console.log(location);
+
+  if (data != undefined){
+    console.log(data)
+  }
+  else if(data === undefined){
+    console.error(error)
+  }
+
+  const handleSubmit = () => {
+    postToDynamicUrl({
+      url: "/News/CreateNewsComment",
+      data: {
+        newsId: NewsId,
+        userIpAddress: "192.11.86.20",
+        title: "عباس قلی",
+        describe: "سلام جالب نبود",
+        userId: "40581"
+      }
+    })
+    
+  }
   
   
   return (
@@ -15,10 +43,10 @@ const NewsDetailComment = () => {
               <p className='font-bold text-2xl text-center'>نظر کاربران درباره این مقاله</p>
               <div className='flex flex-col gap-4 items-center'>
                 <input className='h-25 w-full pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3' placeholder='نظر خودتو بنویس...' />
-                <button className='h-12 w-fit rounded-4xl px-6 leading-12 bg-[#2196F3] text-base font-bold text-white '>ارسال</button>
+                <button onClick={() => handleSubmit()} className='h-12 w-fit rounded-4xl px-6 leading-12 bg-[#2196F3] text-base font-bold text-white '>ارسال</button>
                
 
-                {/* {commentDtos.map((data,ind)=>(  */}
+                {data?.map((data,ind)=>(
                      <div  className='w-full flex flex-col gap-2.5 '>
       
                      <div className='flex justify-between '>
@@ -42,7 +70,7 @@ const NewsDetailComment = () => {
                         </div>
                       </div>
                   </div>
-                {/* ))}  */}
+                ))}
                
                 <NewsDetailReply/>
               </div>

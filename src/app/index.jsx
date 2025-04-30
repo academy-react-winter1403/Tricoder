@@ -10,8 +10,7 @@ function App() {
   console.log(location);
 
   return (
-    <main className={`flex flex-col ${location.pathname === '/'   ? "heroBG" : ""} 
-     `}>
+    <main className={`flex flex-col ${location.pathname === '/'   ? "heroBG" : ""}   `}>
       <Header />
       <Outlet />
       <Footer/>

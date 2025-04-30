@@ -7,9 +7,10 @@ import { WhatsApp } from "../../../assets/fonts/icons/footer/footerMediaIcon/Wha
 
 const Footer = ()=>{
     return(
-        <div className="bg-[#252641] h-138.5 mt-20 LandingTeacher
+        <div className="bg-[#252641] h-138.5 mt-20 LandingTeacher w-full flex-col justify-center items-center 
         max-md:mt-80">
-            <div className="w-115 text-center mx-122 pt-14
+            <div className="flex-col justify-center items-center w-full">
+            <div className="w-115 text-center  pt-14 flex-col justify-center items-center mx-auto
             max-md:mx-6 max-md:w-100">
               <div className="px-36
               max-md:px-28"><FooterLogo/></div>
@@ -17,7 +18,7 @@ const Footer = ()=>{
               max-md:text-sm">هدف ما سهولت دسترسی و دریافت  خدمات از همه ی نقاط کشور با کمترین تعرفه و بدون نیاز  مراجعه حضوری در کل فرایند ثبت </p>          
             </div>
 
-            <div className="mx-122 w-120 pt-12 relative
+            <div className=" w-fit pt-12 relative flex-col justify-center items-center mx-auto
             max-md:mx-13 max-md:w-90">
                 <p className="text-[#FFFFFF] text-base font-normal text-center pb-6
                 max-md:text-sm">برای دریافت اخبار از طریق ایمیل ثبت نام  کنید</p>
@@ -29,14 +30,14 @@ const Footer = ()=>{
                     </div>
             </div>
 
-            <div className="h-6 w-107 pt-14 mx-127 flex leading-5 
+            <div className="h-6 w-fit pt-14   leading-5  flex justify-center items-center mx-auto
             max-md:mx-7 max-md:text-sm ">
                 <p className="font-normal text-[#FFFFFF99] pl-10">دوره های اموزشی </p>
                 <div className="border-l-2 border-r-2 border-r-[#FFFFFF99] border-l-[#FFFFFF99]  h-5 px-10"><p className="font-normal text-[#FFFFFF99]">درباره ما</p></div>
                 <p className="font-normal text-[#FFFFFF99] pr-10">قوانین و مقررات</p>
             </div>
 
-            <div className="bg-[#00000033] mx-24 my-20 h-15 w-320 rounded-2xl flex justify-between
+            <div className="bg-[#00000033]  my-20 h-15 w-fit rounded-2xl flex justify-between gap-x-157 items-center mx-auto
             max-md:w-111 max-md:mx-1 max-md:gap-1">
                 <img className="py-5 pr-15
                 max-md:w-62 max-md:h-14 max-md:pr-2" src="./public/footer/Copyright (1).png"/>
@@ -49,6 +50,8 @@ const Footer = ()=>{
                     <Instagram/>
                 </div>
             </div>
+            </div>
+           
         </div>
     )
 }

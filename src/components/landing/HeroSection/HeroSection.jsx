@@ -36,7 +36,7 @@ const HeroSection = () => {
       </div>
       <div
         className="pt-7    flex flex-col gap-9 items-center
-     max-lg:gap-1 max-lg:"
+     max-lg:gap-1 max-md:pt-10 max-xl:pt-2"
       >
         <div
           className=" text-center tracking-tight whitespace-nowrap pt-10 mx-auto 

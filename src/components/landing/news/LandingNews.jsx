@@ -40,16 +40,17 @@ const LandingNews = () => {
 
 
   return (
-    <div className='mx-20  h-191'>
+    <div className='mx-20 flex-col
+    max-lg:mx-2 '>
 
       <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
-        max-md:h-9 max-md:w-30 max-md:mx-22'>
+        max-md:h-9 max-md:w-30 max-md:mx-145'>
         <p className='text-[40px] text-center whitespace-nowrap
         max-md:text-xl '>اخبار و مقالات  </p>
       </div>
 
-      <div className='h-148.5  my-10 flex gap-10
-        max-md:grid max-md:gap-4 max-md:'>
+      <div className='  my-10 flex gap-10 justify-center items-center
+        max-lg:flex-col max-md:gap-4 max-md:'>
 
         <div className='w-154 
           max-md:w-90 '>
@@ -80,7 +81,7 @@ const LandingNews = () => {
         max-md:text-sm'>لورم  ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از  طراحان گرافیک است   چاپگرها و متون بلکه روزنامه و مجله در ستون و  سطرآنچنان که لازم است   و برای شرایط فعلی تکنولوژی مورد.</p>
         </div>
 
-        <div className='w-154  mt-4
+        <div className='w-  mt-4
        max-md:-mr-3'>
 
           {SmallBlog.map((data, ind) => (
