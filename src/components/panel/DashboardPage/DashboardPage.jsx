@@ -63,6 +63,10 @@ const DashboardPage = () => {
                         <span className="text-[20px] font-yekan-500 text-[#8f979a]"> شماره ملی: </span>
                         <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]"> {studentData?.nationalCode} </span>
                     </div>
+                    <div className=" ">
+                        <span className="text-[20px] font-yekan-500 text-[#8f979a]"   style={{direction:"ltr"}}> شماره ملی: </span>
+                        <div className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]"> {studentData?.homeAdderess} </div>
+                    </div>
 
                 </div>
                 <Link to="/Studentpanel/editprofile">
