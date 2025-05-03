@@ -118,7 +118,7 @@ const Login = () => {
             <Button > دریافت کد تایید </Button>
 
             <AuthSuggestion
-              link={"/authentication/CreateAcount"}
+              link={"/Studentpanel/dashboard"}
               question={"حساب کاربری ندارید؟ "}
               suggest={"ثبت نام "}
             />

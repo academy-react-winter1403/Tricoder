@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Note } from '../../../assets/fonts/icons/landing/courseIcon/Note'
 import { Clock } from '../../../assets/fonts/icons/landing/courseIcon/Clock'
 import { Calender } from '../../../assets/fonts/icons/landing/courseIcon/Calender'
@@ -39,6 +39,22 @@ const buttonTap = {
 };
 
 const LandingCourse = () => {
+    const  [topCourses, setTopCourses] = useState([])
+    const getData = ()=>{
+        try {
+            const result = http.get("/Home/GetCoursesTop?Count=5")
+            setTopCourses(result)
+        } catch (error) {
+            console.log(error);
+            
+        }
+    }
+
+    useEffect(() => {
+      getData()
+    }, [])
+    
+
     const course=[
         {
             img:"./public/landing/course/React.png",
@@ -107,7 +123,7 @@ const LandingCourse = () => {
             className='  my-12 gap-x-8 flex
              max-lg:gap-y-4  max-lg:flex-col '>
 
-                {course.map((data,ind)=>(
+                {topCourses.map((data,ind)=>(
                         <motion.div 
                         variants={itemVariants}
                         whileHover={{ 
@@ -119,7 +135,7 @@ const LandingCourse = () => {
                         className={`w-74 h-97 bg-[#FFFF] rounded-3xl p-4  shadow-2xl flex-col 
                          max-lg:h-fit max-md:w-60 max-lg:justify-center `}>
                              <motion.img    
-                             src={data.img} 
+                             src={data.tumbImageAddress} 
                              alt=''
                              whileHover={{ scale: 1.05 }}
                              className='max-md:w-60'/>
@@ -132,19 +148,19 @@ const LandingCourse = () => {
                                 <div className='  w-14.5 flex  
                                 max-md:mx-2'>
                                     <div className='max-md:hidden'> <Note/></div>
-                                    <p className='text-xs font-medium mr-1'>{data.note}</p>
+                                    <p className='text-xs font-medium mr-1'>276درس</p>
                                 </div>
              
                                 <div className=' w-14.5 flex 
                                 max-md:mx-1'>
                                     <div className='max-md:hidden'> <Clock/></div>
-                                    <p className='text-xs font-medium mr-1 tracking-tight'>{data.time}</p>
+                                    <p className='text-xs font-medium mr-1 tracking-tight'> 10ساعت </p>
                                 </div>
              
                                 <div className=' w-14.5 flex  
                                max-md:mx-2 '>
                                     <div className='max-md:hidden '> <Calender/></div>
-                                    <p className='text-xs font-medium mr-1 '>{data.date}</p>
+                                    <p className='text-xs font-medium mr-1 '>  6آذر1403</p>
                                 </div>
              
                              </div>
@@ -152,9 +168,9 @@ const LandingCourse = () => {
                              <div className='text-sm flex justify-between  my-4 
                              max-md:whitespace-nowrap'>
                                  <span className='font-bold whitespace-nowrap
-                                 max-md:text-xs'>مدرس:  <span className='max-md:text-xs whitespace-nowrap font-normal'>{data.teacher} </span></span>
+                                 max-md:text-xs'>مدرس:  <span className='max-md:text-xs whitespace-nowrap font-normal'>{data.teacherName} </span></span>
                                  <p className=' whitespace-nowrap
-                                 max-md:mr-4 max-md:text-xs'>{data.student}  </p>
+                                 max-md:mr-4 max-md:text-xs'>{data.commandCount}  </p>
                              </div>
              
                                  <div className='flex gap-30 my-2.5

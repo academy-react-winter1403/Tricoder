@@ -1,18 +1,17 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-  type: [],
-};
 
 const courseType = createSlice({
-  name: "priceRange",
-  initialState,
+  name: "courseFilters",
+  initialState: {
+    technologis: undefined,
+  },
   reducers: {
-    setPriceRange: (state, action) => {
-      state.priceRange = action.payload;
+    setTechnology: (state, action) => {
+      state.technologis = [...state.technologis ,action.payload];
     },
   },
 });
 
-export const { setPriceRange } = priceRangeSlice.actions;
-export default priceRangeSlice.reducer;
+export const { setTechnology } = priceRangeSlice.actions;
+export default courseFilters.reducer;
