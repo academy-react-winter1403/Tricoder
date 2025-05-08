@@ -66,7 +66,7 @@ const HeroSection = () => {
         <div className="  max-lg max-lg:w-3/5 max-lg: ">
           <input
             className="  w-[99%] px-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative 
-      max-lg:my-3 max-md:h-8 max-lg:text-xs max-lg:rounded-xl"
+      max-lg:my-3 max-md:h-8 max-lg:text-xs max-lg:rounded-xl landingInput"
             placeholder="چی میخوای یاد بگیری ؟"
           />
           <div className="max-md:hidden max-lg:hidden ">
