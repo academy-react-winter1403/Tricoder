@@ -2,11 +2,13 @@ import React from 'react'
 import teacherImg from "../../../assets/images/teacherimage.png";
 import teacherIcon from "../../../assets/icons/teacher.svg";
 import UseCourseDate from '../Hooks/useCourseData';
+import { useParams } from 'react-router-dom';
 
-const TeacherInfo = ({courseid}) => {
+const TeacherInfo = () => {
 
+  const {courseId} = useParams()
 
-  const {course , loading , error} = UseCourseDate(courseid);
+  const {course , loading , error} = UseCourseDate(courseId);
 
   if (loading) return <p>در حال بارگذاری...</p>;
   if (error) return <p>{error}</p>;

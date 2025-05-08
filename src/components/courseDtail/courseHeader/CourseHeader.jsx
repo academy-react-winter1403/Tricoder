@@ -4,11 +4,13 @@ import heart from "../../../assets/icons/heart.svg";
 import note from "../../../assets/icons/note-2.svg";
 import clock from "../../../assets/icons/blackClock.svg";
 import UseCourseDate from '../Hooks/useCourseData';
+import { useParams } from 'react-router-dom';
 
-const CourseHeader = ({coursedid}) => {
+const CourseHeader = () => {
 
+    const {courseId} = useParams()
     const {course , loading , error}  =
-     UseCourseDate(coursedid);
+     UseCourseDate(courseId);
 
     if (loading) return <p>در حال بارگذاری...</p>
     if (error) return <p>{error}</p>

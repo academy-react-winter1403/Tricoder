@@ -8,10 +8,8 @@ const UseCourseDate = (id) => {
     const [course, setCourse]=useState(null);
     const [loading, setLoading]=useState(true);
     const [error, setError]=useState(null);
-    
 
-    useEffect(()=>{
-        const fetchCourse = async () => {
+    const fetchCourse = async () => {
             try{
                 const result = await getcoursebyId(id);
                 setCourse(result);
@@ -20,9 +18,14 @@ const UseCourseDate = (id) => {
             }finally{
                 setLoading(false);
             }
-        };
+    };
+
+    
+
+    useEffect(()=>{
         fetchCourse();
     },[id]);
+    
     return {course, loading, error}
      
 }

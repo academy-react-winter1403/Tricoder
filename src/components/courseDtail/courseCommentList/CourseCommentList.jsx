@@ -2,9 +2,42 @@ import React from 'react'
 
 import { NewsCommentLike } from "../../../assets/fonts/icons/newsDetail/newsComment/NewsCommentLike"
 import { CommentReply } from '../../../assets/fonts/icons/newsDetail/newsComment/CommentReply'
+import { useGetPostsQuery, usePostToDynamicUrlMutation } from '../../../core/services/interceptor/reduxIndex'
+import { useParams } from 'react-router-dom'
+import UseCourseDate from '../Hooks/useCourseData';
+
+
+// import getcoursebyId from "../../../core/services/api/course";
 
 
  const CourseCommentList = () => {
+  const {courseId} = useParams()
+
+
+
+  // const { courseId } = useParams();
+  // const location = useLocation()
+ 
+  const [postToDynamicUrl] = usePostToDynamicUrlMutation();
+  // console.log(postToDynamicUrl)
+  // const {} = UseCourseDate(courseid);
+
+
+  const {data,error, isLoading } = useGetPostsQuery("/Course/GetCourseCommnets/:" + courseId)
+
+  
+    console.log(data , "data")
+  // console.log(location);
+
+  if (data != undefined){
+
+    console.log(data)
+  }
+  else if(data === undefined){
+    console.error(error)
+  }
+  console.log(courseId)
+
   return (
     <div>3
       <div>
