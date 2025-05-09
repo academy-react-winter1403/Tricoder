@@ -91,7 +91,10 @@ const NewsDetailComment = () => {
       
                      <div className='flex justify-between'>
                      <div className='flex gap-2'>
-                        <div className=' border-2 rounded-3xl w-8 h-8'>{data.pictureAddress}</div>
+                     <img
+                    className=" border-2 rounded-3xl w-8 h-8"
+                    src={data?.pictureAddress}
+                  />
                         <p className='font-medium leading-8 text-base'>{data.autor} </p>
                       </div>
                       <div className='text-[#607D8B] text-xs font-normal leading-8'>2 روز پیش</div>
