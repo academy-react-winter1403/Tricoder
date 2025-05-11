@@ -46,7 +46,9 @@ body{
   color:#b2b2f2;
 }
 
- 
+ .dark .category{
+  opacity: 0;
+ }
 
  
  

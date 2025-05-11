@@ -12,9 +12,12 @@ export const api = createApi({
         }),
         postToDynamicUrl: builder.mutation({
             query:({url,data}) => ({
-                url:url,
-                method: "API",
+                url,
+                method: "POST",
                 body: data,
+                headers: {
+                    Authorization : `${localStorage.getItem('token')}`,
+                }
             })
         })
     })

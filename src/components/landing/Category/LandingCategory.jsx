@@ -91,7 +91,7 @@ const LandingCategory = () => {
       <motion.div
         variants={floatingIcons}
         custom={1}
-        className="max-md:hidden max-xl:hidden"
+        className="max-md:hidden max-xl:hidden category "
       >
         <LittleRectangle />
       </motion.div>
@@ -106,14 +106,16 @@ const LandingCategory = () => {
 
       <div
         className="absolute 
-      max-md:hidden max-xl:hidden"
+      max-md:hidden max-xl:hidden category"
+
+
       >
         {" "}
         <CircleIcon />{" "}
       </div>
       <div
         className="absoluten relative right-52 
-      max-md:top-760 max-md:right-3 max-xl:top-673- max-xl:right-50 landingBigIcon"
+      max-md:top-760 max-md:right-3 max-xl:top-673- max-xl:right-50  category"
       >
         <BigRectangle />
       </div>
@@ -152,6 +154,8 @@ const LandingCategory = () => {
             >
               {data.icon}
             </motion.div>
+
+
 
             <p
               className="font-black text-2xl text-center mt-6

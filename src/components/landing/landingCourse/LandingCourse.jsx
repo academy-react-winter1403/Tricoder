@@ -195,7 +195,7 @@ const LandingCourse = () => {
              
                                  <div className='flex gap-24 my-2.5
                                  max-md:gap-14'>
-                                     <div className='w-13 h-8 rounded-3xl bg-[#FFEBEE] flex gap-1'>
+                                     <div className='w-13 h-8 rounded-3xl bg-[#FFEBEE] flex gap-0.5'>
                                          <LikeIcon/>
                                          <p className='text-[#F44336] leading-8.5'>{data.likeCount}</p>
                                      </div>
