@@ -4,6 +4,11 @@ import Basket from "../../../assets/icons/Basket.png";
 import notification from "../../../assets/icons/notification.png";
 
 const StudentPanel = ({ children }) => {
+
+
+
+
+  
   return (
     <>
       <div className="  border  w-[100%]     h-auto   lg:h-[110vh]  bg-[#EEF2FF]   flex  p-7 gap-7 "   style={{direction:"ltr"}}>
@@ -20,7 +25,7 @@ const StudentPanel = ({ children }) => {
               </div>
 
               <div className="flex   items-center  text-slate-500  ">
-                <h1 className="  font-bold    ">حساب کاربری</h1>
+                <h1 className="  font-bold    ">{}</h1>
                 <PanlsMenuButton />
               </div>
             </header>
