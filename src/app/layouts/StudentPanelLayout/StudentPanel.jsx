@@ -2,9 +2,27 @@ import Sidebar from "./sidbar/sidbar";
 import PanlsMenuButton from "../panelsMenuButton";
 import Basket from "../../../assets/icons/Basket.png";
 import notification from "../../../assets/icons/notification.png";
+import { useLocation } from "react-router-dom";
 
 const StudentPanel = ({ children }) => {
 
+  const location = useLocation();
+  const path = location.pathname;
+
+  const routeTitle = {
+    '/Studentpanel/change-password':'تغییر رمز عبور',
+    '/Studentpanel/comment':'نظرات ثبت شده',
+    '/Studentpanel/mycourse':'دوره های من',
+    '/Studentpanel/dashboard':'داشبورد',
+    '/Studentpanel/editprofile':'ویرایش پروفایل',
+    '/Studentpanel/logout':'خروج از حساب',
+    '/Studentpanel/myFavoritecourse':'دوره های مورد علاقه من',
+    '/Studentpanel/MyFavoriteNews':'اخبار های مورد علاقه من',
+    '/Studentpanel/MyReservedCourse':'دوره های رزرو شده من',
+  }
+  
+
+  const title =routeTitle[path] || "عنوان پیش فرض";
 
 
 
@@ -25,7 +43,7 @@ const StudentPanel = ({ children }) => {
               </div>
 
               <div className="flex   items-center  text-slate-500  ">
-                <h1 className="  font-bold    ">{}</h1>
+                <h1 className="  font-bold    ">{title}</h1>
                 <PanlsMenuButton />
               </div>
             </header>
