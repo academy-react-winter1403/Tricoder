@@ -1,201 +1,106 @@
-import { useEffect, useRef, useState } from "react";
+
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import { Camera } from "lucide-react";
-import * as Yup from "yup";
-import http from "../../../core/services/interceptor/index";
-import { useDispatch } from 'react-redux';
-import { setAvatar } from "../../../redux/Store/profileSlice"
+import { useEffect, useState } from "react";
+import { getUserInfo } from "../../../core/services/api/getUserInfo";
+import { putUserInfo } from "../../../core/services/api/putUswrInfo";
+import OnSetFormData from "../../../core/services/form-data/formData";
 
 const EditProfilePage = () => {
-  const [initialValues, setInitialValues] = useState(undefined);
-  const [preview, setPreview] = useState(undefined);
-  const fileRef = useRef(null);
+  const [initialValues, setInitialValues] = useState(null);
 
-  const dispatch = useDispatch();
-
-
-  useEffect(() => {
-
-
-    http.get("/SharePanel/GetProfileInfo").then((res) => {
-      const data = res;
-      setInitialValues({
-        fName: data.fName || "",
-        lName: data.lName || "",
-        nationalCode: data.nationalCode || "",
-        phoneNumber: data.phoneNumber || "",
-        birthDay: data.birthDay || "",
-        email: data.email || "",
-        avatar: null,
-      });
-      setPreview(data.avatarUrl || "/default-avatar.png");
-    });
-  }, []);
-
-
-  const validationSchema = Yup.object({
-    fName: Yup.string().required("نام الزامی است"),
-    phoneNumber: Yup.string().required("شماره موبایل الزامی است"),
-  });
-
-
-
-
-
-
-
-  const handleSubmit = async (values) => {
+  const GetProfileInfo = async () => {
     try {
-      const formData = new FormData();
-      console.log(values)
-
-      for (const key in values) {
-        if (values[key]) {
-          formData.append(key, values[key]);
-        }
-      }
-
-
-
-
-      const response = await http.put("/SharePanel/UpdateProfileInfo", formData, {
-        headers: {
-          "Content-Type": "multipart/form-data",
-        },
-      });
-
-      alert("اطلاعات با موفقیت ذخیره شد");
-      console.log(response.data);
+      const callApi = await getUserInfo();
+      const data = {
+        FName: callApi?.fName,
+        LName: callApi?.lName,
+        UserAbout: callApi?.userAbout,
+        HomeAdderess: callApi?.homeAdderess,
+        NationalCode: callApi?.nationalCode,
+        BirthDay: callApi?.birthDay,
+      };
+      setInitialValues(data);
     } catch (error) {
-      console.error("🛑 خطا:", error);
-      alert("خطا در بروزرسانی اطلاعات");
+      console.error("error", error);
     }
   };
 
+  const onSubmit = async (value) => {
+    try {
+      const res = OnSetFormData(value);
+      const callApi = await putUserInfo(res);
+      console.log(callApi);
+      // for (let [key, value] of res.entries()) {
+      //   console.log(`${key}: ${value}`);
+      // }
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-
+  useEffect(() => {
+    GetProfileInfo();
+ 
+  }, []);
 
   return (
     <div
       className="h-[90%] bg-white p-6 flex flex-col items-center justify-around"
-      style={{ direction: "rtl" }}
-    >
+      style={{ direction: "rtl" }} >
 
       <Formik
         initialValues={initialValues}
-        validationSchema={validationSchema}
-        onSubmit={handleSubmit}
+        onSubmit={onSubmit}
+        enableReinitialize
       >
-        {({ isSubmitting, setFieldValue }) => (
-          <Form className="w-[100%]  flex flex-col items-center   ">
-            <div className="relative w-[10rem] h-[10rem] rounded-full overflow-hidden group mb-6">
-              <img
-                className="w-full h-full rounded-full border object-cover"
-                src={preview}
-                alt="profile"
-              />
-              <div
-                className="absolute   top-[7rem] inset-0 bg-black/50 flex items-center justify-center text-white group-hover:top-[5rem]  transition-all  duration-500  cursor-pointer"
-                onClick={() => fileRef.current.click()}
-              >
-                <Camera />
-              </div>
 
-              <input
-                type="file"
-                accept="image/*"
-                ref={fileRef}
-                className="hidden"
-                onChange={(e) => {
-                  const file = e.target.files[0];
-                  if (file) {
-                    const previewUrl = URL.createObjectURL(file);
-                    setPreview(previewUrl);
-                    setFieldValue("avatar", file);
-                    dispatch(setAvatar(previewUrl));
-
-
-                  }
-                }}
-
-              />
+        <Form className="w-[100%]  flex flex-col items-center   ">
+          <div className="relative w-[10rem] h-[10rem] rounded-full overflow-hidden group mb-6">
+            <img className="w-full h-full rounded-full border object-cover"  alt="profile" />
+            <div className="absolute  top-[7rem] inset-0 bg-black/50 flex items-center justify-center text-white group-hover:top-[5rem]  transition-all  duration-500  cursor-pointer">
+            <Camera />
             </div>
+            
+          </div>
 
-            <div className="  w-[85%]    flex   flex-wrap  gap-10 ">
-              <div>
-                <label className="block mb-1">نام</label>
-                <Field
-                  name="fName"
-                  className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md"
-                />
-                <ErrorMessage
-                  name="fName"
-                  component="div"
-                  className="text-pink-500 text-sm mt-1"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-1">نام خانوادگی</label>
-                <Field
-                  name="lName"
-                  className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-1">کد ملی</label>
-                <Field
-                  name="nationalCode"
-                  className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-1">شماره موبایل</label>
-                <Field
-                  name="phoneNumber"
-                  className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md"
-                />
-                <ErrorMessage
-                  name="phoneNumber"
-                  component="div"
-                  className="text-pink-500 text-sm mt-1"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-1">تاریخ تولد</label>
-                <Field
-                  name="birthDay"
-                  type="date"
-                  className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md"
-                />
-              </div>
-
-              <div>
-                <label className="block mb-1">ایمیل</label>
-                <Field
-                  name="email"
-                  type="email"
-                  className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md"
-                />
-              </div>
+          <div className="  w-[85%]    flex   flex-wrap  gap-10 ">
+            <div>
+              <label htmlFor="FName" className="block mb-1">نام</label>
+              <Field id="FName" name="FName" type="text" className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md" />
+              <ErrorMessage name="FName" component="div" className="text-pink-500 text-sm mt-1" />
             </div>
-
-
-
-            <div className="w-full mt-8 flex justify-between px-4">
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="bg-[#6033FE] w-[12rem] hover:bg-[#6033A0] text-white px-4 py-2 rounded-lg shadow"
-              >
-                {isSubmitting ? "در حال ذخیره..." : "ثبت اطلاعات"}
-              </button>
+            <div>
+              <label htmlFor="LName" className="block mb-1">نام خانوادگی</label>
+              <Field id="LName" name="LName" type="text" className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md" />
             </div>
-          </Form>
-        )}
+            <div>
+              <label htmlFor="NationalCode" className="block mb-1">کد ملی</label>
+              <Field id="NationalCode" name="NationalCode" className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md" />
+            </div>
+            <div>
+              <label htmlFor="HomeAdderess" className="block mb-1"> محل سکونت</label>
+              <Field id="HomeAdderess" name="HomeAdderess" type="text" className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md" />
+              <ErrorMessage name="HomeAdderess" component="div" className="text-pink-500 text-sm mt-1" />
+            </div>
+            <div>
+              <label htmlFor="BirthDay" className="block mb-1">تاریخ تولد</label>
+              <Field id="BirthDay" name="BirthDay" type="text" className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md" />
+            </div>
+            <div>
+              <label htmlFor="NationalCode" className="block mb-1">درباره من</label>
+              <Field id="UserAbout" name="UserAbout" type="text" className="w-[17rem] h-[45px] border rounded-lg border-slate-300 shadow-md" />
+            </div>
+          </div>
+          <div className="w-full mt-8 flex justify-between px-4">
+            <button
+              type="submit"
+              className="bg-[#6033FE] w-[12rem] hover:bg-[#6033A0] text-white px-4 py-2 rounded-lg shadow"  >
+              ثبت اطلاعات
+            </button>
+          </div>
+        </Form>
+
       </Formik>
     </div>
   );

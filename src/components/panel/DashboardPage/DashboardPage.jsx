@@ -13,13 +13,10 @@ const DashboardPage = () => {
         const fetchData = async () => {
             try {
                 const panelRes = await http.get("/SharePanel/GetProfileInfo");
-                //
-          
                if (panelRes) {
             
                 setStudentData(panelRes)
                }
-            //    panelRes&&   
             } catch (error) {
                 console.error(error)
             }
@@ -27,8 +24,6 @@ const DashboardPage = () => {
 
         fetchData();
     }, []);
-
-    // console.log(studentData)
 
     return (
         <div className="  h-[590px]">
@@ -48,7 +43,7 @@ const DashboardPage = () => {
 
                     <div className=" ">
                         <span className="text-[20px] font-yekan-500 text-[#8f979a]"> نام و نام خانوادگی: </span>
-                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]">{studentData?.lName} </span>
+                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]">{studentData?.fName}{studentData?.lName} </span>
                     </div>
 
 
