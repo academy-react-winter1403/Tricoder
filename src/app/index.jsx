@@ -1,9 +1,6 @@
-<<<<<<< HEAD
-import { useState } from 'react'
+// import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-=======
->>>>>>> develop
+// import viteLogo from '/vite.svg'
 import './App.css'
 import { Outlet, useLocation } from 'react-router-dom'
 import { Header } from '../components/common/header/Header'
@@ -16,18 +13,18 @@ function App() {
   console.log(location);
 
   return (
-    <main className={`flex flex-col ${location.pathname === '/'   ? "heroBG" : ""}   `}>
+    <main className={`flex flex-col ${location.pathname === '/' ? "heroBG" : ""}   `}>
       <Header />
       <Outlet />
-      <Footer/>
+      <Footer />
     </main>
-  
-    
-
-  
 
 
-  
+
+
+
+
+
   )
 }
 
