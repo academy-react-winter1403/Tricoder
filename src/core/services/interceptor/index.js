@@ -35,7 +35,7 @@ http.interceptors.response.use(onSucess, onError);
 http.interceptors.request.use((opt) => {
   const token = getItem("token");
   if (token) {
-    opt.headers.Authorization = "bearer " + token;
+    opt.headers.Authorization = "Bearer " + token;
   }
   return opt;
 });

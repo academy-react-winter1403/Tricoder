@@ -1,8 +1,8 @@
-import axoisInstance from "../interceptor/axiosInstance.js";
+import http from "../interceptor/index";
 
 export const putUserInfo = async (formData) => {
   try {
-    const result = await axoisInstance.put(
+    const result = await http.put(
       "SharePanel/UpdateProfileInfo",
       formData,
       {

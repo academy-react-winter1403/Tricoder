@@ -43,7 +43,7 @@ const DashboardPage = () => {
 
                     <div className=" ">
                         <span className="text-[20px] font-yekan-500 text-[#8f979a]"> نام و نام خانوادگی: </span>
-                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]">{studentData?.fName}{studentData?.lName} </span>
+                        <span className="text-[20px] font-yekan-500 text-[#3939b3] mr-[5px]">{studentData?.fName} {studentData?.lName} </span>
                     </div>
 
 
