@@ -31,9 +31,6 @@ const EditProfilePage = () => {
       const res = OnSetFormData(value);
       const callApi = await putUserInfo(res);
       console.log(callApi);
-      // for (let [key, value] of res.entries()) {
-      //   console.log(`${key}: ${value}`);
-      // }
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +38,7 @@ const EditProfilePage = () => {
 
   useEffect(() => {
     GetProfileInfo();
- 
+
   }, []);
 
   return (
@@ -57,11 +54,11 @@ const EditProfilePage = () => {
 
         <Form className="w-[100%]  flex flex-col items-center   ">
           <div className="relative w-[10rem] h-[10rem] rounded-full overflow-hidden group mb-6">
-            <img className="w-full h-full rounded-full border object-cover"  alt="profile" />
+            <img className="w-full h-full rounded-full border object-cover" alt="profile" />
             <div className="absolute  top-[7rem] inset-0 bg-black/50 flex items-center justify-center text-white group-hover:top-[5rem]  transition-all  duration-500  cursor-pointer">
-            <Camera />
+              <Camera />
             </div>
-            
+
           </div>
 
           <div className="  w-[85%]    flex   flex-wrap  gap-10 ">

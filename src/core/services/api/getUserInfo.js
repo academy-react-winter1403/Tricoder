@@ -7,6 +7,6 @@ export const getUserInfo = async () => {
     const result = await axoisInstance.get("/SharePanel/GetProfileInfo");
     return result.data;
   } catch (error) {
-    console.log("errror",error);
+    console.log("error",error);
   }
 };
