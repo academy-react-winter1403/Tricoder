@@ -1,12 +1,11 @@
-import axoisInstance from "../interceptor/axiosInstance.js";
-
+import axios from "../interceptor/axiosInstance.js";
 
 export const getUserInfo = async () => {
-
   try {
-    const result = await axoisInstance.get("/SharePanel/GetProfileInfo");
+    const result = await axios.get("/SharePanel/GetProfileInfo");
     return result.data;
   } catch (error) {
-    console.log("error",error);
+    console.log("خطا در گرفتن پروفایل:", error.response?.data || error.message);
+    throw error;
   }
 };

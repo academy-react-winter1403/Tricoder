@@ -1,21 +1,20 @@
-
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { OpenMenu } from "../../redux/Store/menuSlice";
 
 
 const PanlsMenuButton = () => {
-    const dispatch =useDispatch();
+  const dispatch = useDispatch();
 
-return(
-  <>
+  return (
+    <>
 
-    <button  className="md:hidden font-bold p-2  text-slate-500  text-xl"
-    onClick={() => dispatch(OpenMenu())}>
-    ☰
-    </button>
+      <button className="md:hidden font-bold p-2  text-slate-500  text-xl"
+        onClick={() => dispatch(OpenMenu())}>
+        ☰
+      </button>
 
-  </>
-)
+    </>
+  )
 }
 
 export default PanlsMenuButton
