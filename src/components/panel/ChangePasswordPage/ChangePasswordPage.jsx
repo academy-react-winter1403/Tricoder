@@ -36,7 +36,7 @@ const ChangePasswordPage = () => {
     };
 
     return (
-        <div className="flex justify-center h-[90%]" style={{ direction: "rtl" }}>
+        <div className="flex justify-center  items-center py-[10%]" style={{ direction: "rtl" }}>
             <Formik
                 initialValues={initialValues}
                 validationSchema={validation}
