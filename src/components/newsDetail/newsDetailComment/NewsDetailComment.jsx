@@ -14,39 +14,33 @@ import { number } from "yup";
 
 const NewsDetailComment = () => {
   const { NewsId } = useParams();
-  const [form, setForm] = useState({
-    newsId: NewsId,
-    userIpAddress: "198.25.541",
-    title: "",
-    describe: "",
-    userId: 40581,
-  });
+  const [title, setTitle] = useState();
+  const [describe, setDescribe] = useState();
 
-  const [postToDynamicUrl] = usePostToDynamicUrlMutation();
+
+  // const [postToDynamicUrl] = usePostToDynamicUrlMutation();
 
   const { data, error, isLoading } = useGetPostsQuery(
     "/News/GetNewsComments?NewsId=" + NewsId
   );
 
-  const handleSubmit = async () => {
-    try {
-      await postToDynamicUrl({
-        url: "/News/CreateNewsComment",
-        data: {
-          form,
-        },
-      }).unwrap;
-      setForm({
-        newsId: NewsId,
-        userIpAddress: "",
-        title:"",
-        describe:"",
-        userId: 40581,
-      })
-    } catch (error) {
-      console.log(error);
+   const handleSubmit = (e) =>{
+    const dto = {
+      title:title,
+      describe:describe,
     }
-  };
+    http.post(  "/News/CreateNewsComment" , dto)
+
+    .then(response => {
+      alert('Item saved: ' + response.data);
+    })
+    .catch(error => {
+      alert('Error occurred');
+      console.error(error);
+    });
+   }
+
+ 
 
   // const handleSubmit = async (value) => {
   //   const { NewsId, title, describe } = value;
@@ -76,8 +70,6 @@ const NewsDetailComment = () => {
   //     );
   //   }
   //   // };
-  //  const dataObj  = {title,describe , newsId , userIpAddress , userId}
-  //  http.post("/News/CreateNewsComment" , dataObj)
 
   return (
     <div>
@@ -88,15 +80,15 @@ const NewsDetailComment = () => {
         <div className="flex flex-col gap-4 items-center">
           <input
             className="h-12 w-full pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3"
-            value={form.title}
-            onChange={(e) => setForm({ ...form, title: e.target.value })}
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
             placeholder="نظر خودتو بنویس..."
           />
 
           <textarea
             className="h-25 w-full pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3"
-            value={form.describe}
-            onChange={(e) => setForm({ ...form, describe: e.target.value })}
+            value={describe}
+            onChange={(e) => setDescribe(e.target.value)}
             placeholder="نظر خودتو بنویس..."
           />
           <button

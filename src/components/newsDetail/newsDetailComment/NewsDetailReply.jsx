@@ -12,13 +12,15 @@ const NewsDetailReply = () => {
     const location = useLocation()
     const [postToDynamicUrl] = usePostToDynamicUrlMutation();
 
-   const {data,error, isLoading } = useGetPostsQuery("/News/GetRepliesComments?Id=<uuid>" + NewsId)
-      
+   const {data,error, isLoading } = useGetPostsQuery("/News/GetRepliesComments?Id" + NewsId)
+      console.log(data)
   
     if (data != undefined){
+
       
     }
     else if(data === undefined){
+
       
     }
   

@@ -6,6 +6,14 @@ export const api = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: baseUrl
     }),
+
+    preparedHeaders:(headers) =>{
+        const token = localStorage.getItem('token')
+        if (token){
+            headers.set('Authorization', `Bearer ${token}`)
+        }
+        return headers;
+    },
     endpoints: (builder) => ({
         getPosts: builder.query({
             query: (id) => `${id}`
@@ -15,11 +23,13 @@ export const api = createApi({
                 url,
                 method: "POST",
                 body: data,
-                headers: {
-                    Authorization : `${localStorage.getItem('token')}`,
-                }
+                // headers: {
+                //     // Authorization :Bearer `${localStorage.getItem('token')}`,
+                // }
+               
             })
         })
+
     })
 })
 
