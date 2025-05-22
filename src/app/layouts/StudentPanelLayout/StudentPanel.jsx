@@ -2,13 +2,36 @@ import Sidebar from "./sidbar/sidbar";
 import PanlsMenuButton from "../panelsMenuButton";
 import Basket from "../../../assets/icons/Basket.png";
 import notification from "../../../assets/icons/notification.png";
+import { useLocation } from "react-router-dom";
 
 const StudentPanel = ({ children }) => {
+
+  const location = useLocation();
+  const path = location.pathname;
+
+  const routeTitle = {
+    '/Studentpanel/change-password':'تغییر رمز عبور',
+    '/Studentpanel/comment':'نظرات ثبت شده',
+    '/Studentpanel/mycourse':'دوره های من',
+    '/Studentpanel/dashboard':'داشبورد',
+    '/Studentpanel/editprofile':'ویرایش پروفایل',
+    '/Studentpanel/logout':'خروج از حساب',
+    '/Studentpanel/myFavoritecourse':'دوره های مورد علاقه من',
+    '/Studentpanel/MyFavoriteNews':'اخبار های مورد علاقه من',
+    '/Studentpanel/MyReservedCourse':'دوره های رزرو شده من',
+  }
+  
+
+  const title =routeTitle[path] || "عنوان پیش فرض";
+
+
+
+  
   return (
     <>
-      <div className="  border  w-[100%]     h-auto   lg:h-[110vh]  bg-[#EEF2FF]   flex  p-7 gap-7 "   style={{direction:"ltr"}}>
-        <div className="md:w-[80%]  w-[99%]  h-[98%]    ">
-          <div className="w-[100%]   h-[100%]   rounded-2xl bg-white  ">
+      <div className="  border  w-[100%]     h-auto   min-h-[110vh]    bg-[#EEF2FF]   flex  p-7 gap-7 "   style={{direction:"ltr"}}>
+        <div className="md:w-[80%]  w-[99%]  h-[120%]    ">
+          <div className="w-[100%]  min-h-[100vh]  max-h-auto  rounded-2xl bg-white   ">
             <header className="w[98%]  h-[4rem] flex  items-center  justify-between   p-6 ">
               <div className=" w-[4rem]    h-[2rem]     flex  justify-between">
                 <img className="w-[25px]     h-[25px]   " src={Basket} alt="" />
@@ -20,7 +43,7 @@ const StudentPanel = ({ children }) => {
               </div>
 
               <div className="flex   items-center  text-slate-500  ">
-                <h1 className="  font-bold    ">حساب کاربری</h1>
+                <h1 className="  font-bold    ">{title}</h1>
                 <PanlsMenuButton />
               </div>
             </header>

@@ -1,27 +1,25 @@
 import React, { useState } from 'react'
-import http from '../../core/services/interceptor'
+import http from '../../core/services/interceptor/axiosInstance'
 
 const Login = () => {
-    const [email, setEmail] = useState()
-    const [password, setPassword] = useState()
-    const [remember, setRemember] = useState()
+    const [email, setEmail] = useState('')
+    const [password, setPassword] = useState('')
+    const [remember, setRemember] = useState(false)
 
     const handleSubmit = (e) => {
         console.log(remember)
         e.preventDefault();
         const dto = { phoneOrGmail: email, password: password, rememberMe: remember }
         console.log(dto)
-        // http.post('/Sign/Login', dto)
-        //     .then((res) => 
-        //         { 
-        //             localStorage.setItem('token', res.token); 
-        //             console.log(res)
-        //         }
-        //     ).catch((err) => 
-        //         {
-        //             console.log(err)
-        //         }
-        //     )
+        http.post('/Sign/Login', dto)
+            .then((res) => {
+                localStorage.setItem('token', res.data.token);
+                console.log("token response", res)
+            }
+            ).catch((err) => {
+                console.log("token response", err)
+            }
+            )
     }
 
     return (
