@@ -109,8 +109,6 @@ const LandingCourse = () => {
       const {data,error, isLoading } = useGetPostsQuery("/Home/GetCoursesTop?Count=4")
         console.log(data)
     
-      console.log(location);
-    
       if (data != undefined){
         console.log(data)
       }
