@@ -26,10 +26,29 @@ const Landing = () => {
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
+
+ //// Landing Fixed Menuuu /// 
+    const showMenu = () => {
+    setMenu(prev => !prev);
+  };
+    const handleClickOutside = (event) => {
+    if (!event.target.closest('.menu-container') && !event.target.closest('.menu-btn')) {
+      setMenu(false);
+    }
+  };
+    useEffect(() => {
+    document.addEventListener('click', handleClickOutside);
+    return () => {
+      document.removeEventListener('click', handleClickOutside);
+    };
+  }, []);
     return (
         <div className="w-full flex flex-col justify-center items-center  mx-auto gap-6 ">
         {up&& ( <button onClick={scrollToTop} className="fixed top-[74%] left-[4%] cursor-pointer z-50" ><img src="../../../public/landing/upArrow.png"/></button>)}   
-       
+         {/* <button onClick={showMenu} className="fixed top-[30%] right-[10%]"> <img src="../../../public/landing/landingMenu.png"/></button> */}
+         {/* <div className="fixed bg-[#2196F3] ">
+          
+         </div> */}
             <HeroSection />
             <Service />
             <LandingCourse />
