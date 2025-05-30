@@ -2,10 +2,8 @@ import React, { useState } from "react";
 import { SliderIcon } from "../../../assets/fonts/icons/landing/slider/Slider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from 'swiper/modules';
-
 import "swiper/css";
 import "swiper/css/pagination";
-// import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex";
 import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex";
 
 const TeacherSlider = () => {
@@ -34,7 +32,6 @@ const TeacherSlider = () => {
   //   },
   // ];
 
-    // const [{ data, error, isLoading }] = useGetPostsQuery("/Home/GetTeachers");
 
        const {data,error, isLoading } = useGetPostsQuery("/Home/GetTeachers")
             console.log(data)
