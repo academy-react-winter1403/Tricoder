@@ -18,6 +18,9 @@ const SearchHeader = () => {
   const [searchQuery, setSearchQuery] = useState(undefined);
   const [isSortOpen, setIsSortOpen] = useState(false);
   const debouncedSearchTerm = useDebounce(searchQuery, 700);
+  
+
+
 
   const sortOptions = [
     { value: "InsertDate", label: "جدیدترین ها", sortType: "DESC" },
