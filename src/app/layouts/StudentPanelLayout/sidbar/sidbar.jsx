@@ -12,7 +12,7 @@ const Sidebar = () => {
   return (
     <>
       <div
-        className={`fixed top-0  w-[20rem]  h-[100%]   md:h-[160vh] border py-[10px] lg:h-[100%] border-solid   bg-gradient-to-b from-purple-500 to-indigo-500 
+        className={`fixed top-0  w-[20rem]  h-[100%]   md:h-[160vh]  py-[10px] lg:h-[100%] border-solid   bg-gradient-to-b from-purple-500 to-indigo-500 
          md:block md:static  md:h-[98%]  md:w-[23%]   md:rounded-2xl  -right-full   transition-all duration-1000    md:text-xs   lg:text-base
          ${itsOpen ? "right-0" : "-right-full"}
                 `}
