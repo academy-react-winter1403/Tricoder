@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import { SliderIcon } from "../../../assets/fonts/icons/landing/slider/Slider";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from 'swiper/modules';
-
 import "swiper/css";
 import "swiper/css/pagination";
 import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex";
@@ -10,31 +9,42 @@ import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex"
 const TeacherSlider = () => {
   const [Slider, setSlider] = useState(0);
 
-  const SlideItem = [
-    {
-      img: "./public/landing/slider/teacher1.png",
-      title: "سالار حیدری",
-      desc: "بکند, node js, .netcore, database",
-    },
-    {
-      img: "./public/landing/slider/teacher2.png",
-      title: " بهاره یزدانی",
-      desc: "طراحی محصول و رابط کاربری",
-    },
-    {
-      img: "./public/landing/slider/teacher3.png",
-      title: " مسعود هشمتی",
-      desc: "ریکت و انگلار",
-    },
-    {
-      img: "./public/landing/slider/teacher4.png",
-      title: "  دکتر بحرالعلوم",
-      desc: "برنامه نویسی تحت فرانت و بکند",
-    },
-  ];
 
-    // const [{ data, error, isLoading }] = useGetPostsQuery("/Home/GetTeachers");
+  // const SlideItem = [
+  //   {
+  //     img: "./public/landing/slider/teacher1.png",
+  //     title: "سالار حیدری",
+  //     desc: "بکند, node js, .netcore, database",
+  //   },
+  //   {
+  //     img: "./public/landing/slider/teacher2.png",
+  //     title: " بهاره یزدانی",
+  //     desc: "طراحی محصول و رابط کاربری",
+  //   },
+  //   {
+  //     img: "./public/landing/slider/teacher3.png",
+  //     title: " مسعود هشمتی",
+  //     desc: "ریکت و انگلار",
+  //   },
+  //   {
+  //     img: "./public/landing/slider/teacher4.png",
+  //     title: "  دکتر بحرالعلوم",
+  //     desc: "برنامه نویسی تحت فرانت و بکند",
+  //   },
+  // ];
 
+
+       const {data,error, isLoading } = useGetPostsQuery("/Home/GetTeachers")
+            console.log(data)
+        
+        
+          if (data != undefined){
+            console.log(data)
+          }
+          else if(data === undefined){
+            console.error(error)
+          }
+          const slideValue = (data?.length)/2
     // try{
     //   const result = await postsQuesry({url: "", data:{}})
     // }
@@ -62,8 +72,10 @@ const TeacherSlider = () => {
           className="h-fit   mt-14 flex gap-1 items-center  justify-center
         max-md:w-115 max-md:  max-md:mt-6"
         >
+          {console.log(slideValue)}
           <Swiper
-            slidesPerView={3}
+            slidesPerView={9}
+            initialSlide={18}
             pagination={{
               clickable: true,
             }}
@@ -71,39 +83,40 @@ const TeacherSlider = () => {
             navigation={true}
             className="mySwiper"
           >
-            {SlideItem.map((data, ind) => (
+            {data?.map((data, ind) => (
               <SwiperSlide>
                 <div
                   className="w-fit relative rounded-3xl  justify-items-center"
                   style={{ marginTop: ind % 2 === 0 ? "60px" : "0px" }}
                 >
                   <div
-                    className="bg-white  w-17 h-7 rounded-3xl flex items-center gap-0.5 absolute top-12 right-12
+                    className="bg-white  w-12 h-7 rounded-3xl flex items-center gap-0.5 absolute top-2 right-3
                   max-md:hidden max-xl:hidden"
                   >
                     <div className="mr-1">
                       {" "}
                       <SliderIcon />
                     </div>
-                    <p className="text-xs text-[#2196F3] mt-0.5 "> 202دوره</p>
+                    <p className="text-xs text-[#2196F3] mt-0.5 "> {data.courseCounts}</p>
                   </div>
 
                   <img
-                    className="w-full
+                    className="w-full h-full
                   max-md:"
-                    src={data.img}
+                    // src={data.pictureAddress}
+                    src={(data.pictureAddress) ? data.pictureAddress : "/newsDetail/notfound.jpg"}
                     alt=""
                   />
 
                   <div
-                    className="-mt-5 
+                    className="
                   max-md:mt-3"
                   >
                     <p
-                      className="text-2xl font-bold text-center
+                      className="text-2xl font-bold text-center leading-10
                   max-md:text-sm"
                     >
-                      {data.title}
+                      {data.fullName}
                     </p>
                     <p
                       className="text-[#455A64] text-center
