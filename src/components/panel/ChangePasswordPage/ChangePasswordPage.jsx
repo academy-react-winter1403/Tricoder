@@ -1,8 +1,13 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import http from "../../../core/services/interceptor";
+import  { useAccent } from '../../../app/layouts/StudentPanelLayout/StudentPanel'
+
 
 const ChangePasswordPage = () => {
+    const { accentColor } = useAccent();
+
+
     const initialValues = {
         currentPass: '',
         Password: '',
@@ -77,7 +82,8 @@ const ChangePasswordPage = () => {
                         <button
                             type="submit"
                             disabled={isSubmitting}
-                            className="bg-[#6033FE] w-[12rem] hover:bg-[#6033A0] text-white px-5 py-3 rounded-lg shadow"
+                            style={{backgroundColor: accentColor}}
+                            className=" w-[12rem] hover:bg-[#6033A0] text-white px-5 py-3 rounded-lg shadow"
                         >
                             {isSubmitting ? "در حال ارسال..." : "ثبت اطلاعات"}
                         </button>
