@@ -4,15 +4,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeMenu } from "../../../../redux/Store/menuSlice";
 import { BookOpenCheck,HomeIcon, BookOpenText, CalendarHeart, FileHeart, KeyRound, LayoutDashboard, LucideUserCircle2, MessageCircleMore, Power,} from "lucide-react";
 
-const Sidebar = () => {
+const Sidebar = ({color}) => {
   const itsOpen = useSelector((state) => state?.menu?.isOpen);
   const manuDispatch = useDispatch();
 
  
   return (
     <>
-      <div
-        className={`fixed top-0  w-[20rem]  h-[100%]   md:h-[160vh]  py-[10px] lg:h-[100%] border-solid   bg-gradient-to-b from-purple-500 to-indigo-500 
+      <div 
+       style={{ backgroundImage: color }}
+        className={`fixed top-0  w-[20rem]  h-[100%]   md:h-[160vh]  py-[10px] lg:h-[100%] border-solid   
          md:block md:static  md:h-[98%]  md:w-[23%]   md:rounded-2xl  -right-full   transition-all duration-1000    md:text-xs   lg:text-base
          ${itsOpen ? "right-0" : "-right-full"}
                 `}

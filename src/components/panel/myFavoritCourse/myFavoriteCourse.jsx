@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { DeleteCourse } from "../../../assets/icons/studentPanel/DeleteCourse";
 import { LikeIcon } from '../../../assets/fonts/icons/landing/courseIcon/LikeIcon';
 import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart';
-import http from '../../../core/services/interceptor';
+// import http from '../../../core/services/interceptor';
 import axiosInstance from "../../../core/services/interceptor/axiosInstance"
 
 
