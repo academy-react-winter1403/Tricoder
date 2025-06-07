@@ -2,6 +2,7 @@ import React from 'react'
 import { DeleteCourse } from "../../../assets/icons/studentPanel/DeleteCourse";
 import { LikeIcon } from '../../../assets/fonts/icons/landing/courseIcon/LikeIcon';
 import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart';
+
 import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex";
 
 
@@ -63,11 +64,10 @@ import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex"
                 
      
                  </div>
+              
         ))}
+        </div>
+  )}
 
-  
 
-    </div>
-  )
-}
-export { MyFavoriteCourse}
+export { MyFavoriteCourse }

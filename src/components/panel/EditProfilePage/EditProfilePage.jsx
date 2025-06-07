@@ -5,8 +5,11 @@ import { useEffect, useState } from "react";
 import { getUserInfo } from "../../../core/services/api/getUserInfo";
 import { putUserInfo } from "../../../core/services/api/putUswrInfo";
 import OnSetFormData from "../../../core/services/form-data/formData";
+import { useAccent }  from '../../../app/layouts/StudentPanelLayout/StudentPanel'
+
 
 const EditProfilePage = () => {
+ const { accentColor } = useAccent();
   const [initialValues, setInitialValues] = useState(null);
 
   const GetProfileInfo = async () => {
@@ -91,8 +94,9 @@ const EditProfilePage = () => {
           </div>
           <div className="w-full mt-8 flex justify-between px-4">
             <button
+                   style={{backgroundColor: accentColor}}
               type="submit"
-              className="bg-[#6033FE] w-[12rem] hover:bg-[#6033A0] text-white px-4 py-2 rounded-lg shadow"  >
+              className=" w-[12rem] hover:bg-[#6033A0] text-white px-4 py-2 rounded-lg shadow"  >
               ثبت اطلاعات
             </button>
           </div>
