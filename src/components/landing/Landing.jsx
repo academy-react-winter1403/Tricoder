@@ -53,10 +53,13 @@ const Landing = () => {
 
     return (
         <div className="w-full flex flex-col justify-center items-center  mx-auto gap-6">
-        {up&& ( <button onClick={scrollToTop} className="fixed top-[74%] left-[4%] cursor-pointer z-50" ><img src="../../../public/landing/upArrow.png"/></button>)}   
-       {menu && (<button onClick={() => setMenuList(!menuList)} className="fixed top-[30%] right-[10%] cursor-pointer"> <img src="../../../public/landing/landingMenu.png"/></button> )}
-          <div className={`fixed bg-[#2196F3]  w-[30%]  right-0  top-0  flex flex-col text-white text-center transform transition-transform duration-300  ${menuList? "translate-x-0" : "translate-x-full"}`}>
+        {up&& ( <button onClick={scrollToTop} className="fixed top-[86%] left-[4%] cursor-pointer z-50" ><img src="../../../public/landing/upArrow.png"/></button>)}   
+       {menu && (<button onClick={() => setMenuList(!menuList)} className="fixed top-[6%] right-[2%] cursor-pointer z-50"> <img src="../../../public/landing/landingMenu.png"/></button> )}
+          <div className={`  leading-7 fixed bg-[#2196F3]  w-[10%] pr-7  right-0  top-0  flex flex-col text-white  transform transition-transform duration-300  ${menuList? "translate-x-0" : "translate-x-full"}`}>
+             
               <Link to={"/courses"}>   دوره‌ها   </Link>
+               <p>اساتید</p>
+                <p>ارتباط با ما</p>
                <Link to={"news"}>اخبار مقالات</Link>
           
          </div> 
