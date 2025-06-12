@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Note } from '../../../assets/fonts/icons/landing/courseIcon/Note'
 import { Clock } from '../../../assets/fonts/icons/landing/courseIcon/Clock'
 import { Calender } from '../../../assets/fonts/icons/landing/courseIcon/Calender'
@@ -188,7 +188,7 @@ const LandingCourse = () => {
                                  <span className='font-bold whitespace-nowrap
                                  max-md:text-xs'>مدرس:  <span className='max-md:text-xs whitespace-nowrap font-normal'>{data.teacherName} </span></span>
                                  <p className=' whitespace-nowrap
-                                 max-md:mr-4 max-md:text-xs'>{data.student}  </p>
+                                 max-md:mr-4 max-md:text-xs'>{data.like}  </p>
                              </div>
              
                                  <div className='flex gap-24 my-2.5

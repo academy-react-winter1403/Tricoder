@@ -153,8 +153,8 @@ const Sidebar = () => {
             }
             className='block py-2 px-4 flex justify-end  gap-3  rounded-lg cursor-pointer  m-2'
           >
-        دوره های مورد علاقه من
-        <CalendarHeart/>
+       
+        {/* <CalendarHeart/> */}
           </NavLink>
           <NavLink
             to="/Studentpanel/MyReservedCourse"
@@ -168,8 +168,8 @@ const Sidebar = () => {
             }
             className='block py-2 px-4 flex justify-end  gap-3  rounded-lg cursor-pointer  m-2'
           >
-        دوره های رزرو شده من
-        <BookOpenCheck/>
+        
+        {/* <BookOpenCheck/> */}
           </NavLink>
           <NavLink
             to="/Studentpanel/MyFavoriteNews"
@@ -183,8 +183,8 @@ const Sidebar = () => {
             }
             className='block py-2 px-4 flex justify-end  gap-3  rounded-lg cursor-pointer  m-2'
           >
-        اخبار مورد علاقه من
-        <FileHeart/>
+        
+        {/* <FileHeart/> */}
           </NavLink>
         </ul>
       </div>

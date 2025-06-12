@@ -5,6 +5,9 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
 
 const http = axios.create({
   baseURL: baseUrl,
+    headers: {
+    Authorization: "Bearer " + localStorage.getItem("token"),
+  },
 });
 
 const onSucess = (res) => {

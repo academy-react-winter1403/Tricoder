@@ -52,7 +52,56 @@ const AccordionList = () => {
         </div>
       ))}
     </div>
-  );
+);
+
 };
 
 export { AccordionList };
+
+
+
+
+// return (
+//   <div className="max-w-lg mx-auto space-y-4 px-4 max-sm:max-w-full">
+//     {items.map((item, index) => (
+//       <div
+//         key={index}
+//         className="mb-[12px] border-b border-b-[#ECEFF1]"
+//       >
+//         <button
+//           onClick={() => toggleFilter(index)}
+//           className={`
+//             flex flex-row-reverse justify-center items-end
+//             p-4
+//             w-[248px] h-[37px] m-auto
+//             transition-all
+//             max-sm:w-full max-sm:h-auto max-sm:justify-between max-sm:px-3
+//             ${item.gap}
+//           `}
+//         >
+//           <span className="transition-all">
+//             {isOpen === index ? <ArrowDown /> : <Arrow />}
+//           </span>
+//           <span className="text-gray-800 font-yekan-500 text-[16px] mb-[-4px] whitespace-nowrap
+//             max-sm:text-[14px] max-sm:mb-0 max-sm:whitespace-normal
+//           ">
+//             {item.title}
+//           </span>
+//         </button>
+
+//         <div
+//           className={`
+//             overflow-hidden transition-all duration-300 ease-in-out
+//             ${isOpen === index ? "max-h-[300px] opacity-100 px-4" : "max-h-0 opacity-0 p-0"}
+//             max-sm:px-2
+//           `}
+//         >
+//           {isOpen === index && <div>{item.content}</div>}
+//         </div>
+//       </div>
+//     ))}
+//   </div>
+// );
+
+
+

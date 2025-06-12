@@ -79,15 +79,19 @@ const SignUp = ()=>{
 
                         <div className="w-full h-11 flex justify-end items-center">
                             <div className="flex">
-                                <label htmlFor="rememberMe" className="text-[9px]  font-yekan-500 text-[#455A64]"> من را بخاطر بسپار </label>
+                                <label htmlFor="rememberMe" className="text-[11px]  font-yekan-500 text-[#455A64]"> من را بخاطر بسپار </label>
                                 
                                 <input type="checkbox" id="rememberMe" className="hidden peer "  />
-                                <span className="border-1 w-3 h-3 block ml-1 rounded-[5px] border-[#455A64]
+                                <span className="border-1 w-3 h-3 block mr-[2px] rounded-[5px] border-[#455A64]
                                 peer-checked:bg-[#2196F3] peer-checked:border-none "></span>
                             </div>
                         </div>
 
-                        <Button> ورود به حساب  </Button>
+                        <div className="flex justify-center">
+                            <Button> ورود به حساب  </Button>
+                        </div>
+
+                        
                     </form>
                 
             </div>

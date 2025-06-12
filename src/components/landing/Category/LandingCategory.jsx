@@ -91,7 +91,7 @@ const LandingCategory = () => {
       <motion.div
         variants={floatingIcons}
         custom={1}
-        className="max-md:hidden max-xl:hidden category "
+        className="max-md:hidden max-xl:hidden category  "
       >
         <LittleRectangle />
       </motion.div>
@@ -115,13 +115,13 @@ const LandingCategory = () => {
       </div>
       <div
         className="absoluten relative right-52 
-      max-md:top-760 max-md:right-3 max-xl:top-673- max-xl:right-50  category"
+      max-md:top-760 max-md:right-3 max-xl:top-40 max-xl:right-50  category "
       >
         <BigRectangle />
       </div>
       <div
         className="absolute -right-39 
-      max-md:hidden max-xl:top-560 max-xl:hidden"
+      max-md:hidden max-xl:top-560 max-xl:hidden "
       >
         <TextIcon />
       </div>
@@ -135,7 +135,7 @@ const LandingCategory = () => {
           <motion.div
             key={ind}
             className="bg-white w-82 h-82 rounded-3xl shadow-2xl relative
-          max-md:w-51 max-md:h-57 landingInput"
+          max-md:w-51 max-md:h-57 landingInput max-xl:hidden"
             variants={cardVariants}
             whileHover={{
               y: -10,
