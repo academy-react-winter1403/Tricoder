@@ -49,20 +49,20 @@ const LandingCourse = () => {
     //     }
     // }
 
-    const  [topCourses, setTopCourses] = useState([])
-    const getData = ()=>{
-        try {
-            const result = http.get("/Home/GetCoursesTop?Count=5")
-            setTopCourses(result)
-        } catch (error) {
-            console.log(error);
+    // const  [topCourses, setTopCourses] = useState([])
+    // const getData = ()=>{
+    //     try {
+    //         const result = http.get("/Home/GetCoursesTop?Count=5")
+    //         setTopCourses(result)
+    //     } catch (error) {
+    //         console.log(error);
             
-        }
-    }
+    //     }
+    // }
 
-    useEffect(() => {
-      getData()
-    }, [])
+    // useEffect(() => {
+    //   getData()
+    // }, [])
     
 
     const course=[
@@ -140,7 +140,7 @@ const LandingCourse = () => {
             className='  my-12 gap-x-8 flex
              max-lg:gap-y-4  max-lg:flex-col '>
 
-                {topCourses.map((data,ind)=>(
+                {course.map((data,ind)=>(
                         <motion.div 
                         variants={itemVariants}
                         whileHover={{ 
@@ -152,7 +152,7 @@ const LandingCourse = () => {
                         className={`w-74 h-97 bg-[#FFFF] rounded-3xl p-4  shadow-2xl flex-col 
                          max-lg:h-fit max-md:w-60 max-lg:justify-center landingInput`}>
                              <motion.img    
-                             src={data.tumbImageAddress} 
+                             src={data.img} 
                              alt=''
                              whileHover={{ scale: 1.05 }}
                              className='max-md:w-60'/>
@@ -185,9 +185,9 @@ const LandingCourse = () => {
                              <div className='text-sm flex justify-between  my-4 
                              max-md:whitespace-nowrap'>
                                  <span className='font-bold whitespace-nowrap
-                                 max-md:text-xs'>مدرس:  <span className='max-md:text-xs whitespace-nowrap font-normal'>{data.teacherName} </span></span>
+                                 max-md:text-xs'>مدرس:  <span className='max-md:text-xs whitespace-nowrap font-normal'>{data.teacher} </span></span>
                                  <p className=' whitespace-nowrap
-                                 max-md:mr-4 max-md:text-xs'>{data.commandCount}  </p>
+                                 max-md:mr-4 max-md:text-xs'>{data.like}  </p>
                              </div>
              
                                  <div className='flex gap-30 my-2.5
