@@ -1,84 +1,42 @@
-import React from 'react'
-import { NewsCommentLike } from "../../../assets/fonts/icons/newsDetail/newsComment/NewsCommentLike"
-import { CommentReply } from '../../../assets/fonts/icons/newsDetail/newsComment/CommentReply'
-import { NewsDetailReply } from './NewsDetailReply'
-import { useGetPostsQuery, usePostToDynamicUrlMutation } from '../../../core/services/interceptor/reduxIndex'
-import { useLocation, useParams } from 'react-router-dom'
+import React, { useState } from "react";
+import { NewsCommentLike } from "../../../assets/fonts/icons/newsDetail/newsComment/NewsCommentLike";
+import { CommentReply } from "../../../assets/fonts/icons/newsDetail/newsComment/CommentReply";
+import { NewsDetailReply } from "./NewsDetailReply";
+import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex";
+import { useParams } from "react-router-dom";
+import { useCreateNewsComments } from "../../../core/services/Mutation/CommentsMutation";
+import { useGetCommentNews } from "../../../core/services/Query/GetAllCommentsQuery";
+import CommentsDev from "./CommentsAllDev";
+import CommentsAllDev from "./CommentsAllDev";
 
-
-const NewsDetailComment = () => { 
+const NewsDetailComment = ({detailsNewsDto}) => {
   const { NewsId } = useParams();
-  const location = useLocation()
-  const [postToDynamicUrl] = usePostToDynamicUrlMutation();
+  console.log(NewsId)
 
-  const {data,error, isLoading } = useGetPostsQuery("/News/GetNewsComments?NewsId=" + NewsId)
   
-  console.log(location);
 
-  if (data != undefined){
-    console.log(data)
-  }
-  else if(data === undefined){
-    console.error(error)
-  }
+  
 
-  const handleSubmit = () => {
-    postToDynamicUrl({
-      url: "/News/CreateNewsComment",
-      data: {
-        newsId: NewsId,
-        userIpAddress: "192.11.86.20",
-        title: "عباس قلی",
-        describe: "سلام جالب نبود",
-        userId: 40581
-      }
-    })
-    
-  }
-  
-  
+
+
   return (
-    <div>
-        <div className='rounded-3xl shadow-2xl flex flex-col gap-6 px-8 py-8'>
-              <p className='font-bold text-2xl text-center'>نظر کاربران درباره این مقاله</p>
-              <div className='flex flex-col gap-4 items-center'>
-                <input className='h-25 w-full pr-4 border-2 border-[#CFD8DC]  rounded-2xl text-sm text-[#607D8B] leading-3' placeholder='نظر خودتو بنویس...' />
-                <button onClick={() => handleSubmit()} className='h-12 w-fit rounded-4xl px-6 leading-12 bg-[#2196F3] text-base font-bold text-white '>ارسال</button>
-               
+    <div className="rounded-3xl shadow-2xl flex flex-col gap-6 px-8 py-8">
+    
+    <CommentsAllDev
 
-                {data?.map((data,ind)=>(
-                     <div  className='w-full flex flex-col gap-2.5 '>
+          id={detailsNewsDto.id}
+          userId={detailsNewsDto.userId}
+    />
+
+      {/* Display Comments */}
+       <p>درحال بارگذاری نظرات...</p>
+       <p className="text-red-500">خطا در بارگذاری نظرات</p>
       
-                     <div className='flex justify-between '>
-                     <div className='flex gap-2'>
-                        <div className=' border-2 rounded-3xl w-8 h-8'>{data.pictureAddress}</div>
-                        <p className='font-medium leading-8 text-base'>{data.autor} </p>
-                      </div>
-                      <div className='text-[#607D8B] text-xs font-normal leading-8'>2 روز پیش</div>
-                     </div>
-        
-                      <p className='text-sm text-[#455A64]'>{data.describe}</p>
-                     
-                      <div className='flex gap-3'>
-                        <div className='flex gap-1'>
-                          <p className='text-[#F44336] text-sm font-bold'>{data.likeCount}</p>
-                          <NewsCommentLike/>
-                        </div>
-                        <div className='flex gap-1'>
-                          <p className='text-[#455A64] text-sm font-normal'> {data.replyCount}  پاسخ  </p>
-                          <CommentReply/>
-                        </div>
-                      </div>
-                  </div>
-                ))}
-               
-                <NewsDetailReply/>
-              </div>
-      
-            </div>
-      
+
+      {/* Replies Section */}
+      <NewsDetailReply />
     </div>
-  )
-}
+  );
+};
 
-export {NewsDetailComment} 
+export { NewsDetailComment };

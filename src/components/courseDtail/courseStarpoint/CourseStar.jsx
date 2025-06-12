@@ -3,14 +3,18 @@ import { ThumbsDown, ThumbsUp } from "lucide-react";
 import { useState } from "react";
 import http from "../../../core/services/interceptor";
 import UseCourseDate from '../Hooks/useCourseData';
+import { useParams } from "react-router-dom";
 
-const CourseStare = ({ courseid }) => {
+const CourseStare = () => {
+
+  const {courseId} = useParams()
+
   const [rating, setRating] = useState(0);
   const [hoverRating, setHoverRating] = useState(0);
   const [loadinge, setLoading] = useState(true);
   const [errore, setError] = useState(null);
   const [liked, setLiked] = useState(0);
-  const {course , loading , error} = UseCourseDate(courseid);
+  const {course , loading , error} = UseCourseDate(courseId);
   if (loading) return <p>در حال بارگذاری...</p>;
   if (error) return <p>{error}</p>;
 
@@ -21,7 +25,7 @@ const CourseStare = ({ courseid }) => {
 
 
   const handleLike = async () => {
-    if (!courseid) {
+    if (!courseId) {
       console.error("❌ CourseId is missing");
       return;
     }
@@ -29,7 +33,7 @@ const CourseStare = ({ courseid }) => {
     setError(null);
 
     try {
-      const response = await http.post(`/Course/AddCourseLike?CourseId=${courseid}`);
+      const response = await http.post(`/Course/AddCourseLike?CourseId=${courseId}`);
       console.log("✅ Like response:", response);
       setLiked(response.data.likes);
     } catch (err) {
@@ -44,7 +48,7 @@ const CourseStare = ({ courseid }) => {
 
 
 
-  console.log("📌 courseId prop:", courseid);
+  // console.log("📌 courseId prop:", courseid);
 
 
 

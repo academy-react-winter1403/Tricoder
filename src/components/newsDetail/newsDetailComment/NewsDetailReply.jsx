@@ -1,16 +1,38 @@
 import React from 'react'
 import { NewsCommentLike } from "../../../assets/fonts/icons/newsDetail/newsComment/NewsCommentLike"
 import { CommentReply } from '../../../assets/fonts/icons/newsDetail/newsComment/CommentReply'
+import { useLocation, useParams } from 'react-router-dom'
+import { useGetPostsQuery, usePostToDynamicUrlMutation } from '../../../core/services/interceptor/reduxIndex'
+
+
 
 const NewsDetailReply = () => {
-  return (
-        
-           <div  className='w-full flex flex-col gap-2.5  border-r-2 border-[#CFD8DC] pr-4 mr-4'>
+
+   const { NewsId } = useParams();
+    const location = useLocation()
+    const [postToDynamicUrl] = usePostToDynamicUrlMutation();
+
+   const {data,error, isLoading } = useGetPostsQuery("/News/GetRepliesComments?Id" + NewsId)
+      console.log(data)
+  
+    if (data != undefined){
+
+      
+    }
+    else if(data === undefined){
+
+      
+    }
+  
+    return(
+<>
+      {data?.map((data,ind)=>(
+        <div key={ind}  className='w-full flex flex-col gap-2.5  border-r-2 border-[#CFD8DC] pr-4 mr-4'>
       
       <div className='flex justify-between '>
       <div className='flex gap-2'>
          <div className=' border-2 rounded-3xl w-8 h-8'></div>
-         <p className='font-medium leading-8 text-base'>محمد زمانی</p>
+         <p className='font-medium leading-8 text-base'>محمد زمانی  {data.autor}</p>
        </div>
        <div className='text-[#607D8B] text-xs font-normal leading-8'>2 روز پیش</div>
       </div>
@@ -28,9 +50,13 @@ const NewsDetailReply = () => {
          </div>
        </div>
    </div>
+       
+      ))}
+       </>
+    )
         
+   
   
-  )
 }
 
 export {NewsDetailReply} 

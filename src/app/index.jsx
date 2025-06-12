@@ -7,21 +7,22 @@ import { Footer } from '../components/common/footer/Footer'
 function App() {
 
   const location = useLocation()
-  console.log(location);
+  // console.log(location);
+  
 
   return (
-    <main className={`flex flex-col ${location.pathname === '/'   ? "heroBG" : ""}   `}>
+    <main className={`flex flex-col ${location.pathname === '/' ? "heroBG" : ""}   `}>
       <Header />
       <Outlet />
-      <Footer/>
+      <Footer />
     </main>
-  
-    
-
-  
 
 
-  
+
+
+
+
+
   )
 }
 

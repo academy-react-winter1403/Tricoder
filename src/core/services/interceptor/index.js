@@ -5,6 +5,9 @@ const baseUrl = import.meta.env.VITE_BASE_URL;
 
 const http = axios.create({
   baseURL: baseUrl,
+    headers: {
+    Authorization: "Bearer " + localStorage.getItem("token"),
+  },
 });
 
 const onSucess = (res) => {
@@ -35,7 +38,7 @@ http.interceptors.response.use(onSucess, onError);
 http.interceptors.request.use((opt) => {
   const token = getItem("token");
   if (token) {
-    opt.headers.Authorization = "bearer " + token;
+    opt.headers.Authorization = "Bearer " + token;
   }
   return opt;
 });

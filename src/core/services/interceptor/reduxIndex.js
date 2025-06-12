@@ -6,17 +6,30 @@ export const api = createApi({
     baseQuery: fetchBaseQuery({
         baseUrl: baseUrl
     }),
+
+    preparedHeaders:(headers) =>{
+        const token = localStorage.getItem('token')
+        if (token){
+            headers.set('Authorization', `Bearer ${token}`)
+        }
+        return headers;
+    },
     endpoints: (builder) => ({
         getPosts: builder.query({
             query: (id) => `${id}`
         }),
         postToDynamicUrl: builder.mutation({
             query:({url,data}) => ({
-                url:url,
-                method: "API",
+                url,
+                method: "POST",
                 body: data,
+                // headers: {
+                //     // Authorization :Bearer `${localStorage.getItem('token')}`,
+                // }
+               
             })
         })
+
     })
 })
 

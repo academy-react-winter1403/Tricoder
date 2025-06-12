@@ -11,6 +11,8 @@ import { getItem } from "../../../core/services/common/storage.services"
 
 
 const Header = () => {
+     const [searchTerm, setSearchTerm] = useState('');
+
     const dispatch = useDispatch();
     const darkMode = useSelector((state) => state.theme.darkMode)
     console.log(darkMode)
@@ -24,6 +26,7 @@ const Header = () => {
 
         }
     }, [darkMode])
+    ////// bakhshhhh searchhhhhhhhh //////
 
 
     return (
@@ -47,10 +50,10 @@ const Header = () => {
             </div>
             <div className="w-50 h-12.5 flex justify-between gap-4 
             max-md:gap-1 max-md:mt-6">
+              
                 <button onClick={() => { dispatch(setTheme(darkMode === "dark" ? "light" : "dark")) }} className="w-12 h-12 rounded-4xl   relative  cursor-pointer 
-               max-md:w-9 max-md:h-9 max-md:px-1.5 max-md:py-1 max-md:mt-1.5  " >
-
-
+                 
+           max-md:w-9 max-md:h-9 max-md:px-1.5 max-md:py-1 max-md:mt-1.5  " >
                     <img className="" src={darkMode === "dark" ? sunIcon : moonIcon} />
 
                 </button>

@@ -4,11 +4,13 @@ import monitor from "../../../assets/icons/monitor-recorder.svg";
 import calandar from "../../../assets/icons/calendar-2.svg";
 import calandarTick from "../../../assets/icons/calendar-tick.svg";
 import UseCourseDate from '../Hooks/useCourseData';
+import { useParams } from "react-router-dom";
 
 const CourseInfo = ({courseid}) => {
  
+  const {courseId} = useParams()
 
-  const {course , loading , error} = UseCourseDate(courseid);
+  const {course , loading , error} = UseCourseDate(courseId);
 
  if (loading) return <p>در حال بارگذاری...</p>;
  if (error) return <p>{error}</p>;

@@ -7,6 +7,8 @@ import { motion } from "framer-motion";
 import { toast } from 'react-toastify';
 import { Link } from 'react-router-dom'
 import http from '../../../core/services/interceptor'
+import { useGetPostsQuery, usePostToDynamicUrlMutation } from '../../../core/services/interceptor/reduxIndex'
+
 
 const containerVariants = {
     hidden: { opacity: 0 },
@@ -49,75 +51,72 @@ const LandingCourse = () => {
     //     }
     // }
 
-    // const  [topCourses, setTopCourses] = useState([])
-    // const getData = ()=>{
-    //     try {
-    //         const result = http.get("/Home/GetCoursesTop?Count=5")
-    //         setTopCourses(result)
-    //     } catch (error) {
-    //         console.log(error);
-            
-    //     }
+    // const course=[
+    //     {
+    //         img:"./public/landing/course/React.png",
+    //         title:"دوره جامع React JS صفر تا صد",
+    //         note:"202درس",
+    //         time:"14ساعت",
+    //         date:"1اذر1402",
+    //         teacher:"دکتر بحرالعلوم",
+    //         student:"256دانش اموز",
+    //         like:12,
+    //         price:5000
+    //     },
+    //     {
+    //         img:"./public/landing/course/Notejs.png",
+    //         title:"دوره جامع .net core صفر تا صد",
+    //         note:"205درس",
+    //         time:"18ساعت",
+    //         date:"6اذر1407",
+    //         teacher:"دکتر اصغری",
+    //         student:"286دانش اموز",
+    //         like:12,
+    //         price:43000
+    //     },
+    //     {
+    //         img:"./public/landing/course/Html5.png",
+    //         title:"دوره جامع HTML 5 صفر تا صد",
+    //         note:"276درس",
+    //         time:"10ساعت",
+    //         date:"6اذر1404",
+    //         teacher:"دکتراسفندیاری",
+    //         student:"206دانش اموز",
+    //         like:13,
+    //         price:60000
+    //     },
+    //     {
+    //         img:"./public/landing/course/phyton.png",
+    //         title:"دوره جامع pyton صفر تا صد",
+    //         note:"376درس",
+    //         time:"12ساعت",
+    //         date:"6اذ1404",
+    //         teacher:"دکتر قاسمی",
+    //         student:"276دانش اموز",
+    //         like:12,
+    //         price:68000
+    //     },
+    // ]
+
+
+    // const getingdata =()=>{
+    //     const result = http.get("")
     // }
 
-    // useEffect(() => {
-    //   getData()
-    // }, [])
+      const [postToDynamicUrl] = usePostToDynamicUrlMutation();
+      console.log(postToDynamicUrl)
     
+      const {data,error, isLoading } = useGetPostsQuery("/Home/GetCoursesTop?Count=4")
+        console.log(data)
+    
+      if (data != undefined){
+        console.log(data)
+      }
+      else if(data === undefined){
+        console.error(error)
+      }
 
-    const course=[
-        {
-            img:"./public/landing/course/React.png",
-            title:"دوره جامع React JS صفر تا صد",
-            note:"202درس",
-            time:"14ساعت",
-            date:"1اذر1402",
-            teacher:"دکتر بحرالعلوم",
-            student:"256دانش اموز",
-            like:12,
-            price:5000
-        },
-        {
-            img:"./public/landing/course/Notejs.png",
-            title:"دوره جامع .net core صفر تا صد",
-            note:"205درس",
-            time:"18ساعت",
-            date:"6اذر1407",
-            teacher:"دکتر اصغری",
-            student:"286دانش اموز",
-            like:12,
-            price:43000
-        },
-        {
-            img:"./public/landing/course/Html5.png",
-            title:"دوره جامع HTML 5 صفر تا صد",
-            note:"276درس",
-            time:"10ساعت",
-            date:"6اذر1404",
-            teacher:"دکتراسفندیاری",
-            student:"206دانش اموز",
-            like:13,
-            price:60000
-        },
-        {
-            img:"./public/landing/course/phyton.png",
-            title:"دوره جامع pyton صفر تا صد",
-            note:"376درس",
-            time:"12ساعت",
-            date:"6اذ1404",
-            teacher:"دکتر قاسمی",
-            student:"276دانش اموز",
-            like:12,
-            price:68000
-        },
-    ]
-
-
-    const getingdata =()=>{
-        const result = http.get("")
-    }
-
-
+  
   return (
     <motion.div 
     initial="hidden"
@@ -139,8 +138,10 @@ const LandingCourse = () => {
                 
             className='  my-12 gap-x-8 flex
              max-lg:gap-y-4  max-lg:flex-col '>
-
-                {course.map((data,ind)=>(
+                
+           
+                {data?.map((data,ind)=>(
+                     
                         <motion.div 
                         variants={itemVariants}
                         whileHover={{ 
@@ -152,10 +153,10 @@ const LandingCourse = () => {
                         className={`w-74 h-97 bg-[#FFFF] rounded-3xl p-4  shadow-2xl flex-col 
                          max-lg:h-fit max-md:w-60 max-lg:justify-center landingInput`}>
                              <motion.img    
-                             src={data.img} 
+                             src={(data.tumbImageAddress) ? data.tumbImageAddress : "/newsDetail/notfound.jpg"}
                              alt=''
                              whileHover={{ scale: 1.05 }}
-                             className='max-md:w-60'/>
+                             className='max-md:w-60  h-43 '/>
                              
                              <p className='font-bold text-base font-yekan-600 my-4 
                              max-md:text-xs'>{data.title}</p>
@@ -171,13 +172,13 @@ const LandingCourse = () => {
                                 <div className=' w-14.5 flex 
                                 max-md:mx-1'>
                                     <div className='max-md:hidden'> <Clock/></div>
-                                    <p className='text-xs font-medium mr-1 tracking-tight'> 10ساعت </p>
+                                    <p className='text-xs font-medium mr-1 tracking-tight'>10ساعت</p>
                                 </div>
              
                                 <div className=' w-14.5 flex  
                                max-md:mx-2 '>
                                     <div className='max-md:hidden '> <Calender/></div>
-                                    <p className='text-xs font-medium mr-1 '>  6آذر1403</p>
+                                    <p className='text-xs font-medium mr-1 '>6اذر1404</p>
                                 </div>
              
                              </div>
@@ -185,20 +186,20 @@ const LandingCourse = () => {
                              <div className='text-sm flex justify-between  my-4 
                              max-md:whitespace-nowrap'>
                                  <span className='font-bold whitespace-nowrap
-                                 max-md:text-xs'>مدرس:  <span className='max-md:text-xs whitespace-nowrap font-normal'>{data.teacher} </span></span>
+                                 max-md:text-xs'>مدرس:  <span className='max-md:text-xs whitespace-nowrap font-normal'>{data.teacherName} </span></span>
                                  <p className=' whitespace-nowrap
                                  max-md:mr-4 max-md:text-xs'>{data.like}  </p>
                              </div>
              
-                                 <div className='flex gap-30 my-2.5
+                                 <div className='flex gap-24 my-2.5
                                  max-md:gap-14'>
-                                     <div className='w-13 h-8 rounded-3xl bg-[#FFEBEE] flex gap-1'>
+                                     <div className='w-13 h-8 rounded-3xl bg-[#FFEBEE] flex gap-0.5'>
                                          <LikeIcon/>
-                                         <p className='text-[#F44336] leading-8.5'>{data.like}</p>
+                                         <p className='text-[#F44336] leading-8.5'>{data.likeCount}</p>
                                      </div>
                                      <div className='leading-10 '>
                                          <span className='text-[#2196F3] font-bold pl-1.5
-                                         max-md:pl-1 max-md:text-sm'>{data.price}</span>
+                                         max-md:pl-1 max-md:text-sm'>{data.cost}</span>
                                          <span className='max-md:text-sm'>تومان</span>
                                      </div>
              
@@ -207,6 +208,8 @@ const LandingCourse = () => {
              
                         </motion.div>
                 ))}
+               
+
             </div>
             
             <Link to={"/courses"}>

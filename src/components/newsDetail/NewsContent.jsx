@@ -103,7 +103,7 @@ const NewsContent = ({detailsNewsDto}) => {
         </div>
       </div>
 
-    <NewsDetailComment />
+    <NewsDetailComment detailsNewsDto={detailsNewsDto}/>
 
     </div>
   )

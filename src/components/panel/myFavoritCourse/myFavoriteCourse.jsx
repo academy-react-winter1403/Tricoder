@@ -3,24 +3,38 @@ import { DeleteCourse } from "../../../assets/icons/studentPanel/DeleteCourse";
 import { LikeIcon } from '../../../assets/fonts/icons/landing/courseIcon/LikeIcon';
 import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart';
 
+import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex";
+
+
  const MyFavoriteCourse = () => {
-  const favoriteCourse=[
-    {
-      courseType:"ری اکت",
-      courseTeacher:" نام مدرس دوره",
-      startDate:"1402/7/19",
-      coursePrice:"35000 تومان",
-      delete:<FullHeart/>
-  },
-  {
-      courseType:"نکست ",
-      courseTeacher:" نام مدرس دوره",
-      startDate:"1402/7/18",
-      coursePrice:"95000 تومان",
-      delete:<FullHeart/>
-  },
+//   const favoriteCourse=[
+//     {
+//       courseType:"ری اکت",
+//       courseTeacher:" نام مدرس دوره",
+//       startDate:"1402/7/19",
+//       coursePrice:"35000 تومان",
+//       delete:<FullHeart/>
+//   },
+//   {
+//       courseType:"نکست ",
+//       courseTeacher:" نام مدرس دوره",
+//       startDate:"1402/7/18",
+//       coursePrice:"95000 تومان",
+//       delete:<FullHeart/>
+//   },
    
-]
+// ]
+
+      const {data,error, isLoading } = useGetPostsQuery("/SharePanel/GetMyFavoriteCourses")
+            console.log(data)
+        
+        
+          if (data != undefined){
+            console.log(data)
+          }
+          else if(data === undefined){
+            console.error(error)
+          }
   return (
     <div className=" flex flex-col px-11 pt-15 rtl gap-6 w-full 
     ">
@@ -33,14 +47,8 @@ import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart';
                <p>مدرس</p>
                <p> نام دوره</p>
             <p>تصویر</p>
-          
-           
-           
-            
-         
-
         </div>
-        {favoriteCourse.map((data,ind) =>(
+        {data?.map((data,ind) =>(
                   <div key={ind} className="flex gap-32.5 text-center py-3.5 w-full px-10 whitespace-nowrap rounded-[10px] bg-gray-200 justify-center leading-8
                   max-lg:gap-5 max-md:text-xs max-md:gap-4">
                          <FullHeart/>
@@ -56,11 +64,10 @@ import { FullHeart } from '../../../assets/fonts/icons/newsDetail/FullHeart';
                 
      
                  </div>
+              
         ))}
+        </div>
+  )}
 
-  
 
-    </div>
-  )
-}
-export { MyFavoriteCourse}
+export { MyFavoriteCourse }

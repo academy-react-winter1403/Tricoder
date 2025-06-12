@@ -9,8 +9,27 @@ import { ReactIcon } from "../../../assets/fonts/icons/landing/heroSection/small
 import { AngularIcon } from "../../../assets/fonts/icons/landing/heroSection/smallIcon/AngularIcon";
 import { CssIcon } from "../../../assets/fonts/icons/landing/heroSection/smallIcon/CssIcon";
 import { HtmlIcon } from "../../../assets/fonts/icons/landing/heroSection/smallIcon/HtmlIcon";
+import { useState } from "react";
+
 
 const HeroSection = () => {
+
+
+    const [searchTerm, setSearchTerm] = useState("");
+    
+
+    const handleChange = (e) => {
+    setSearchTerm(e.target.value);
+  };
+  //   const filteredData = data?.filter(item => 
+  //   item.toLowerCase().includes(searchTerm.toLowerCase())
+  // );  
+
+
+ 
+
+
+
   return (
     <div
       className={`w-full flex items-center justify-center gap-x-16
@@ -64,15 +83,23 @@ const HeroSection = () => {
           </p>
         </div>
         <div className="  max-lg max-lg:w-3/5 max-lg: ">
-          <input
+          <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
             className="  w-[99%] px-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative 
-      max-lg:my-3 max-md:h-8 max-lg:text-xs max-lg:rounded-xl"
+      max-lg:my-3 max-md:h-8 max-lg:text-xs max-lg:rounded-xl landingInput"
             placeholder="چی میخوای یاد بگیری ؟"
           />
           <div className="max-md:hidden max-lg:hidden ">
             {" "}
             <SearchIcon />
           </div>
+          <ul>
+            <li>
+                {/* {filteredData.map(item => (
+          <li key={item.id}>{item.name}</li>
+        ))} */}
+            </li>
+          </ul>
+          
           <div className="">
             {" "}
             <WebsiteInfo />
