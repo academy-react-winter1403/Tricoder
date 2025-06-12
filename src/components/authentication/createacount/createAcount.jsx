@@ -55,12 +55,17 @@ const CreateAcount = () => {
                         pr-4 tracking-tight outline-none"
             placeHolder="شماره موبایل"
           />
-          <Button>دریافت کد تایید</Button>
-          <AuthSuggestion
+          <div className=" flex justify-center">
+            <Button>دریافت کد تایید</Button>
+          </div>
+          <div className=" flex justify-center">
+            <AuthSuggestion
             link={"/authentication/login"}
             question={"حساب کاربری دارید؟ "}
             suggest={"وارد شوید  "}
-          />
+            />
+          </div>
+          
         </form>
       </div>
     </div>
