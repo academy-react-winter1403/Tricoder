@@ -2,7 +2,7 @@ import Sidebar from "./sidbar/sidbar";
 import PanlsMenuButton from "../panelsMenuButton";
 import Basket from "../../../assets/icons/Basket.png";
 import { useLocation } from "react-router-dom";
-import { useState,useContext , createContext } from "react";
+import { useState, useContext, createContext } from "react";
 import ColorSelectore from './ColorSelectore'
 
 
@@ -20,22 +20,22 @@ export const useAccent = () => useContext(AccentContext);
 const StudentPanel = ({ children }) => {
 
 
- const [themeColor, setThemeColor] = useState(' linear-gradient(to bottom, #a855f7, #6366f1)');
- const [accentColor, setAccentColor] = useState('#6033FE'); // رنگ پرت
+  const [themeColor, setThemeColor] = useState(' linear-gradient(to bottom, #a855f7, #6366f1)');
+  const [accentColor, setAccentColor] = useState('#6033FE'); // رنگ پرت
 
-    const colors = [
-      { base: 'linear-gradient(to bottom, #a855f7, #6366f1)', accent: '#6033FE' },
-      { base: ' linear-gradient(0deg,rgba(250, 0, 87, 1) 0%, rgba(255, 148, 193, 1) 100%)', accent: '#D62273' },
-      { base: 'linear-gradient(0deg,rgba(69, 122, 196, 1) 0%, rgba(171, 220, 255, 1) 100%)', accent:'#275C91'},
-      { base:  'linear-gradient(0deg,rgba(63, 158, 131, 1) 0%, rgba(200, 255, 145, 1) 100%)', accent: '#2D612D' },
-    ];
+  const colors = [
+    { base: 'linear-gradient(to bottom, #a855f7, #6366f1)', accent: '#6033FE' },
+    { base: ' linear-gradient(0deg,rgba(250, 0, 87, 1) 0%, rgba(255, 148, 193, 1) 100%)', accent: '#D62273' },
+    { base: 'linear-gradient(0deg,rgba(69, 122, 196, 1) 0%, rgba(171, 220, 255, 1) 100%)', accent: '#275C91' },
+    { base: 'linear-gradient(0deg,rgba(63, 158, 131, 1) 0%, rgba(200, 255, 145, 1) 100%)', accent: '#2D612D' },
+  ];
 
-    const handleColorChange = (color) => {
-      setThemeColor(color.base);
-      setAccentColor(color.accent);
-    };
+  const handleColorChange = (color) => {
+    setThemeColor(color.base);
+    setAccentColor(color.accent);
+  };
 
-   
+
 
   const location = useLocation();
   const path = location.pathname;
@@ -59,33 +59,33 @@ const StudentPanel = ({ children }) => {
 
 
   return (
-  < AccentContext.Provider  value={{accentColor}}>
-   <ThemeContext.Provider    value={{ themeColor }}>
-      <div className="   w-[100%]     h-auto   min-h-[110vh]    bg-[#EEF2FF]   flex  p-7 gap-7 " style={{ direction: "ltr" }}>
-        <div className="md:w-[80%]  w-[99%]  h-[100%]  ">
-          <div className="w-[100%]  min-h-[100vh] max-h-auto  rounded-2xl bg-white ">
-            <header className="w[98%]  h-[4rem] flex  items-center  justify-between   p-6 ">
-              <div className=" w-[12rem]    h-[2rem]     flex  gap-[10px]">
-                <img className="w-[25px]     h-[25px]   " src={Basket} alt="" />
-              <ColorSelectore colors={colors} onSelect={handleColorChange} />
-         
-              </div>
+    < AccentContext.Provider value={{ accentColor }}>
+      <ThemeContext.Provider value={{ themeColor }}>
+        <div className="   w-[100%]     h-auto   min-h-[110vh]    bg-[#EEF2FF]   flex  p-7 gap-7 " style={{ direction: "ltr" }}>
+          <div className="md:w-[80%]  w-[99%]  h-[100%]  ">
+            <div className="w-[100%]  min-h-[100vh] max-h-auto  rounded-2xl bg-white ">
+              <header className="w[98%]  h-[4rem] flex  items-center  justify-between   p-6 ">
+                <div className=" w-[12rem]    h-[2rem]     flex  gap-[10px]">
+                  <img className="w-[25px]     h-[25px]   " src={Basket} alt="" />
+                  <ColorSelectore colors={colors} onSelect={handleColorChange} />
 
-              <div className="flex   items-center  text-slate-500  ">
-                <h1 className="  font-bold    ">{title}</h1>
+                </div>
 
-              </div>
-            </header>
-            <hr className="w-[98%]   mx-auto   border-slate-500" />
+                <div className="flex   items-center  text-slate-500  ">
+                  <h1 className="  font-bold    ">{title}</h1>
 
-            {children}
+                </div>
+              </header>
+              <hr className="w-[98%]   mx-auto   border-slate-500" />
+
+              {children}
+            </div>
           </div>
+          <Sidebar />
         </div>
-        <Sidebar/>
-      </div>
-    </ThemeContext.Provider>
+      </ThemeContext.Provider>
     </AccentContext.Provider>
-   
+
   );
 };
 
