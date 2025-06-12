@@ -38,22 +38,22 @@ const TeacherSlider = () => {
     ]
 
   return (
-    <div className='my-25 bg-[#E3F2FD] h-187 pt-16
-    max-md:h-150 max-xl:my-70'>
-        <div className='h-130    mx-29 relative  '>
+    <div className='my-90 bg-[#E3F2FD] h-187 pt-15 w-full flex justify-center items-center 
+    max-md:h-150 max-xl:my-30 LandingTeacher'>
+        <div className='    flex-col justify-center items-center  mx-auto '>
 
-        <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
-        max-md:h-9 max-md:w-30 max-md:mx-13  max-xl:mx-78'>
+        <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-auto
+        max-md:h-9 max-md:w-30 max-md:  max-xl:'>
         <p className='text-[40px] text-center whitespace-nowrap
          max-md:text-xl '>اساتید برتر </p> 
         </div> 
 
-        <div className='h-111  b mt-22 flex gap-1 items-center  
-        max-md:w-115 max-md:-mr-29  max-md:mt-6'>
+        <div className='h-fit   mt-22 flex gap-1 items-center  justify-center
+        max-md:w-115 max-md:  max-md:mt-6'>
       
 
             {SlideItem.map((data,ind)=>(
-                  <div className='w-74 h-95.5 relative rounded-3xl ' style={{marginTop: ind % 2 === 0 ? '80px' : '0px',}}>
+                  <div className='w-fit relative rounded-3xl  justify-items-center' style={{marginTop: ind % 2 === 0 ? '80px' : '0px',}}>
 
                   <div className='bg-white  w-17 h-7 rounded-3xl flex items-center gap-0.5 absolute top-12 right-12
                   max-md:hidden max-xl:hidden'>
@@ -76,7 +76,7 @@ const TeacherSlider = () => {
      
           
         </div>
-             <div className='w-24 h-4 flex mx-138 gap-6 mt-9
+             {/* <div className='w-24 h-4 flex mx-138 gap-6 mt-9
              max-md:-mt-20 max-md:mx-17 max-xl:mx-96'>
               <div className='w-4 h-4 bg-[#2196F3] rounded-3xl
               max-md:w-3 max-md:h-3'></div>
@@ -85,7 +85,7 @@ const TeacherSlider = () => {
               <div className='w-4 h-4 bg-[#ffff] rounded-3xl border-2 border-[#2196F3]
                max-md:w-3 max-md:h-3'></div>
 
-             </div>
+             </div> */}
 
         </div>
       

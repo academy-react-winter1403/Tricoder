@@ -64,11 +64,11 @@ const Service = () => {
     whileInView="show"
     viewport={{ once: true, margin: "-50px" }}
     variants={container}
-    className=' h-97  mx-30 mt-20      max-lg:mx-23 '>
+    className='   mx-30 mt-80      max-lg:mx-23 '>
         <motion.div
         variants={item}  
         className='w-70 h-18 border-b-4 b  mx-125  border-[#2196F3]  border-b-gradient-to-r from-[#2196F300] via-[#2196F3] to-[#2196F300] 
-        max-md:h-9 max-md:w-30  max-md:hidden  max-lg:hidden'>
+        max-md:h-9 max-md:w-30  max-md:hidden  max-lg:hidden '>
 
           <p className='text-[40px] text-center 
           max-md:text-xl '>خدمات ما</p> 
@@ -85,7 +85,7 @@ const Service = () => {
                  whileHover={hoverEffect}
                  style={{boxShadow: ind % 2 === 1 ? '0 9px 32px -14px ' : '',}} 
                  className='bg-[#FAFEFF2E] h-70 w-99 border-[2px] border-[#fff3f33b] rounded-3xl
-                  max-lg:w-66 max-lg:h-58 max-lg:px-2'>
+                  max-lg:w-66 max-lg:h-58 max-lg:px-2 LandingTeacher'>
                     <motion.div 
                     whileHover={{ rotate: 10, scale: 1.1 }}
                     className='max-lg:-mr-20'>{data.icon}</motion.div>

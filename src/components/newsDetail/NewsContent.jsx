@@ -68,13 +68,13 @@ const NewsContent = ({detailsNewsDto}) => {
 
 
       <div className='flex flex-col gap-8'>
-        <div className='bg-[#ECEFF1] flex justify-between items-center py-4 px-6 rounded-2xl'>
+        <div className='bg-[#ECEFF1] flex justify-between items-center py-4 px-6 rounded-2xl landingInput'>
           <div className='flex gap-2'>
             <Share />
             <span className='font-bold text-base '>اشتراک گزاری</span>
           </div>
 
-          <div className='flex gap-4'>
+          <div className='flex gap-4 '>
             <NewsMedia />
             <NewsTwitter />
             <NewsInsta />

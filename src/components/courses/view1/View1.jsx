@@ -20,7 +20,7 @@ const View1 = ({data}) => {
                     <div className='border-1 w-[264px] h-[180px] rounded-[20px] m-auto mt-[16px] overflow-hidden'>
                         <img src={data.tumbImageAddress} alt="courseImg" className='w-full h-full overflow-hidden' />
                     </div>
-                    <div className='  w-[169px] h-[25px] text-[16px] font-yekan-700 place-self-start mt-[16px] text-fontColor-1 whitespace-nowrap'> {data.title}</div>
+                    <div className='  w-[169px] h-[25px] text-[16px] font-yekan-700 place-self-start mt-[16px] text-fontColor-1 whitespace-nowrap courseTab'> {data.title}</div>
                     <div className=' w-[264px] h-[40px] rounded-[24px] mt-[12px] bg-[#ECEFF1] flex items-center justify-center gap-[24px] '>
                         <div className=' h-[19px]  text-[12px] font-yekan-500 flex gap-[2px]'>
                             <Note/>
@@ -37,8 +37,8 @@ const View1 = ({data}) => {
                     </div>
 
                     <div className=' w-[264px] h-[22px] flex flex-row-reverse mt-[16px] justify-between text-[14px] font-yekan-700 '>
-                        <div className=' w-[74px] whitespace-nowrap text-fontColor-1'> {data.currentRegistrants} دانش‌آموز </div>
-                        <div className=' w-[114px] text-fontColor-1 '> مدرس: {data.teacherName} </div>
+                        <div className=' w-[74px] whitespace-nowrap text-fontColor-1 courseTab'> {data.currentRegistrants} دانش‌آموز </div>
+                        <div className=' w-[114px] text-fontColor-1 courseTab '> مدرس: {data.teacherName} </div>
                     </div>
 
                     <div className='w-[264px] h-[32px] flex flex-row-reverse mt-[14px] justify-between text-[14px] font-yekan-700 items-center '>

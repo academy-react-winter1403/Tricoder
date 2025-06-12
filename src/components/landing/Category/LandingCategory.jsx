@@ -91,7 +91,7 @@ const LandingCategory = () => {
     initial="hidden"
     whileInView="show"
     viewport={{ once: true, margin: "-100px" }} 
-    className='h-188 my-45
+    className='h-fit my-30 flex justify-center items-center mx-auto container
     max-md:my-39 max-xl:my-80 '>
 
       <motion.div 
@@ -104,27 +104,27 @@ const LandingCategory = () => {
      <motion.div
      variants={floatingIcons}
      custom={2} 
-     className='max-md:hidden max-xl:hidden'> 
+     className='max-md:hidden max-xl:hidden hidden'> 
         <GroupIcon />
      </motion.div>
 
-      <div className='absolute top-725 right-153
+      <div className='absolute top-778 right-153
       max-md:hidden max-xl:hidden'>  <CircleIcon /> </div>
-      <div className='absolute right-110 top-610
-      max-md:top-690 max-md:right-3 max-xl:top-673- max-xl:right-50'><BigRectangle /></div>
+      <div className='absolute right-110 top-665
+      max-md:top-760 max-md:right-3 max-xl:top-673- max-xl:right-50 landingBigIcon'><BigRectangle /></div>
       <div className='absolute right-20 top-660
       max-md:hidden max-xl:top-560 max-xl:hidden'><TextIcon /></div>
 
       <motion.div
       variants={container} 
-      className='w-172   absolute top-580 right-170 grid grid-cols-2 grid-rows-2 gap-8 
-      max-md:right-7 max-md:top-700 max-md:gap-5 max-md:w-102 max-xl:right-50 max-xl:top-700 '>
+      className='   absolute top-630 right-170 grid grid-cols-2 grid-rows-2 gap-8 
+      max-md:right-7 max-md:top-770 max-md:gap-5 max-md:w-102 max-xl:right-50 max-xl:top-700 '>
 
         {CategoryItem.map((data, ind) => (
           <motion.div 
           key={ind} 
           className='bg-white w-82 h-82 rounded-3xl shadow-2xl relative
-          max-md:w-51 max-md:h-57' 
+          max-md:w-51 max-md:h-57 landingInput' 
           variants={cardVariants}
             whileHover={{
               y: -10,
