@@ -30,7 +30,8 @@ export const api = createApi({
             })
         })
 
-    })
+    }),
+    // useGetPostsQuery: 
 })
 
 export const { useGetPostsQuery, usePostToDynamicUrlMutation } = api;

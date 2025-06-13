@@ -13,12 +13,6 @@ const NewsDetailComment = ({detailsNewsDto}) => {
   const { NewsId } = useParams();
   console.log(NewsId)
 
-  
-
-  
-
-
-
   return (
     <div className="rounded-3xl shadow-2xl flex flex-col gap-6 px-8 py-8">
     

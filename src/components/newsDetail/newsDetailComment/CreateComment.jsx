@@ -55,7 +55,7 @@ const CreateComment = ({id , newsId}) => {
           placeholder="عنوان نظر..."
         />
         <textarea
-          className="h-25 w-full pr-4 border-2 border-[#CFD8DC] rounded-2xl text-sm text-[#607D8B] leading-3"
+          className="h-25 w-full pr-4   pt-3 border-2 border-[#CFD8DC] rounded-2xl text-sm text-[#607D8B] leading-3"
           value={describe}
           onChange={(e) => setDescribe(e.target.value)}
           placeholder="متن نظر..."
