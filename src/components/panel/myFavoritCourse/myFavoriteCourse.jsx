@@ -50,7 +50,7 @@ const MyFavoriteCourse = () => {
     "
     >
       <div
-        className="flex gap-36 bg-[#6033FE] text-white  text-center py-4 w-full px-9  whitespace-nowrap rounded-[10px] 
+        className="flex gap-30 bg-[#6033FE] text-white  text-center py-4 w-full  whitespace-nowrap rounded-[10px]  justify-center
         max-lg:gap-5 max-md:text-xs"
       >
         <p> مدیریت</p>
@@ -63,7 +63,7 @@ const MyFavoriteCourse = () => {
       {favoriteCourse?.favoriteCourseDto?.map((data, ind) => (
         <div
           key={ind}
-          className="flex gap-32.5 text-center py-3.5 w-full px-10 whitespace-nowrap rounded-[10px] bg-gray-200 justify-center leading-8
+          className="flex gap-25 text-center py-3.5 w-full  whitespace-nowrap rounded-[10px] bg-gray-200 justify-center leading-8
                   max-lg:gap-5 max-md:text-xs max-md:gap-4"
         >
           <FullHeart />
@@ -71,7 +71,7 @@ const MyFavoriteCourse = () => {
           <p>{data.lastUpdate}</p>
           <p>{data.teacheName}</p>
           <p> {data.courseTitle}</p>
-          <div className="border-2 border-black w-6 h-6 rounded-[4px]"></div>
+          <div className="border-2 border-black w-6 h-6 rounded-[4px]"> <img src={data.tumbImageAddress}/> </div>
         </div>
       ))}
     </div>
