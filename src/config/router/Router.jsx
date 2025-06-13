@@ -99,8 +99,8 @@ export const routs = createBrowserRouter(
             { path: "/Studentpanel/editprofile", element: <EditProfilePage/> },
             { path: "/Studentpanel/logout", element: <LogoutPage/> },
             { path: "/Studentpanel/myFavoritecourse", element: <MyFavoriteCourse/> },
-            { path: "/Studentpanel/MyFavoriteNews", element: <MyFavoriteNews/> },
-            { path: "/Studentpanel/MyReservedCourse", element: <MyReservedCourse/> },
+            // { path: "/Studentpanel/MyFavoriteNews", element: <MyFavoriteNews/> },
+            // { path: "/Studentpanel/MyReservedCourse", element: <MyReservedCourse/> },
           ],
         },
       

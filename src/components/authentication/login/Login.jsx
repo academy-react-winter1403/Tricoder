@@ -82,14 +82,14 @@ const Login = () => {
             />
 
             <div className="w-full h-11 flex justify-between items-center">
-              <span className="text-[9px] font-yekan-500 text-[#2196F3]">
+              <span className="text-[10px] font-yekan-500 text-[#2196F3]">
                 {" "}
                 رمز عبور را فراموش کردم{" "}
               </span>
               <div className="flex">
                 <label
                   htmlFor="rememberMe"
-                  className="text-[9px]  font-yekan-500 text-[#455A64]"
+                  className="text-[10px]  font-yekan-500 text-[#455A64]"
                 >
                   {" "}
                   من را بخاطر بسپار{" "}
@@ -109,19 +109,25 @@ const Login = () => {
                   }
                 />
                 <label htmlFor="rememberMe"
-                  className="border-1 w-3 h-3 block ml-1 rounded-[5px] border-[#455A64]
+                  className="border-1 w-3 h-3 block mr-[2px] rounded-[5px] border-[#455A64]
                                     peer-checked:bg-[#2196F3] peer-checked:border-none peer-checked:bg-[url(src/assets/icons/Vector.png)]"
                 ></label>
               </div>
             </div>
 
-            <Button > دریافت کد تایید </Button>
+            <div className=" flex justify-center">
+              <Button  > دریافت کد تایید </Button>
+            </div>
 
-            <AuthSuggestion
+            <div className=" flex justify-center">
+              <AuthSuggestion
               link={"/Studentpanel/dashboard"}
               question={"حساب کاربری ندارید؟ "}
               suggest={"ثبت نام "}
-            />
+              />
+            </div>
+
+            
           </div>
         </form>
       </div>
