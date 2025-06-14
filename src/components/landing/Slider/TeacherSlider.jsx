@@ -69,13 +69,13 @@ const TeacherSlider = () => {
         </div>
 
         <div
-          className="h-fit   mt-14 flex gap-1 items-center  justify-center
+          className="h-fit   mt-14 flex  items-center  justify-center
         max-md:w-115 max-md:  max-md:mt-6"
         >
           {console.log(slideValue)}
           <Swiper
-            slidesPerView={9}
-            initialSlide={18}
+            slidesPerView={8}
+            initialSlide={650}
             pagination={{
               clickable: true,
             }}

@@ -16,3 +16,4 @@ export const putUserInfo = async (formData) => {
     console.log(error);
   }
 };
+

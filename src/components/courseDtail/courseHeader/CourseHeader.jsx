@@ -36,22 +36,8 @@ const CourseHeader = () => {
 
 
 
-
-
-
-
-
-
-
   if (loading) return <p>در حال بارگذاری...</p>
   if (error) return <p>{error}</p>
-
-
-
-
-   
-
-
 
 
 

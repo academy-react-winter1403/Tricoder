@@ -8,9 +8,11 @@ import { createContext, useContext } from "react"
 import { Provider, useDispatch, useSelector } from "react-redux"
 import { setTheme } from "../../../redux/Store/darkmode/DarkMode"
 import { getItem } from "../../../core/services/common/storage.services"
-
+import { useTranslation } from "react-i18next"
 
 const Header = () => {
+      const {t} =useTranslation()
+
      const [searchTerm, setSearchTerm] = useState('');
 
     const dispatch = useDispatch();
@@ -43,7 +45,7 @@ const Header = () => {
             <div className="w-86.5 h-8 flex gap-10 text-base font-medium tracking-tight whitespace-nowrap leading-13 mr-25
             max-md:text-[12px] max-md:gap-3 max-md:mx-6 " >
 
-                <Link to={"/courses"}>   دوره‌ها     </Link>
+                <Link to={"/courses"}>   {t("courses")}     </Link>
                 <p>اساتید</p>
                 <p>ارتباط با ما</p>
                 <Link to={"news"}>اخبار مقالات</Link>
@@ -55,7 +57,7 @@ const Header = () => {
                  
            max-md:w-9 max-md:h-9 max-md:px-1.5 max-md:py-1 max-md:mt-1.5  " >
                     <img className="" src={darkMode === "dark" ? sunIcon : moonIcon} />
-
+                    
                 </button>
 
                 <Link to={getItem("token") ? "/Studentpanel/dashboard" : "/authentication/login"}>
