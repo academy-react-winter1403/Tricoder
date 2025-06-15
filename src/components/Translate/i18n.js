@@ -48,6 +48,8 @@ i18n.use(initReactI18next).init({
            footer2:"Sign up to receive news via email.",
            footerBlue:"Let me know",
            footerT1:"Training courses",
+           aboutUs:"AboutUs",
+           footerRules:"Rules and regulations",
 
           
 
@@ -99,6 +101,9 @@ i18n.use(initReactI18next).init({
                 footer2:"برای دریافت اخبار از طریق ایمیل ثبت نام کنید",
                 footerBlue:"خبرم کن",
                 footerT1:"دوره های اموزشی",
+                aboutUs:"درباره ما",
+                footerRules:"قوانین و مقررات",
+
                 
 
      

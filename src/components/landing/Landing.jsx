@@ -12,6 +12,7 @@ import i18n from "i18next";
 import { changeLng, TranslateSlice } from "../../redux/Store/translateSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
+import { TransgenderIcon } from "lucide-react";
 
 const Landing = () => {
   const user = useSelector((e) => e.translate);
@@ -100,7 +101,7 @@ const Landing = () => {
           className="fixed top-[75%] left-[4%] cursor-pointer z-50"
         >
           {" "}
-          <img src="../../../public/landing/landingMenu.png" />
+          {/* <img src="../../../public/landing/course/language.png" /> */}
         </button>
       )} 
        <div
@@ -122,10 +123,10 @@ const Landing = () => {
           }
         
         }
-        className="fixed top-[75%] left-[4%] cursor-pointer z-50"
+        className="fixed top-[75%] left-[4%] cursor-pointer z-50 "
       >
         {" "}
-        <img src="../../../public/landing/landingMenu.png" />
+        <img className="w-[50px]" src="../../../public/landing/translate2.png" />
       </button>
        <HeroSection />
             <Service />
