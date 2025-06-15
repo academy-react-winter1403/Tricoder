@@ -2,9 +2,11 @@
 
 import { LogOut, Power } from "lucide-react";
 import { useState } from "react";
+import { useAccent }  from '../../../app/layouts/StudentPanelLayout/StudentPanel'
 
 
  const LogoutPage = () => {
+  const { accentColor } = useAccent();
   const [showModal, setShowModal] = useState(false)
 
   const handleLogout = () => {
@@ -25,8 +27,9 @@ import { useState } from "react";
           با خارج شدن از حساب، برای ورود مجدد نیاز به وارد کردن اطلاعات دارید.
         </p>
         <button
+           style={{backgroundColor: accentColor}}
           onClick={() => setShowModal(true)}
-          className="bg-indigo-500 hover:bg-indigo-600 text-white text-lg px-8 py-3 rounded-lg shadow-md transition"
+          className=" text-white text-lg px-8 py-3 rounded-lg shadow-md transition"
         >
           خروج از حساب
         </button>
@@ -42,8 +45,9 @@ import { useState } from "react";
             </p>
             <div className="flex justify-center gap-4">
               <button
+               style={{backgroundColor: accentColor}}
                 onClick={handleLogout}
-                className="bg-indigo-500 hover:bg-indigo-600 text-white px-6 py-2 rounded-md text-sm"
+                className=" text-white px-6 py-2 rounded-md text-sm"
               >
                 بله، خارج شو
               </button>
