@@ -63,9 +63,11 @@ const Header = () => {
                 <Link to={getItem("token") ? "/Studentpanel/dashboard" : "/authentication/login"}>
                     <div className=" w-33 h-12 bg-[#2196F3] rounded-[80px]
                 max-md:w-17 max-md:h-8 max-md:rounded-3xl max-md:mt-1.5 ">
-                        <p className="text-base font-bold text-white text-center leading-12
-                    max-md:text-[10px] max-md:leading-8.5">{getItem("token") ? "" : "ورود به حساب"} {t("dashbored")} </p>
-                            
+                        <p
+                         
+                        className="text-base font-bold text-white text-center leading-12
+                    max-md:text-[10px] max-md:leading-8.5">{getItem("token") ? "داشبورد" : "ورود به حساب"}</p>
+
                     </div>
                 </Link>
 

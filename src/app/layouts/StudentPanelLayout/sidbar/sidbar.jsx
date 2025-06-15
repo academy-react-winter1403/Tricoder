@@ -4,6 +4,9 @@ import { useSelector, useDispatch } from "react-redux";
 import { closeMenu } from "../../../../redux/Store/menuSlice";
 import { BookOpenCheck,HomeIcon, BookOpenText, CalendarHeart, FileHeart, KeyRound, LayoutDashboard, LucideUserCircle2, MessageCircleMore, Power,} from "lucide-react";
 import { useTheme,useAccent }  from "../StudentPanel";
+import { useEffect, useState } from "react";
+import http from "../../../../core/services/interceptor";
+
 const Sidebar = () => {
 
 
@@ -15,6 +18,24 @@ const Sidebar = () => {
   const { accentColor } = useAccent();
 
 
+  const [studentData, setStudentData] = useState(null);
+
+
+  useEffect(() => {
+      const fetchData = async () => {
+          try {
+              const panelRes = await http.get("/SharePanel/GetProfileInfo");
+             if (panelRes) {
+          
+              setStudentData(panelRes)
+             }
+          } catch (error) {
+              console.error(error)
+          }
+      };
+
+      fetchData();
+  }, []);
 
   return (
     <>
@@ -42,7 +63,7 @@ const Sidebar = () => {
             className="  w-[8rem] h-[8rem]   xl:w-[8rem] xl:h-[8rem]  lg:w-[6rem] lg:h-[6rem]   
                        md:w-[5rem] md:h-[5rem]    rounded-full mb-2  border  border-white"
           />
-          <h3 className=" text-white  text-lg font-semibold">بیتا قنبری</h3>
+          <h3 className=" text-white  text-lg font-semibold"> {studentData?.fName} {studentData?.lName}</h3>
         </div>
 
         <ul className="text-white  text-right ">

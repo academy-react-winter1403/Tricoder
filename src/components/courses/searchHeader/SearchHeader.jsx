@@ -20,7 +20,7 @@ const SearchHeader = () => {
   const [searchQuery, setSearchQuery] = useState(undefined);
   const [isSortOpen, setIsSortOpen] = useState(false);
   const debouncedSearchTerm = useDebounce(searchQuery, 700);
-  const selectedTypes = useSelector((state) => state.filters?.selectedTypes || []);
+  // const selectedTypes = useSelector((state) => state.filters?.selectedTypes || []);
 
   const sortOptions = [
     { value: "InsertDate", label: "جدیدترین ها", sortType: "DESC" },
@@ -45,7 +45,7 @@ const SearchHeader = () => {
           Query: Query,
           SortingCol: SortingCol,
           SortType: SortType,
-          CourseTypeIds: selectedTypes.join(',')
+          // CourseTypeIds: selectedTypes.join(',')
         },
       });
 
@@ -84,7 +84,7 @@ const SearchHeader = () => {
     return (
       <div>
         <div className="max-w-[952px] mx-auto w-full h-[56px] flex justify-between flex-row-reverse gap-[16px] ">
-          {/* Sort Dropdown */}
+          
           <div className="relative h-[56px] rounded-[16px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)]">
             <div
               className="h-full rounded-[16px] flex items-center justify-center gap-[26px] cursor-pointer"
@@ -105,7 +105,7 @@ const SearchHeader = () => {
               </div>
             </div>
 
-            {/* Dropdown Menu */}
+            
             {isSortOpen && (
               <div className="absolute top-full right-0 mt-1 w-full min-w-[200px] bg-white rounded-[16px] shadow-lg z-50 overflow-hidden landingInput">
                 {sortOptions.map((option) => (
@@ -125,7 +125,7 @@ const SearchHeader = () => {
             )}
           </div>
 
-          {/* Search Input */}
+          
           <div className="w-[620px] h-[56px] rounded-[16px] overflow-hidden bg-[20px_16px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)] relative">
             <input
               type="text"
@@ -141,7 +141,7 @@ const SearchHeader = () => {
             </div>
           </div>
 
-          {/* View Toggle */}
+         
           <div className="w-[100px] h-[56px] rounded-[16px] shadow-[0px_0px_20px_0px_rgba(0,0,0,0.05)] flex flex-row-reverse justify-center items-center bg-[#ECEFF1]">
             <span
               onClick={() => setView(false)}

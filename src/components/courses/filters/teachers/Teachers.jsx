@@ -1,16 +1,19 @@
 import React, { useEffect, useState } from 'react'
 import http from './../../../../core/services/interceptor/index';
+import { useDispatch, useSelector } from 'react-redux';
+import { setSelectTeacher } from '../../../../redux/Store/teacherSlice';
 
 const Teachers = () => {
     const [teacher, setTeacher] = useState([]);
     const [filteredTeachers, setFilteredTeachers] = useState([]);
     const [searchQuery, setSearchQuery] = useState('');
+    
 
     const getTeacherInfo = async () => {
         try {
             const result = await http.get("/Home/GetTeachers");
             setTeacher(result);
-            setFilteredTeachers(result); // Initialize filtered list with all teachers
+            setFilteredTeachers(result); 
         } catch (error) {
             console.log(error);
             setTeacher([]);
@@ -23,7 +26,7 @@ const Teachers = () => {
         getTeacherInfo();
     }, []);
 
-    // Filter teachers based on search query
+    
     useEffect(() => {
         if (searchQuery.trim() === '') {
             setFilteredTeachers(teacher);
@@ -60,6 +63,11 @@ const Teachers = () => {
 }
 
 const NameList = ({fullName, teacherId}) => {
+    // const teacherId = useSelector((state)=>state.TeacherId.value)
+    const dispatch = useDispatch()
+    // console.log(teacherId);
+    // console.log(teacherId);
+    
     return (
         <div className='flex flex-row-reverse justify-end gap-[8px] mb-[8px] mt-[12px]'>
             <input 
@@ -71,12 +79,15 @@ const NameList = ({fullName, teacherId}) => {
                 htmlFor={"id"+teacherId} 
                 className='font-yekan-500 text-[#455A64] text-[14px] block'
             >
-                {fullName}
+                {fullName }
             </label>
             <label
                 htmlFor={"id"+teacherId} 
                 className={`border-1 w-[20px] h-[20px] block rounded-[8px] peer-checked:bg-[#2196F3] border-[#CFD8DC] bg-[#ECEFF1]`}
+                onClick={() => dispatch(setSelectTeacher(teacherId))}
             ></label>
+            
+            
         </div>
     );
 }
