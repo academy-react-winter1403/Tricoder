@@ -35,7 +35,7 @@ const NewsList = ({ data }) => {
     <Link to={"/newsDetail/" + data.id}>
       <motion.div
         ref={cardRef}
-        className='w-[375px] h-[447px] flex flex-col items-center max-2xl:w-[347px] max-xl:w-[317px] max-lg:w-[300px] max-md:w-[280px] rounded-[24px] bg-white transition-all'
+        className='w-[375px] h-[447px] flex flex-col items-center max-2xl:w-[347px] max-xl:w-[317px] max-lg:w-[300px] max-md:w-[280px] rounded-[24px] bg-white transition-all  landingInput text'
         style={{
           rotateX: rotateX,
           rotateY: rotateY,

@@ -123,7 +123,7 @@ const Landing = () => {
           }
         
         }
-        className="fixed top-[75%] left-[4%] cursor-pointer z-50 "
+        className="fixed top-[77%] left-[4.5%] cursor-pointer z-50 "
       >
         {" "}
         <img className="w-[50px]" src="../../../public/landing/translate2.png" />
