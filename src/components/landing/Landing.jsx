@@ -8,7 +8,7 @@ import { TeacherSlider } from "./Slider/TeacherSlider"
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 // import  {} from 'i18n-react'
-import T from 'i18n-react'
+// import T from 'i18n-react'
 
 
 
