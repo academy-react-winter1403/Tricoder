@@ -5,6 +5,7 @@ import profileReducer from "./profileSlice";
 import courseFilters from "./filterSlice";
 import themeSlice from "./../Store/darkmode/DarkMode";
 import filterReducer from "./filterSlice"
+import teacherIdReducer from "./teacherSlice"
 
 export const store = configureStore({
   reducer: {
@@ -14,5 +15,6 @@ export const store = configureStore({
     courseFilters: courseFilters,
     theme: themeSlice,
     filters: filterReducer,
+    teacherId:teacherIdReducer
   },
 });

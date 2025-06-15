@@ -1,7 +1,7 @@
 import { createSlice } from '@reduxjs/toolkit';
 
 const initialState = {
-  selectedTypes: [],  // این باید به درستی مقداردهی بشه
+  selectedTypes: [],  
 };
 
 const filterSlice = createSlice({

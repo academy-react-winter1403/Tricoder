@@ -40,7 +40,7 @@ const WebsiteInfo = () => {
       >
         {WebInfo.map((info,ind) => (
           <div
-            className="w-55 h-53  mx-auto flex-col justify-center items-center rounded-2xl bg-[#FFFFFF99] border-[4px] border-white whitespace-nowrap landingInfo
+            className="w-55 h-53  mx-auto flex-col justify-center items-center rounded-2xl bg-[#FFFFFF99] border-[4px] border-white whitespace-nowrap landingInfo landingInput text
               max-md:h-22 max-lg:"
           >
             <div className=" flex flex-col justify-center items-center mx-auto ">

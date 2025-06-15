@@ -49,6 +49,10 @@ body{
  .dark .category{
   opacity: 0;
  }
+ .dark .text{
+  color: #e1e1f3;
+ }
+ 
 
  
  

@@ -78,7 +78,7 @@ const TeacherSlider = () => {
         >
           {console.log(slideValue)}
           <Swiper
-            slidesPerView={8}
+            slidesPerView={9}
             initialSlide={650}
             pagination={{
               clickable: true,

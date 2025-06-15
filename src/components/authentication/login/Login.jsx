@@ -121,7 +121,7 @@ const Login = () => {
 
             <div className=" flex justify-center">
               <AuthSuggestion
-              link={"/Studentpanel/dashboard"}
+              link={"/authentication/CreateAcount"}
               question={"حساب کاربری ندارید؟ "}
               suggest={"ثبت نام "}
               />
