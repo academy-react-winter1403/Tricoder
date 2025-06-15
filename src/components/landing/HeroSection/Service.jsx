@@ -3,24 +3,28 @@ import { ChartIcon } from '../../../assets/fonts/icons/landing/servicesIcon/Char
 import { JobIcon } from '../../../assets/fonts/icons/landing/servicesIcon/JobIcon'
 import { PersonalCard } from '../../../assets/fonts/icons/landing/servicesIcon/PersonalCard'
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next"
+
 
 const Service = () => {
+          const {t} =useTranslation()
+    
     const service=[
         {
             icon:<ChartIcon/>,
-            title:"سادگی خدمات ",
-            desc:"سهولت دسترسی و دریافت  خدمات از همه ی نقاط کشور با کمترین تعرفه و بدون نیاز  مراجعه حضوری در کل فرایند ثبت "
+            title:t("services1"),
+            desc:t("servicesDesc")
         },
         {
             icon:<JobIcon/>,
-            title:"فرصت های شغلی",
-            desc:"سهولت دسترسی و دریافت  خدمات از همه ی نقاط کشور با کمترین تعرفه و بدون نیاز  مراجعه حضوری در کل فرایند ثبت "
+            title:t("services2"),
+            desc:t("servicesDesc")
 
         },
         {
             icon:<PersonalCard/>,
-            title:"مدرک معتبر",
-            desc:"سهولت دسترسی و دریافت  خدمات از همه ی نقاط کشور با کمترین تعرفه و بدون نیاز  مراجعه حضوری در کل فرایند ثبت "
+            title:t("services3"),
+            desc:t("servicesDesc")
           
         }
     ]
@@ -71,7 +75,7 @@ const Service = () => {
         max-md:h-9 max-md:w-30  max-md:hidden  max-lg:hidden '>
 
           <p className='text-[40px] text-center 
-          max-md:text-xl '>خدمات ما</p> 
+          max-md:text-xl '>{t("serviceTitle")}</p> 
 
         </motion.div> 
             <motion.div className='h-70  my-20 flex gap-8 

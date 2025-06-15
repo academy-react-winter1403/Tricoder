@@ -4,8 +4,12 @@ import { Instagram } from "../../../assets/fonts/icons/footer/footerMediaIcon/In
 import { Linkedin } from "../../../assets/fonts/icons/footer/footerMediaIcon/Linkedin"
 import { Twitter } from "../../../assets/fonts/icons/footer/footerMediaIcon/Twitter"
 import { WhatsApp } from "../../../assets/fonts/icons/footer/footerMediaIcon/WhatsApp"
+import { useTranslation } from "react-i18next"
+
 
 const Footer = ()=>{
+           const {t} =useTranslation()
+    
     return(
         <div className="bg-[#252641] h-138.5 mt-20 LandingTeacher w-full flex-col justify-center items-center 
         max-md:mt-80">
@@ -15,24 +19,24 @@ const Footer = ()=>{
               <div className="px-36
               max-md:px-28"><FooterLogo/></div>
               <p className="text-[#FFFFFF] text-xl font-normal
-              max-md:text-sm">هدف ما سهولت دسترسی و دریافت  خدمات از همه ی نقاط کشور با کمترین تعرفه و بدون نیاز  مراجعه حضوری در کل فرایند ثبت </p>          
+              max-md:text-sm">{t("footerTitle")}</p>          
             </div>
 
             <div className=" w-fit pt-12 relative flex-col justify-center items-center mx-auto
             max-md:mx-13 max-md:w-90">
                 <p className="text-[#FFFFFF] text-base font-normal text-center pb-6
-                max-md:text-sm">برای دریافت اخبار از طریق ایمیل ثبت نام  کنید</p>
+                max-md:text-sm">{t("footer2")}</p>
                     <input className="bg-[#FFFFFF] w-116 h-14 rounded-[50px] text-left pl-4
                     max-md:w-90 max-md:h-12" placeholder="Example@gmail.com"/>
                     <div className="w-19 h-10 rounded-[80px] bg-[#2196F3] absolute top-26 right-3
                     max-md:top-24.5 max-md:h-9">
-                        <p className="text-white text-center leading-10 text-sm ">خبرم کن</p>
+                        <p className="text-white text-center leading-10 text-sm "> {t("footerBlue")}</p>
                     </div>
             </div>
 
             <div className="h-6 w-fit pt-14   leading-5  flex justify-center items-center mx-auto
             max-md:mx-7 max-md:text-sm ">
-                <p className="font-normal text-[#FFFFFF99] pl-10">دوره های اموزشی </p>
+                <p className="font-normal text-[#FFFFFF99] pl-10">{t("footerT1")}</p>
                 <div className="border-l-2 border-r-2 border-r-[#FFFFFF99] border-l-[#FFFFFF99]  h-5 px-10"><p className="font-normal text-[#FFFFFF99]">درباره ما</p></div>
                 <p className="font-normal text-[#FFFFFF99] pr-10">قوانین و مقررات</p>
             </div>

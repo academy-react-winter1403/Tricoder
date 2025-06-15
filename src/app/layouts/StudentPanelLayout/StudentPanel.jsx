@@ -27,7 +27,7 @@ const StudentPanel = ({ children }) => {
     { base: 'linear-gradient(to bottom, #a855f7, #6366f1)', accent: '#6033FE' },
     { base: ' linear-gradient(0deg,rgba(250, 0, 87, 1) 0%, rgba(255, 148, 193, 1) 100%)', accent: '#D62273' },
     { base: 'linear-gradient(0deg,rgba(69, 122, 196, 1) 0%, rgba(171, 220, 255, 1) 100%)', accent: '#275C91' },
-    { base: 'linear-gradient(0deg,rgba(63, 158, 131, 1) 0%, rgba(200, 255, 145, 1) 100%)', accent: '#2D612D' },
+    { base: 'linear-gradient(0deg,rgba(63, 158, 131, 1) 0%, rgba(200, 255, 145, 1) 100%)', accent: '#3D8F3D' },
   ];
 
   const handleColorChange = (color) => {

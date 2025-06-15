@@ -10,10 +10,13 @@ import { AngularIcon } from "../../../assets/fonts/icons/landing/heroSection/sma
 import { CssIcon } from "../../../assets/fonts/icons/landing/heroSection/smallIcon/CssIcon";
 import { HtmlIcon } from "../../../assets/fonts/icons/landing/heroSection/smallIcon/HtmlIcon";
 import { useState } from "react";
+import { useTranslation } from "react-i18next"
+
 
 
 const HeroSection = () => {
 
+      const {t} =useTranslation()
 
     const [searchTerm, setSearchTerm] = useState("");
     
@@ -24,11 +27,6 @@ const HeroSection = () => {
   //   const filteredData = data?.filter(item => 
   //   item.toLowerCase().includes(searchTerm.toLowerCase())
   // );  
-
-
- 
-
-
 
   return (
     <div
@@ -65,28 +63,28 @@ const HeroSection = () => {
             className="text-2xl font-medium  
       max-md:hidden "
           >
-            پلتفرم اموزش طراحی وب
+            {t("title1")}
           </p>
 
           <p
             className="text-[80px] font-black
      max-md:text-[23px] "
           >
-            مرجع اموزش برنامه نویسی
+         {t("title2")}
           </p>
           <p
             className="text-2xl font-medium 
        max-md:text-xs"
           >
-            مرجع اموزش زنده و تعاملی دسترسی به بیش از هفت هزار ویدیوی اموزشی به
-            زبان فارسی .
+            {t("title3")}
+        
           </p>
         </div>
         <div className="  max-lg max-lg:w-3/5 max-lg: ">
           <input value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}
             className="  w-[99%] px-5 h-14 bg-[#FFF] rounded-2xl  text-[#607D8B] my-15 relative 
       max-lg:my-3 max-md:h-8 max-lg:text-xs max-lg:rounded-xl landingInput"
-            placeholder="چی میخوای یاد بگیری ؟"
+            placeholder={t("search")}
           />
           <div className="max-md:hidden max-lg:hidden ">
             {" "}

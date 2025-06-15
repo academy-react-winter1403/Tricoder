@@ -5,6 +5,7 @@ import calandar from "../../../assets/icons/calendar-2.svg";
 import calandarTick from "../../../assets/icons/calendar-tick.svg";
 import UseCourseDate from '../Hooks/useCourseData';
 import { useParams } from "react-router-dom";
+import http from "../../../core/services/interceptor";
 
 const CourseInfo = ({courseid}) => {
  
@@ -15,7 +16,18 @@ const CourseInfo = ({courseid}) => {
  if (loading) return <p>در حال بارگذاری...</p>;
  if (error) return <p>{error}</p>;
 
-
+//  const handleReserve = async () => {
+//   try {
+//     const response = await http.post("/CourseReserve/ReserveAdd", {
+//       courseId: course?.courseId,
+//     });
+  
+//   } catch (error) {
+//     const message =
+//       error.response?.data?.message || error.message || "مشکلی پیش آمده";
+//     toast.error(message);
+//   }
+// };
   const infoArray = [
     { icon:  userIcon , title: "تعداد دانشجو", about: course?.capacity },
     { icon:  monitor , title: "وضعیت دوره", about: course?.courseStatusName },
@@ -56,7 +68,10 @@ const CourseInfo = ({courseid}) => {
 
       </div>
      
-     <div className="w-[80%]   h-[4rem]  mt-[8rem]  flex   justify-between  items-center">
+     <div
+     className="w-[80%]   h-[4rem]  mt-[8rem]  flex   justify-between  items-center"
+    //  onClick={handleReserve}
+     >
       <button className="bg-[#2196F3] w-[8rem]   h-[3.5rem]    rounded-[80px]  font-semibold  text-center text-white">
           شرکت در دوره
       </button>

@@ -2,9 +2,11 @@ import { useEffect } from "react";
 import { DeleteCourse } from "../../../assets/icons/studentPanel/DeleteCourse";
 import http from "../../../core/services/interceptor"
 import { Trash2 } from "lucide-react";
+import { useAccent } from '../../../app/layouts/StudentPanelLayout/StudentPanel'
 
 
 const CoursePage = () => {
+  const { accentColor } = useAccent();
 
   useEffect(() => {
     const fetchPostData = async () => {
@@ -54,7 +56,9 @@ const CoursePage = () => {
 
     <div className="flex flex-col gap-6 w-full px-4 pt-10">
       {/* menu */}
-      <div className="hidden md:flex bg-[#6033FE] text-white text-center py-4 gap-[5rem]  px- w-full  rounded-[10px] whitespace-nowrap">
+      <div
+        style={{ backgroundColor: accentColor }}
+        className="hidden md:flex text-white text-center py-4 gap-[5rem]  px- w-full  rounded-[10px] whitespace-nowrap">
         <p className="flex-1">مدیریت</p>
         <p className="flex-1">قیمت</p>
         <p className="flex-1">تاریخ شروع</p>

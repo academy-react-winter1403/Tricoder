@@ -9,31 +9,35 @@ import { GameIcon } from "../../../assets/fonts/icons/landing/category/littleIco
 import { WebIcon } from "../../../assets/fonts/icons/landing/category/littleIcon/WebIcon";
 import { Design } from "../../../assets/fonts/icons/landing/category/littleIcon/Design";
 import { motion } from "framer-motion";
+import { useTranslation } from "react-i18next"
+
 
 const LandingCategory = () => {
+               const {t} =useTranslation()
+  
   const CategoryItem = [
     {
       icon: <DataIcon />,
-      title: "تحلیل داده",
-      desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از طراحان گرافیک است",
+      title:t("categoryData"),
+      desc: t("categoryDesc"),
       id: 1,
     },
     {
       icon: <GameIcon />,
-      title: "بازی",
-      desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از طراحان گرافیک است",
+      title: t("categoryGame"),
+      desc: t("categoryDesc"),
       id: 2,
     },
     {
       icon: <WebIcon />,
-      title: "امنیت شبکه",
-      desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از طراحان گرافیک است",
+      title: t("categorySecurity"),
+      desc:  t("categoryDesc"),
       id: 3,
     },
     {
       icon: <Design />,
-      title: "وب دیزاین",
-      desc: "لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از طراحان گرافیک است",
+      title: t("categotyDesign"),
+      desc: t("categoryDesc"),
       id: 2,
     },
   ];
