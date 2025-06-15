@@ -13,8 +13,6 @@ import { changeLng, TranslateSlice } from "../../redux/Store/translateSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { useTranslation } from "react-i18next";
 
-// import i18n from "./i18n";
-
 const Landing = () => {
   const user = useSelector((e) => e.translate);
   const dispatch = useDispatch();

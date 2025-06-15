@@ -2,16 +2,19 @@ import React from 'react'
 import { EyeIcon } from '../../../assets/fonts/icons/landing/NewsIcon/EyeIcon'
 import { NewsDate } from '../../../assets/fonts/icons/landing/NewsIcon/NewsDate'
 import { Link } from 'react-router-dom'
+import { useTranslation } from "react-i18next"
+
 
 
 
 const LandingNews = () => {
+       const {t} =useTranslation()
 
   const SmallBlog = [
     {
       img: "./public/landing/news/smallBlog/NewsBg1.png",
-      title: "چگونه مطالعه موثر را برای شما آسانتر کنیم.",
-      desc: "لورم  ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از  طراحان گرافیک است   چاپگرها و متون بلکه روزنامه و مجله در ستون و  سطرآنچنان که لازم است   و برای شرایط فعلی تکنولوژی مورد.",
+      title:t("NewsPost"),
+      desc: t("NewsDesc"),
       icon: <EyeIcon />,
       eyeCount: "22بازدید",
       DateIcon: <NewsDate />,
@@ -20,8 +23,8 @@ const LandingNews = () => {
 
     {
       img: "./public/landing/news/smallBlog/NewsBg2.png",
-      title: "چگونه مطالعه موثر را برای شما آسانتر کنیم.",
-      desc: "لورم  ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از  طراحان گرافیک است   چاپگرها و متون بلکه روزنامه و مجله در ستون و  سطرآنچنان که لازم است   و برای شرایط فعلی تکنولوژی مورد.",
+      title: t("NewsPost"),
+      desc: t("NewsDesc"),
       icon: <EyeIcon />,
       eyeCount: "24بازدید",
       DateIcon: <NewsDate />,
@@ -29,8 +32,8 @@ const LandingNews = () => {
     },
     {
       img: "./public/landing/news/smallBlog/NewsBg3.png",
-      title: "چگونه مطالعه موثر را برای شما آسانتر کنیم.",
-      desc: "لورم  ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از  طراحان گرافیک است   چاپگرها و متون بلکه روزنامه و مجله در ستون و  سطرآنچنان که لازم است   و برای شرایط فعلی تکنولوژی مورد.",
+      title:t("NewsPost"),
+      desc:t("NewsDesc"),
       icon: <EyeIcon />,
       eyeCount: "22بازدید",
       DateIcon: <NewsDate />,
@@ -46,7 +49,7 @@ const LandingNews = () => {
       <div className='w-70 h-18 border-b-4 b border-[#2196F3] mx-125
         max-md:h-9 max-md:w-30 max-md:mx-145'>
         <p className='text-[40px] text-center whitespace-nowrap
-        max-md:text-xl '>اخبار و مقالات  </p>
+        max-md:text-xl '>{t("NewsTitle")}</p>
       </div>
 
       <div className='  my-10 flex gap-10 justify-center items-center
@@ -63,7 +66,7 @@ const LandingNews = () => {
           max-md:w-20 max-md:h-9 max-md:gap-0.5'>
               <div className='mr-3'> <EyeIcon /></div>
               <p className='text-[#2196F3]
-            max-md:text-sm'>22 بازدید</p>
+            max-md:text-sm'>{t("NewsView")}</p>
             </div>
 
             <div className='h-10 w-28 bg-[#DAEEFF] rounded-3xl flex items-center gap-1 
@@ -76,9 +79,9 @@ const LandingNews = () => {
 
           </div>
           <p className='text-[32px] font-bold leading-20
-        max-md:text-xl max-md:leading-11'>چگونه مطالعه موثر را برای شما آسانتر کنیم.</p>
+        max-md:text-xl max-md:leading-11'> {t("NewsPost")}</p>
           <p className='text-[#455A64]
-        max-md:text-sm'>لورم  ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ  و با استفاده از  طراحان گرافیک است   چاپگرها و متون بلکه روزنامه و مجله در ستون و  سطرآنچنان که لازم است   و برای شرایط فعلی تکنولوژی مورد.</p>
+        max-md:text-sm'>{t("NewsDesc")}</p>
         </div>
 
         <div className='w-  mt-4
@@ -124,7 +127,7 @@ const LandingNews = () => {
 
       <Link to={"/news"}>
           <div className='w-33 h-12 bg-[#2196F3] rounded-[80px] mx-144 '>
-        <p className='font-bold text-center text-white leading-13 '>مشاهده همه</p>
+        <p className='font-bold text-center text-white leading-13 '> {t("ViewAll")}</p>
 
       </div>
       </Link>

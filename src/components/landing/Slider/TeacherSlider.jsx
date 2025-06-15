@@ -5,9 +5,13 @@ import { Navigation, Pagination } from 'swiper/modules';
 import "swiper/css";
 import "swiper/css/pagination";
 import { useGetPostsQuery } from "../../../core/services/interceptor/reduxIndex";
+import { useTranslation } from "react-i18next"
+
 
 const TeacherSlider = () => {
   const [Slider, setSlider] = useState(0);
+               const {t} =useTranslation()
+  
 
 
   // const SlideItem = [
@@ -64,7 +68,7 @@ const TeacherSlider = () => {
             className="text-[40px] text-center whitespace-nowrap
          max-md:text-xl "
           >
-            اساتید برتر{" "}
+           {t("TopProfessors")}{" "}
           </p>
         </div>
 
