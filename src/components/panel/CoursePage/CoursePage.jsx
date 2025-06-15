@@ -63,9 +63,9 @@ const CoursePage = () => {
         style={{ backgroundColor: accentColor }}
         className="hidden md:flex text-white text-center py-4 gap-[5rem]  px- w-full  rounded-[10px] whitespace-nowrap">
         <p className="flex-1">مدیریت</p>
-        <p className="flex-1">قیمت</p>
+        <p className="flex-1">کد دانش آموز</p>
         <p className="flex-1">تاریخ شروع</p>
-        <p className="flex-1">مدرس</p>
+        <p className="flex-1">نام دانش آموز</p>
         <p className="flex-1">نام دوره</p>
         <p className="flex-1">تصویر</p>
       </div>
