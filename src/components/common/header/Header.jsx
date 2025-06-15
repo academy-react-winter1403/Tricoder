@@ -48,7 +48,7 @@ const Header = () => {
                 <Link to={"/courses"}>   {t("courses")}     </Link>
                 <p>{t("teachers")} </p>
                 <p>{t("ContactUs")}</p>
-                <Link to={"news"}>اخبار مقالات</Link>
+                <Link to={"news"}> {t("News")} </Link>
             </div>
             <div className="w-50 h-12.5 flex justify-between gap-4 
             max-md:gap-1 max-md:mt-6">
@@ -64,8 +64,8 @@ const Header = () => {
                     <div className=" w-33 h-12 bg-[#2196F3] rounded-[80px]
                 max-md:w-17 max-md:h-8 max-md:rounded-3xl max-md:mt-1.5 ">
                         <p className="text-base font-bold text-white text-center leading-12
-                    max-md:text-[10px] max-md:leading-8.5">{getItem("token") ? "داشبورد" : "ورود به حساب"}</p>
-
+                    max-md:text-[10px] max-md:leading-8.5">{getItem("token") ? "" : "ورود به حساب"} {t("dashbored")} </p>
+                            
                     </div>
                 </Link>
 

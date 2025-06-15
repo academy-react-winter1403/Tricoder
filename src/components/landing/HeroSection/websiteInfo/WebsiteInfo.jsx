@@ -4,25 +4,30 @@ import {
   usePostToDynamicUrlMutation,
 } from "../../../../core/services/interceptor/reduxIndex";
 
+import { useTranslation } from "react-i18next"
+
+
 const WebsiteInfo = () => {
   const { data, error, isLoading } = useGetPostsQuery("/Home/LandingReport");
+      const {t} =useTranslation()
+
   
 
   const WebInfo=[
       {
           img:"./public/landing/heroSection/icon (5).png",
           num:data?.teacherCount,
-          info:"مدرس مجرب"
+          info:t("info1")
       },
       {
           img:"./public/landing/heroSection/icon (6).png",
           num:data?.courseCount,
-          info:"دقیقه اموزش"
+          info:t("info2")
       },
       {
           img:"./public/landing/heroSection/icon (7).png",
           num:data?.studentCount,
-          info:"نفر دانشجو"
+          info:t("info3")
 
       }
   ]
