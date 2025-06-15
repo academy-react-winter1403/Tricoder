@@ -38,7 +38,7 @@ const Header = () => {
                 <div className=" h-8 flex gap-1 pt-2 
             max-md:-mr-20">
                     <Logo />
-                    <p className={`text-xl tracking-tight leading-9 max-md:text-sm `}>هگزا اسکواد</p>
+                    <p className={`text-xl tracking-tight leading-9 max-md:text-sm `}>  {t("logo")}</p>
                 </div>
             </Link>
 
@@ -46,8 +46,8 @@ const Header = () => {
             max-md:text-[12px] max-md:gap-3 max-md:mx-6 " >
 
                 <Link to={"/courses"}>   {t("courses")}     </Link>
-                <p>اساتید</p>
-                <p>ارتباط با ما</p>
+                <p>{t("teachers")} </p>
+                <p>{t("ContactUs")}</p>
                 <Link to={"news"}>اخبار مقالات</Link>
             </div>
             <div className="w-50 h-12.5 flex justify-between gap-4 

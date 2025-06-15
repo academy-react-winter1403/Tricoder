@@ -7,6 +7,9 @@ i18n.use(initReactI18next).init({
         translation:{
             logo:"HegxaSquad",
             courses:"Courses",
+            teachers:"Teachers",
+           ContactUs:"Contact Us",
+
 
         }
       },
@@ -14,6 +17,8 @@ i18n.use(initReactI18next).init({
             translation:{
                 logo:"هگزا اسکواد",
             courses:"دوره ها",
+            teachers:"اساتید",
+              ContactUs:"ارتباط با ما",
 
             }
     }
