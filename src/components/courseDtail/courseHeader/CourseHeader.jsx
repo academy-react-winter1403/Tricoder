@@ -27,7 +27,7 @@ const CourseHeader = () => {
     try {
       await AddToFavorite(courseId);
       setIsFavorite(true)
-      alert("به علاقه‌مندی‌ها اضافه شد!");
+   
     } catch (error) {
       alert("خطا در افزودن به علاقه‌مندی‌ها", error);
     }
