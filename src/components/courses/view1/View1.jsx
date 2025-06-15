@@ -44,7 +44,7 @@ const View1 = ({ data }) => {
         onMouseLeave={resetRotation}
       >
         <motion.div
-          className='relative border-1 w-[296px] h-[389px] rounded-[24px] bg-white overflow-hidden'
+          className='relative border-1 w-[296px] h-[389px] rounded-[24px] bg-white overflow-hidden landingInput text'
           style={{
             rotateX: rotateX,
             rotateY: rotateY,
@@ -76,7 +76,7 @@ const View1 = ({ data }) => {
               {data.title}
             </div>
 
-            <div className='w-[264px] h-[40px] rounded-[24px] mt-[12px] bg-[#ECEFF1] flex items-center justify-center gap-[24px]'>
+            <div className='w-[264px] h-[40px] rounded-[24px] mt-[12px] bg-[#ECEFF1] flex items-center justify-center gap-[24px]  landingInput text'>
               <div className='h-[19px] text-[12px] font-yekan-500 flex gap-[2px]'>
                 <Note />
                 202 درس

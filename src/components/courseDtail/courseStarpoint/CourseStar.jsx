@@ -26,7 +26,7 @@ const CourseStare = () => {
 
   const handleLike = async () => {
     if (!courseId) {
-      console.error("❌ CourseId is missing");
+      // console.error("CourseId is missing");
       return;
     }
     setLoading(true);
@@ -34,10 +34,10 @@ const CourseStare = () => {
 
     try {
       const response = await http.post(`/Course/AddCourseLike?CourseId=${courseId}`);
-      console.log("✅ Like response:", response);
+      console.log("Like response:", response);
       setLiked(response.data.likes);
     } catch (err) {
-      console.error("❌ Error in liking course:", err);
+      console.error("Error in liking course:", err);
       setError('خطا در لایک کردن!');
     } finally {
       setLoading(false);
@@ -48,7 +48,7 @@ const CourseStare = () => {
 
 
 
-  // console.log("📌 courseId prop:", courseid);
+  // console.log("courseId prop:", courseid);
 
 
 

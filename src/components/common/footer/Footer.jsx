@@ -37,8 +37,8 @@ const Footer = ()=>{
             <div className="h-6 w-fit pt-14   leading-5  flex justify-center items-center mx-auto
             max-md:mx-7 max-md:text-sm ">
                 <p className="font-normal text-[#FFFFFF99] pl-10">{t("footerT1")}</p>
-                <div className="border-l-2 border-r-2 border-r-[#FFFFFF99] border-l-[#FFFFFF99]  h-5 px-10"><p className="font-normal text-[#FFFFFF99]">درباره ما</p></div>
-                <p className="font-normal text-[#FFFFFF99] pr-10">قوانین و مقررات</p>
+                <div className="border-l-2 border-r-2 border-r-[#FFFFFF99] border-l-[#FFFFFF99]  h-5 px-10"><p className="font-normal text-[#FFFFFF99]">{t("aboutUs")}</p></div>
+                <p className="font-normal text-[#FFFFFF99] pr-10">{t("footerRules")}</p>
             </div>
 
             <div className="bg-[#00000033]  my-20 h-15 w-fit rounded-2xl flex justify-between gap-x-157 items-center mx-auto

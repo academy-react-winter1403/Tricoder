@@ -107,7 +107,7 @@ const SearchHeader = () => {
 
             
             {isSortOpen && (
-              <div className="absolute top-full right-0 mt-1 w-full min-w-[200px] bg-white rounded-[16px] shadow-lg z-50 overflow-hidden">
+              <div className="absolute top-full right-0 mt-1 w-full min-w-[200px] bg-white rounded-[16px] shadow-lg z-50 overflow-hidden landingInput">
                 {sortOptions.map((option) => (
                   <div
                     key={option.value}
@@ -165,7 +165,7 @@ const SearchHeader = () => {
         <div className="mt-[32px] flex flex-wrap justify-center gap-[32px] w-[952px] h-[1231px]">
           {View
             ? coursesItems.map((items, index) => (
-                <View1 key={index} data={items} />
+                <View1 key={index} data={items}  />
               ))
             : coursesItems.map((items, index) => (
                 <View2 key={index} data={items} />
