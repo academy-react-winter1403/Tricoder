@@ -2,7 +2,7 @@ import { Field, Formik } from "formik";
 import { Form, useNavigate } from "react-router-dom";
 import { Button } from "../../common/button/button";
 import { AuthSuggestion } from "../../common/AuthSuggestion/AuthSuggestion";
-import { useState } from "react";
+import { use, useState } from "react";
 
 import http from "../../../core/services/interceptor";
 
@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { setItem } from "../../../core/services/common/storage.services";
 
 const Login = () => {
+
   const [phoneOrGmail, setPhoneOrGmail] = useState("");
   const [password, setPassword] = useState("");
   const [remember, setRemember] = useState(false);
@@ -28,15 +29,24 @@ const Login = () => {
     };
 
     try {
-      const data = await http.post("/Sign/Login", user);
-      console.log(data);
-      toast.success("ورود با موفقیت انجام شد", {
-        theme: "colored",
-        className: "custom-toast",
-      });
+      console.log(user)
 
-      setItem("token", data?.token);
-      navigate("/");
+      const data = await http.post("/Sign/Login", user);
+      if (data.success) {
+        toast.success("ورود با موفقیت انجام شد", {
+          theme: "colored",
+          className: "custom-toast",
+        });
+  
+        setItem("token", data?.token);
+        navigate("/");
+      } else {
+        toast.error("ورود با موفقیت انجام نشد", {
+          theme: "colored",
+          className: "custom-toast",
+        });
+      }
+   
     } catch (error) {
       toast.error("اطلاعات ورودی نادرست است", {
         theme: "colored",
@@ -72,14 +82,14 @@ const Login = () => {
             />
 
             <div className="w-full h-11 flex justify-between items-center">
-              <span className="text-[9px] font-yekan-500 text-[#2196F3]">
+              <span className="text-[10px] font-yekan-500 text-[#2196F3]">
                 {" "}
                 رمز عبور را فراموش کردم{" "}
               </span>
               <div className="flex">
                 <label
                   htmlFor="rememberMe"
-                  className="text-[9px]  font-yekan-500 text-[#455A64]"
+                  className="text-[10px]  font-yekan-500 text-[#455A64]"
                 >
                   {" "}
                   من را بخاطر بسپار{" "}
@@ -99,19 +109,25 @@ const Login = () => {
                   }
                 />
                 <label htmlFor="rememberMe"
-                  className="border-1 w-3 h-3 block ml-1 rounded-[5px] border-[#455A64]
+                  className="border-1 w-3 h-3 block mr-[2px] rounded-[5px] border-[#455A64]
                                     peer-checked:bg-[#2196F3] peer-checked:border-none peer-checked:bg-[url(src/assets/icons/Vector.png)]"
                 ></label>
               </div>
             </div>
 
-            <Button > دریافت کد تایید </Button>
+            <div className=" flex justify-center">
+              <Button  > دریافت کد تایید </Button>
+            </div>
 
-            <AuthSuggestion
+            <div className=" flex justify-center">
+              <AuthSuggestion
               link={"/authentication/CreateAcount"}
               question={"حساب کاربری ندارید؟ "}
               suggest={"ثبت نام "}
-            />
+              />
+            </div>
+
+            
           </div>
         </form>
       </div>

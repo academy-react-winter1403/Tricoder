@@ -55,18 +55,18 @@ const Code = ({ length = 5, onSubmit }) => {
 
   const handleKeyDown = (index, e) => {
     if (e.key === "Backspace" && !otp[index] && index > 0) {
-      inputsRef.current[index - 1].focus(); // برگشت به اینپوت قبلی
+      inputsRef.current[index - 1].focus(); 
     }
   };
   const handlePaste = (e) => {
-    e.preventDefault(); // جلوگیری از رفتار پیش‌فرض
-    const pasteData = e.clipboardData.getData("text"); // دریافت مقدار پیست شده
-    if (!/^\d*$/.test(pasteData)) return; // اگر فقط عدد نبود، رد شود
+    e.preventDefault(); 
+    const pasteData = e.clipboardData.getData("text"); 
+    if (!/^\d*$/.test(pasteData)) return; 
 
-    const pasteArray = pasteData.split("").slice(0, length); // حداکثر `length` مقدار بردار
-    setOtp(pasteArray.concat(Array(length - pasteArray.length).fill(""))); // پر کردن آرایه
+    const pasteArray = pasteData.split("").slice(0, length); 
+    setOtp(pasteArray.concat(Array(length - pasteArray.length).fill(""))); 
 
-    // فوکوس روی آخرین مقدار پر شده
+    
     const lastFilledIndex = pasteArray.length - 1;
     if (inputsRef.current[lastFilledIndex]) {
       inputsRef.current[lastFilledIndex].focus();
@@ -75,7 +75,7 @@ const Code = ({ length = 5, onSubmit }) => {
 
   return (
     <div className=" w-57 h-55 m-auto mb-4 ">
-      <p className="font-yekan-500 text-[9px] text-right tracking-normal text-[#455A64]">
+      <p className="font-yekan-500 text-[11px] text-right  text-[#455A64]">
         کد به شماره {phoneNumber} ارسال شد، در صورت اشتباه بودن شماره آنرا
         <Link className="underline decoration-sky-600 text-sky-600">
           {" "}
@@ -98,16 +98,26 @@ const Code = ({ length = 5, onSubmit }) => {
             />
           ))}
         </div>
-        <h4 className="font-yekan-500 mt-2 text-[#2196F3]">1:23</h4>
-        <button
+        <div className="flex justify-center">
+          <h4 className="font-yekan-500 mt-2 text-[#2196F3]">1:23</h4>
+        </div>
+        
+        <div className="flex justify-center">
+          <button
           onClick={() => onSubmit(otp.join(""))}
           className="text-[10px] px-9 py-[11px] rounded-3xl bg-[#2196F3] text-white font-yekan-500"
         >
           ساخت حساب کابری
         </button>
+        </div>
+        
       </form>
 
-      <AuthSuggestion question={"کدارسال نشد؟"} suggest={"ارسال دوباره"} />
+      <div className="flex justify-center">
+        <AuthSuggestion question={"کدارسال نشد؟"} suggest={"ارسال دوباره"} />
+      </div>
+
+      
     </div>
   );
 };

@@ -1,0 +1,95 @@
+import React, { useRef, useState } from 'react'
+import { Link } from 'react-router-dom'
+import { motion, useMotionValue, useTransform } from 'framer-motion'
+
+const NewsList = ({ data }) => {
+  const cardRef = useRef(null)
+  const [isHovered, setIsHovered] = useState(false)
+
+
+  const rotateX = useMotionValue(0)
+  const rotateY = useMotionValue(0)
+
+ 
+  const handleMouseMove = (e) => {
+    const card = cardRef.current
+    const rect = card.getBoundingClientRect()
+    const x = e.clientX - rect.left
+    const y = e.clientY - rect.top
+    const centerX = rect.width / 2
+    const centerY = rect.height / 2
+
+    const rotateAmountX = -((y - centerY) / centerY) * 10
+    const rotateAmountY = ((x - centerX) / centerX) * 10
+
+    rotateX.set(rotateAmountX)
+    rotateY.set(rotateAmountY)
+  }
+
+  const resetRotation = () => {
+    rotateX.set(0)
+    rotateY.set(0)
+  }
+
+  return (
+    <Link to={"/newsDetail/" + data.id}>
+      <motion.div
+        ref={cardRef}
+        className='w-[375px] h-[447px] flex flex-col items-center max-2xl:w-[347px] max-xl:w-[317px] max-lg:w-[300px] max-md:w-[280px] rounded-[24px] bg-white transition-all  landingInput text'
+        style={{
+          rotateX: rotateX,
+          rotateY: rotateY,
+          transformPerspective: 1000,
+        }}
+        onMouseMove={handleMouseMove}
+        onMouseLeave={resetRotation}
+        onMouseEnter={() => setIsHovered(true)}
+        whileTap={{ scale: 0.97, boxShadow: '0px 0px 20px rgba(0,0,0,0.2)' }}
+        transition={{ type: 'spring', stiffness: 100, damping: 10 }}
+      >
+
+        
+        <motion.div
+          className='border-1 w-full h-[280px] rounded-[24px] mb-[24px] overflow-hidden'
+          animate={{ y: [0, -10, 0] }}
+          transition={{
+            duration: 3,
+            repeat: Infinity,
+            ease: 'easeInOut'
+          }}
+        >
+          <motion.img
+            src={data.currentImageAddressTumb}
+            alt="newsimage"
+            className='w-full h-full object-cover'
+            whileHover={{ brightness: 1.1 }}
+            transition={{ duration: 0.3 }}
+          />
+        </motion.div>
+
+        
+        <div className='text-right mb-[16px] w-full'>
+          <p className='text-[20px] font-yekan-700 mb-[8px] text-[#263238] max-xl:text-[18px] w-fit h-fit'>
+            {data.title}
+          </p>
+          <p className='text-[15px] font-yekan-500 text-[#455A64] max-xl:text-[13px]'>
+            {data.miniDescribe}
+          </p>
+        </div>
+
+       
+        <div className='self-start h-[22px] flex gap-[16px] items-center'>
+          <span className='block text-[14px] font-yekan-500 text-[#2196F3]'>
+            {data.currentView} بازدید
+          </span>
+          <span className='block w-[8px] h-[8px] rounded-[80px] bg-[#2196F3]'></span>
+          <span className='block text-[14px] font-yekan-500 text-[#2196F3]'>
+            1402/7/2
+          </span>
+        </div>
+      </motion.div>
+    </Link>
+  )
+}
+
+export { NewsList }

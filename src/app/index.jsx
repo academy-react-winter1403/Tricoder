@@ -1,18 +1,27 @@
-
-import { Fragment } from 'react'
 import './App.css'
-import { Outlet } from 'react-router-dom'
-import { Header } from '../components/header/Header'
-import { Footer } from '../components/footer/Footer'
+import { Outlet, useLocation } from 'react-router-dom'
+import { Header } from '../components/common/header/Header'
+import { Footer } from '../components/common/footer/Footer'
+
 
 function App() {
+
+  const location = useLocation()
+  // console.log(location);
   
+
   return (
-    <Fragment>
-        <Header/>
-          <Outlet/>
-        <Footer/>
-    </Fragment>
+    <main className={`flex flex-col ${location.pathname === '/' ? "heroBG" : ""}   `}>
+      <Header />
+      <Outlet />
+      <Footer />
+    </main>
+
+
+
+
+
+
 
   )
 }

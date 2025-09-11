@@ -1,47 +1,46 @@
 import axios from "axios";
 import { getItem } from "../common/storage.services";
 
-const baseUrl = import.meta.env.VITE_BASE_URL
+const baseUrl = import.meta.env.VITE_BASE_URL;
 
 const http = axios.create({
-    baseURL:baseUrl,
+  baseURL: baseUrl,
+    headers: {
+    Authorization: "Bearer " + localStorage.getItem("token"),
+  },
+});
 
-})
+const onSucess = (res) => {
+  return res.data;
+};
 
-
-
-
-const onSucess = (res) =>{
-    return res.data
-}
-
-const onError = (error) =>{
+const onError = (error) => {
     console.log('error', error);
-    if (error?.response.status===401) {
-        window.location.pathname = "/login"
+
+    if (error.response) {
+        if (error.response.status === 401) {
+            window.location.pathname = "/login";
+        }
+
+        if (error.response.status >= 400 && error.response.status < 500) {
+            console.log("client error: ", error.response.status);
+        }
+    } else {
+        console.error("خطای شبکه‌ای یا مشکل CORS یا سرور در دسترس نیست:", error.message);
     }
 
-    if (error?.response.status >=400 && error?.response.status < 500) {
-        console.log("client error: ", error.response.status);
-        
-    }
-
-    return Promise.reject(error)
-    
+    return Promise.reject(error);
 }
 
 
-http.interceptors.response.use(onSucess,onError)
+http.interceptors.response.use(onSucess, onError);
 
-http.interceptors.request.use((opt)=>{
-    const token = getItem("token")
-    if (token){
-        opt.headers.Authorization= "bearer " + token
+http.interceptors.request.use((opt) => {
+  const token = getItem("token");
+  if (token) {
+    opt.headers.Authorization = "Bearer " + token;
+  }
+  return opt;
+});
 
-    }
-    return opt 
-})
-
-
-export default http
-
+export default http;

@@ -1,6 +1,10 @@
 
 @import "tailwindcss";
 
+
+/* @custom-variant dark (&:where(.dark, .dark *)); */
+
+
 @font-face {
   font-family: 'yekan-hairline';
   src: url("./assets/fonts/Yekan_Bakh_Fanum_Hairline.TTF");
@@ -41,7 +45,7 @@
 @font-face {
   font-family: 'yekan-fat';
   src: url("./assets/fonts/Yekan_Bakh_Fanum_Fat.TTF");
-  
+
 }
 
 
@@ -66,6 +70,7 @@
     --font-yekan-700:"yekan-bold";
     --font-yekan-800:"yekan-extera-bold";
     --font-yekan-900:"yekan-fat";
+    
   }
   
  
@@ -75,4 +80,37 @@ body,ul,li{
   
 }
 
+.swiper {
+  width: 100%;
+  height: 100%;
+}
 
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+
+  width: 18% !important;
+  display: flex !important;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 30px;
+}
+.swiper-slide img{
+  margin: auto;
+   width: 100%;
+  height: 100%;
+}
+.swiper-button-next{
+  top: 30px  !important;
+  bottom: auto !important ;
+  color: rgb(84, 22, 240) !important;
+  scale: 0.5;
+  left: 75px !important;
+}
+.swiper-button-prev{
+  top: 30px  !important;
+  bottom: auto !important ;
+  color: white !important;
+  scale: 0.5;
+  right: 75px !important;
+}
